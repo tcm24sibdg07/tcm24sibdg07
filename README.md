@@ -3,19 +3,16 @@
 
 ## Índice
 
-:[Introdução](rei01.md)  
-:[Especificação de Requisitos](rei02.md)  
-:[Esquema Conceptual](rei03.md)  
+C1 :[Introdução](rei01.md)  
+C2 :[Especificação de Requisitos](rei02.md)  
+C3 :[Esquema Conceptual](rei03.md)  
 
 ## Group _07_
-
-_Don't forget to add the group elements_
 
 * Catarina Morais [@h3xgxrl](https://github.com/h3xgxrl)
 * Lara Pereira [@LaraDavidPereira](https://github.com/LaraDavidPereira)
 * Miguel Tavares [@MiguelSantosTavares](https://github.com/MiguelSantosTavares)
 
 ---
-_You can add a footer menu for navigation_ 
 < Previous | [^ Main](/../../) | [Next >](rei01.md)
 :--- | :---: | ---: 

@@ -12,7 +12,7 @@
 _Don't forget to add the group elements_
 
 * Catarina Morais [@h3xgxrl](https://github.com/h3xgxrl)
-* Lara Pereira [@MarcoOliveira](https://github.com/marcoamarooliveira)
+* Lara Pereira [@LaraDavidPereira](https://github.com/LaraDavidPereira)
 * Miguel Tavares [@MarcoOliveira](https://github.com/marcoamarooliveira)
 
 ---

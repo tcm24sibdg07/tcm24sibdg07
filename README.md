@@ -1,4 +1,4 @@
-# tcm25sibdg07
+
 # Relatório de Especificação da Informação
 
 ## Índice
@@ -7,12 +7,13 @@
 :[Especificação de Requisitos](rei02.md)  
 :[Esquema Conceptual](rei03.md)  
 
-## Group _xx_
+## Group _07_
 
 _Don't forget to add the group elements_
 
-* Marco Amaro Oliveira [@MarcoOliveira](https://github.com/marcoamarooliveira)
-* Other team members
+* Catarina Morais [@h3xgxrl](https://github.com/h3xgxrl)
+* Lara Pereira [@MarcoOliveira](https://github.com/marcoamarooliveira)
+* Miguel Tavares [@MarcoOliveira](https://github.com/marcoamarooliveira)
 
 ---
 _You can add a footer menu for navigation_ 

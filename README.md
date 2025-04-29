@@ -29,13 +29,14 @@ Para aprender mais sobre a sintaxe, consulta [Markdown Básico](https://www.mark
 
 ## Relatórios
 
-- [Relatório de Requisitos (REI)](doc/relatorio-requisitos.pdf)
+- [Relatório de Requisitos (REI)](doc/rei)
 
 ---
 
 ## Equipa
 
-- Catarina Morais - [@MarcoOliveira](https://github.com/MarcoOliveira)
-- Lara Pereira -
-- Miguel Tavares - 
+* Catarina Morais [@h3xgxrl](https://github.com/h3xgxrl)
+* Lara Pereira [@LaraDavidPereira](https://github.com/LaraDavidPereira)
+* Miguel Tavares [@MiguelSantosTavares](https://github.com/MiguelSantosTavares)
+
 

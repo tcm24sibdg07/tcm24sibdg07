@@ -1,6 +1,5 @@
 # C2 : Especificação de Requisitos
 
-# Tipos de Utilizadores (Atores) e Funcionalidades (Casos de Uso)
 
 ## Tipos de Utilizadores (Atores)
 

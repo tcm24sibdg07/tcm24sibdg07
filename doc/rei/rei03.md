@@ -96,7 +96,7 @@ Um produto pode ser incluído em várias encomendas, e uma encomenda pode conter
 ## Diagrama do Modelo Entidade-Associação
 
 Exemplo de inserção de uma imagem:  
-![Diagrama do Modelo Entidade-Associação](doc/imagens/diagrama.png)
+![Diagrama do Modelo Entidade-Associação](tcm25sibdg07/doc/imagens/diagrama.png)
 
 Sempre adicione uma descrição para ajudar o usuário a entender a figura.
 

@@ -95,7 +95,7 @@ Um produto pode ser incluído em várias encomendas, e uma encomenda pode conter
 
 ## Diagrama do Modelo Entidade-Associação
  
-![Diagrama do Modelo Entidade-Associação](tcm25sibdg07/doc/imagens/diagrama.png)
+![Diagrama do Modelo Entidade-Associação](doc/imagens/diagrama.png)
 
 ## Regras de Negócio Adicionais (Restrições)
 

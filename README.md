@@ -15,9 +15,7 @@ Para aprender mais sobre a sintaxe, consulta [Markdown Básico](https://www.mark
 
 ## Organização do Repositório
 
-- Código-fonte na pasta [`src`](./src)
 - Relatórios e documentação na pasta [`doc`](./doc)
-- Diagramas na pasta [`diagrams`](./diagrams)
 
 ---
 

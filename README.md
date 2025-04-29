@@ -1,29 +1,19 @@
-# Loja Online de Produtos de Beleza
+# Purple Blush
 
-Repository to host the project developed for 'Gestão de Sistemas de Informação', uma disciplina do primeiro ano na SOMESCHOOL.  
-Desenvolvido pelo Grupo ALPHA: @MarcoOliveira, [adicionar outros estudantes].
+Repositório para o projeto de 'Sistemas de Informação e Bases de Dados', uma disciplina do segundo ano de Tecnologias de Comunicação Multimédia (TCM) da Universidade da Maia.  
+Desenvolvido pelo Grupo Purple Blush: Catarina Morais, Lara Pereira e Miguel Tavares.
 
 ---
 
 ## Descrição do Projeto
 
-Este projeto consiste no desenvolvimento de um sistema de gestão para uma loja online de produtos de beleza.  
-A documentação é escrita em Markdown.  
-Para aprender mais sobre a sintaxe, consulta [Markdown Básico](https://www.markdownguide.org/basic-syntax/) ou [Markdown Avançado](https://www.markdownguide.org/extended-syntax/).
+O presente projeto tem como objetivo a análise e informatização do sistema de informação de uma pequena loja online dedicada à venda de produtos de beleza. Pretende-se estudar e desenvolver um modelo de dados que permita uma gestão eficiente do negócio, abrangendo a gestão de produtos, categorias, clientes, encomendas e stock. Com o aumento das vendas, tornou-se imprescindível informatizar o sistema de informação para garantir uma estrutura fiável e eficaz.
 
 ---
 
 ## Organização do Repositório
 
 - Relatórios e documentação na pasta [`doc`](./doc)
-
----
-
-## Galeria
-
-| Diagrama de Entidades | Exemplo de Página Inicial |
-|:---------------------:|:-------------------------:|
-| ![Diagrama ER](diagrams/diagrama-er.png) | ![Página Inicial](gallery/pagina-inicial.png) |
 
 ---
 

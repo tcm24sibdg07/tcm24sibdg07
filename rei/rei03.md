@@ -1,13 +1,7 @@
 # C3 : Esquema conceptual
 
-## Modelo E/A
-Aqui está o texto formatado em **Markdown**:
 
 # Modelo Entidade-Associação (E/A)
-
-## Introdução
-
-O modelo Entidade-Associação (E/A) é uma representação visual das entidades e suas associações no sistema de informação da loja online. Ele define as principais entidades envolvidas no funcionamento da loja, as suas interações e os dados que serão geridos no sistema. As principais entidades-tipo, suas associações e os atributos associados são descritos a seguir.
 
 ## Entidade-Tipo: Produto
 
@@ -19,7 +13,7 @@ A entidade "Produto" representa cada item disponível para venda na loja online.
 - **Nome:** Nome do produto.
 - **Preço:** Valor do produto.
 - **Quantidade_Stock:** Quantidade de unidades disponíveis em stock.
-- **Categoria:** Categoria à qual o produto pertence, como "Maquilhagem", "Cuidados com a Pele", etc.
+- **Categoria:** Categoria à qual o produto pertence, como "Maquilhagem", "BodyCare", etc.
 
 ## Entidade-Tipo: Cliente
 
@@ -32,7 +26,7 @@ A entidade "Cliente" contém informações sobre os clientes da loja online. Cad
 - **Email:** Endereço de e-mail do cliente.
 - **Telefone:** Número de telefone do cliente.
 - **Morada:** Endereço de entrega do cliente.
-- **Data_Aniversario:** Data de aniversário do cliente.
+- **Data_Nascimento:** Data de nascimento do cliente.
 
 ## Entidade-Tipo: Encomenda
 

@@ -67,7 +67,7 @@ A entidade "Categoria" organiza os produtos da loja em grupos de acordo com o se
 Cada produto pertence a uma categoria. A associação entre "Produto" e "Categoria" é de muitos para um, pois muitos produtos podem pertencer à mesma categoria.
 
 **Cardinalidade:**  
-Cada produto está associado a uma categoria, mas uma categoria pode conter vários produtos.
+Cada produto está associado a categorias e uma categoria pode conter vários produtos.
 
 ### Encomenda - Cliente
 
@@ -94,15 +94,10 @@ Um produto pode estar presente em várias encomendas, e cada encomenda pode cont
 Um produto pode ser incluído em várias encomendas, e uma encomenda pode conter vários produtos.
 
 ## Diagrama do Modelo Entidade-Associação
-
-Exemplo de inserção de uma imagem:  
+ 
 ![Diagrama do Modelo Entidade-Associação](tcm25sibdg07/doc/imagens/diagrama.png)
 
-Sempre adicione uma descrição para ajudar o usuário a entender a figura.
-
 ## Regras de Negócio Adicionais (Restrições)
-
-Aqui estão algumas regras importantes que ajudam a manter o sistema correto e organizado. Elas não podem ser representadas diretamente no modelo E/A, mas são essenciais para garantir a boa gestão da loja online:
 
 - **Quantidade de Produtos em Stock:**  
   A quantidade de produtos em stock nunca pode ser negativa. Se o stock não for suficiente para uma encomenda, o sistema deve impedir a finalização da compra.

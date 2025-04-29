@@ -2,10 +2,6 @@
 
 # Tipos de Utilizadores (Atores) e Funcionalidades (Casos de Uso)
 
-## Introdução
-
-Para que o sistema de informação seja eficaz, é essencial identificar os principais tipos de utilizadores (atores) e as funcionalidades (casos de uso) que estarão disponíveis para cada um deles.
-
 ## Tipos de Utilizadores (Atores)
 
 ### Administrador
@@ -28,16 +24,10 @@ Responsabilidades:
 
 O Cliente terá um perfil restrito, podendo:
 - Visualizar os produtos disponíveis.
-- Realizar compras.
+- Realizar uma encomenda.
 - Consultar o seu histórico de encomendas.
 - Aceder aos dados de entrega e ao estado atual da sua encomenda.
 
-### Atendimento ao Cliente
-
-O Atendimento ao Cliente terá permissões para:
-- Aceder aos detalhes das encomendas.
-- Interagir diretamente com os clientes para resolver dúvidas ou questões relacionadas com os pedidos.
-- Atualizar o estado das encomendas conforme necessário.
 
 ## Funcionalidades (Casos de Uso)
 
@@ -60,8 +50,6 @@ As principais funcionalidades do sistema, de acordo com os tipos de utilizadores
 - **Gestão de Stock:**  
   Monitorizar o stock de produtos, incluindo alertas de reposição e ajustes de inventário.
 
-- **Consulta de Relatórios:**  
-  Visualizar relatórios sobre vendas, stock e comportamentos dos clientes.
 
 ### Gestor de Stock
 
@@ -81,15 +69,6 @@ As principais funcionalidades do sistema, de acordo com os tipos de utilizadores
 
 - **Consulta de Encomendas:**  
   Aceder ao histórico de compras e acompanhar o estado das encomendas em tempo real.
-
-### Atendimento ao Cliente
-
-- **Consulta de Encomendas:**  
-  Acesso aos detalhes das encomendas dos clientes, permitindo a atualização do estado e a resolução de problemas.
-
-- **Gestão de Reclamações:**  
-  Registar e acompanhar reclamações dos clientes, encaminhando-as para o administrador, se necessário.
-
 
 
 

@@ -8,32 +8,43 @@
 O Administrador será responsável pela gestão global do sistema.  
 Este perfil tem permissões totais sobre todos os dados, podendo:
 
-**Gestão de Utilizadores:** Editar dados, ativar/desativar/eliminar contas e repor palavras-passe.
+- **Gestão de Utilizadores:** 
+Editar dados, ativar/desativar/eliminar contas e repor palavras-passe.
 
-**Gestão de Produtos:** Adicionar, editar, eliminar e atualizar o stock de produtos, incluindo nome, descrição, preço e categoria.
+- **Gestão de Produtos:** 
+Adicionar, editar, eliminar e atualizar o stock de produtos, incluindo nome, descrição, preço e categoria.
 
-**Gestão de Categorias:** Criar, editar e remover categorias de produtos.
+- **Gestão de Categorias:** 
+Criar, editar e remover categorias de produtos.
 
-**Gestão de Encomendas:** Visualizar, alterar estados (ex: pendente, enviada, entregue, cancelada), corrigir ou eliminar encomendas, e consultar detalhes.
+- **Gestão de Encomendas:** 
+Visualizar, alterar estados (ex: pendente, enviada, entregue, cancelada), corrigir ou eliminar encomendas, e consultar detalhes.
 
-**Histórico e Estatísticas:** Aceder ao histórico de encomendas por cliente ou data e visualizar estatísticas (ex: produtos mais vendidos, número de encomendas).
+- **Histórico e Estatísticas:** 
+Aceder ao histórico de encomendas por cliente ou data e visualizar estatísticas (ex: produtos mais vendidos, número de encomendas).
 
-**Gestão de Parâmetros e Integrações:** Configurar taxas de IVA, modos de envio, notificações do sistema e integrações externas (ex: métodos de pagamento ou de envio).
+- **Gestão de Parâmetros e Integrações:** 
+Configurar taxas de IVA, modos de envio, notificações do sistema e integrações externas (ex: métodos de pagamento ou de envio).
 
 
 ### Cliente
 
 O Cliente terá um perfil restrito, podendo:
 
-**Registo e Gestão Pessoal:** Registar-se, editar dados pessoais (nome, e-mail, morada, telefone, NIF, palavra-passe) e eliminar a conta.
+- **Registo e Gestão Pessoal:**
+- Registar-se, editar dados pessoais (nome, e-mail, morada, telefone, NIF, palavra-passe) e eliminar a conta.
 
-**Navegação e Compras:** Visualizar o catálogo de produtos, aplicar filtros, consultar detalhes de produtos, adicionar ao carrinho e realizar encomendas (escolhendo métodos de pagamento e de envio).
+- **Navegação e Compras:**
+- Visualizar o catálogo de produtos, aplicar filtros, consultar detalhes de produtos, adicionar ao carrinho e realizar encomendas (escolhendo métodos de pagamento e de envio).
 
-**Acompanhamento de Encomendas:** Acompanhar o estado das encomendas (pendente, enviada, entregue) e consultar o histórico de compras.
+- **Acompanhamento de Encomendas:**
+- Acompanhar o estado das encomendas (pendente, enviada, entregue) e consultar o histórico de compras.
 
-**Repetir ou Cancelar Encomendas:** Repetir encomendas anteriores ou cancelar, dependendo do estado.
+- **Repetir ou Cancelar Encomendas:**
+- Repetir encomendas anteriores ou cancelar, dependendo do estado.
 
-**Notificações e Suporte:** Receber notificações sobre o estado das encomendas e submeter pedidos de apoio através de um formulário de contacto.
+- **Notificações e Suporte:**
+- Receber notificações sobre o estado das encomendas e submeter pedidos de apoio através de um formulário de contacto.
 
 
 ## Funcionalidades (Casos de Uso)

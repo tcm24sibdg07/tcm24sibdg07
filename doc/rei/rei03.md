@@ -129,7 +129,7 @@ O Diagrama mostra a estrutura dos dados da loja online. Representa os clientes, 
   O preço de um produto pode ser alterado, porém não afetará as encomendas anteriores à mudança.
 
 - **Pagamentos:**  
-  Uma encomenda só pode ser enviada depois de o pagamento ser confirmado. Se o pagamento não for processado corretamente, a encomenda não pode ser marcada como "Enviada".
+  Uma encomenda só pode ser enviada depois de o pagamento ser confirmado, com excessão do método de pagamento de "contra-reembolso" (com uma taxa acrescida de 1,95€). Caso contrário, se o pagamento não for processado corretamente, a encomenda não pode ser marcada como "Enviada".
 
 - **Atualização de Stock:**  
   O stock de produtos deve ser atualizado corretamente sempre que uma encomenda for realizada ou cancelada, garantindo que as quantidades disponíveis estão sempre corretas.

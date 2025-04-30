@@ -30,7 +30,7 @@ Este perfil tem permissões totais sobre todos os dados, podendo:
 
 - **Gestão de Parâmetros e Integrações:** 
 
-  Configurar taxas de IVA, modos de envio, notificações do sistema e integrações externas (ex: métodos de pagamento ou de envio).
+  Configurar métodos de pagamento, notificações do sistema, observar as observações das encomendas, etc..
 
 
 ### Cliente
@@ -43,7 +43,7 @@ O Cliente terá um perfil restrito, podendo:
 
 - **Navegação e Compras:**
 
-  Visualizar o catálogo de produtos, aplicar filtros, consultar detalhes de produtos, adicionar ao carrinho e realizar encomendas (escolhendo métodos de pagamento e de envio).
+  Visualizar o catálogo de produtos, aplicar filtros, consultar detalhes de produtos, adicionar ao carrinho e realizar encomendas (escolhendo o método de pagamento e deixando observações).
 
 - **Acompanhamento de Encomendas:**
 
@@ -86,7 +86,7 @@ As principais funcionalidades do sistema, de acordo com os tipos de utilizadores
   Navegar pelo catálogo de produtos, com possibilidade de usar filtros de categoria e preço.
 
 - **Realização de Encomendas:**  
-  Adicionar produtos ao carrinho, realizar o checkout escolhendo um método de pagamento e de envio.
+  Adicionar produtos ao carrinho, realizar o checkout escolhendo um método de pagamento e podendo deixar uma observação sobre a mesma.
 
 - **Consulta de Encomendas:**  
   Aceder ao histórico de compras e acompanhar o estado das encomendas em tempo real.

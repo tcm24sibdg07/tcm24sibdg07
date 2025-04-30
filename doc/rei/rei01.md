@@ -4,7 +4,7 @@
 ## Descrição do trabalho
 
 
-O presente projeto tem como objetivo a análise e informatização do sistema de informação de uma pequena loja online dedicada à venda de produtos de beleza. Pretende-se estudar e desenvolver um modelo de dados que permita a gestão eficiente do negócio, incluindo a gestão de produtos, clientes, encomendas e stock.
+O presente projeto tem como objetivo a análise e informatização do sistema de informação de uma pequena loja online dedicada à venda de produtos de beleza. Pretende-se estudar e desenvolver um modelo de dados que permita a gestão eficiente do negócio, incluindo a gestão de produtos, clientes, encomendas, stock e classificações.
 
 Atualmente, a loja realiza a gestão de todas as suas operações de forma arcaica, o que leva a atrasos e erros, dificultando:
 - O acompanhamento de encomendas.
@@ -22,6 +22,7 @@ A informatização do sistema visa resolver os problemas atuais:
 - Gerir clientes, isto é, criar novas fichas de clientes, podendo tanto consultar, alterar e ou apagar, assim como acompanhar o seu histórico de compras.
 - Gerir encomendas, isto é, poder consultá-las, alterá-las e ou cancelar as mesmas e até mesmo consultar o estado da mesma.
 - Consultar o estado do stock, incluindo haver uma notificação quando o stock de determinado produto tiver em falta.
+- Permitir que os clientes classifiquem as encomendas após a entrega, atribuindo uma pontuação de 1 a 5 estrelas e, opcionalmente, um comentário.
   
 
 ## Benefícios Esperados
@@ -71,13 +72,14 @@ Estes pressupostos visam simplificar a abordagem ao problema e garantir que o mo
   - Preferências de compra.
   - Comportamentos de navegação.
 
-### Encomendas e Inventário
+### Encomendas, Inventário e Classificações
 
 - As encomendas incluirão apenas produtos disponíveis no catálogo.
 - A gestão de stock será feita **em tempo real**.
 - Cada encomenda:
   - Terá um valor total.
   - Poderá incluir vários itens.
+  - Poderá ser classificada após entrega, com uma avaliação de 1 a 5 estrelas e um comentário opcional.
   - Um produto poderá aparecer em várias encomendas.
 - Não haverá:
   - Gestão de promoções.

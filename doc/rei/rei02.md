@@ -9,21 +9,27 @@ O Administrador será responsável pela gestão global do sistema.
 Este perfil tem permissões totais sobre todos os dados, podendo:
 
 - **Gestão de Utilizadores:** 
+
 Editar dados, ativar/desativar/eliminar contas e repor palavras-passe.
 
 - **Gestão de Produtos:** 
+
 Adicionar, editar, eliminar e atualizar o stock de produtos, incluindo nome, descrição, preço e categoria.
 
 - **Gestão de Categorias:** 
+
 Criar, editar e remover categorias de produtos.
 
 - **Gestão de Encomendas:** 
+
 Visualizar, alterar estados (ex: pendente, enviada, entregue, cancelada), corrigir ou eliminar encomendas, e consultar detalhes.
 
 - **Histórico e Estatísticas:** 
+
 Aceder ao histórico de encomendas por cliente ou data e visualizar estatísticas (ex: produtos mais vendidos, número de encomendas).
 
 - **Gestão de Parâmetros e Integrações:** 
+
 Configurar taxas de IVA, modos de envio, notificações do sistema e integrações externas (ex: métodos de pagamento ou de envio).
 
 
@@ -75,7 +81,7 @@ As principais funcionalidades do sistema, de acordo com os tipos de utilizadores
   Navegar pelo catálogo de produtos, com possibilidade de usar filtros de categoria e preço.
 
 - **Realização de Encomendas:**  
-  Adicionar produtos ao carrinho, realizar o checkout e efetuar o pagamento.
+  Adicionar produtos ao carrinho, realizar o checkout escolhendo um método de pagamento e de envio.
 
 - **Consulta de Encomendas:**  
   Aceder ao histórico de compras e acompanhar o estado das encomendas em tempo real.

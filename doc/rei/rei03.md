@@ -9,11 +9,10 @@
 A entidade "Produto" representa cada item disponível para venda na loja online. Esta entidade contém todas as informações essenciais sobre o produto, permitindo que os funcionários e administradores possam consultar, editar e controlar o catálogo da loja.
 
 ### Atributos:
-- **ID_Produto:** Identificador único para cada produto.
+- **ID:** Identificador único para cada produto.
 - **Nome:** Nome do produto.
 - **Preço:** Valor do produto.
-- **Quantidade_Stock:** Quantidade de unidades disponíveis em stock.
-- **Categoria:** Categoria à qual o produto pertence, como "Maquilhagem", "BodyCare", etc.
+- **Stock:** Quantidade de unidades disponíveis em stock.
 
 ## Entidade-Tipo: Cliente
 
@@ -21,12 +20,13 @@ A entidade "Produto" representa cada item disponível para venda na loja online.
 A entidade "Cliente" contém informações sobre os clientes da loja online. Cada cliente tem um registo único no sistema, que armazena dados pessoais essenciais para a realização de compras e a gestão de encomendas.
 
 ### Atributos:
-- **ID_Cliente:** Identificador único do cliente.
+- **ID:** Identificador único do cliente.
 - **Nome:** Nome do cliente.
-- **Email:** Endereço de e-mail do cliente.
-- **Telefone:** Número de telefone do cliente.
+- **E-mail:** Endereço de e-mail do cliente.
+- **Telemóvel:** Número de telefone do cliente.
 - **Morada:** Endereço de entrega do cliente.
 - **Data_Nascimento:** Data de nascimento do cliente.
+- **NIF:** Número de Contribuinte do cliente, sendo este opcional.
 
 ## Entidade-Tipo: Encomenda
 
@@ -34,21 +34,18 @@ A entidade "Cliente" contém informações sobre os clientes da loja online. Cad
 A entidade "Encomenda" representa uma compra realizada por um cliente. Cada encomenda está associada a um cliente e contém informações sobre a data em que foi feita, o valor total da compra e os produtos incluídos.
 
 ### Atributos:
-- **ID_Encomenda:** Identificador único da encomenda.
-- **ID_Cliente:** Identificador do cliente que fez a encomenda.
-- **Data_Encomenda:** Data em que a encomenda foi realizada.
-- **Valor_Total:** Valor total da encomenda.
+- **ID:** Identificador único da encomenda.
+- **Data:** Data em que a encomenda foi realizada.
+- **Valor_Total:** Valor total da encomenda, este atributo será derivado da soma de (preço_unitario x quantidade) de todos os produtos que foram encomendados.
 
-## Entidade-Tipo: Item_Encomenda
+## Entidade-Tipo: Item
 
 **Descrição:**  
-A entidade "Item_Encomenda" representa um produto específico dentro de uma encomenda. Cada encomenda pode conter vários produtos, e esta entidade associa os produtos às encomendas feitas pelos clientes.
+A entidade "Item" representa um produto específico dentro de uma encomenda. Cada encomenda pode conter vários produtos, e esta entidade associa os produtos às encomendas feitas pelos clientes.
 
 ### Atributos:
-- **ID_Encomenda:** Identificador da encomenda à qual o item pertence.
-- **ID_Produto:** Identificador do produto incluído na encomenda.
-- **Quantidade_Encomendada:** Quantidade de unidades do produto na encomenda.
-- **Preco_Unitario:** Preço do produto no momento da compra.
+- **Quantidade:** Quantidade de unidades do produto na encomenda.
+- **Preco_Unitário:** Preço do produto no momento da compra.
 
 ## Entidade-Tipo: Categoria
 
@@ -56,15 +53,24 @@ A entidade "Item_Encomenda" representa um produto específico dentro de uma enco
 A entidade "Categoria" organiza os produtos da loja em grupos de acordo com o seu tipo ou características comuns. Cada produto é associado a uma categoria, facilitando a busca e filtragem de produtos no catálogo.
 
 ### Atributos:
-- **ID_Categoria:** Identificador único da categoria.
-- **Nome:** Nome da categoria (e.g., "Cuidados com a Pele", "Cabelos", etc.).
+- **ID:** Identificador único da categoria.
+- **Nome:** Nome da categoria (ex.: "Cuidados com a Pele", "Cabelos", etc.).
+
+## Entidade-Tipo: Estado
+
+**Descrição:**  
+A entidade "Estado" representa a situação atual de uma encomenda, como por exemplo "Em preparação", "Enviada", "Entregue" ou "Cancelada". Esta entidade permite classificar e acompanhar o progresso das encomendas ao longo do tempo.
+
+### Atributos:
+- **ID:** Identificador único da categoria.
+- **Nome:** Nome do estado (ex.: "Em Preparação", "Enviado", etc.).
 
 ## Associações
 
 ### Produto - Categoria
 
 **Descrição:**  
-Cada produto pertence a uma categoria. A associação entre "Produto" e "Categoria" é de muitos para um, pois muitos produtos podem pertencer à mesma categoria.
+Cada produto pertence a uma categoria. A associação entre "Produto" e "Categoria" é de muitos para muitos, pois muitos produtos podem pertencer à mesma categoria e cada produto pode ter uma ou mais categorias.
 
 **Cardinalidade:**  
 Cada produto está associado a categorias e uma categoria pode conter vários produtos.
@@ -77,25 +83,27 @@ Cada encomenda é realizada por um cliente. A associação entre "Encomenda" e "
 **Cardinalidade:**  
 Um cliente pode ter várias encomendas, mas cada encomenda pertence a um único cliente.
 
-### Encomenda - Item_Encomenda
+### Encomenda - Produto
 
 **Descrição:**  
-Uma encomenda pode conter vários produtos (itens). A associação entre "Encomenda" e "Item_Encomenda" é de um para muitos, pois uma encomenda pode ter vários itens.
+Uma encomenda pode conter vários produtos. A associação entre "Encomenda" e "Produtos" é de muitos para muitos, pois uma encomenda pode ter vários produtos e o mesmo produto pode estar em mais que uma encomenda.
 
 **Cardinalidade:**  
-Cada encomenda pode ter múltiplos produtos (itens), mas cada item pertence a uma única encomenda.
+Um produto pode ser incluído em várias encomendas e uma encomenda pode conter vários produtos.
 
-### Produto - Item_Encomenda
+### Encomenda - Estado
 
 **Descrição:**  
-Um produto pode estar presente em várias encomendas, e cada encomenda pode conter vários produtos. A associação entre "Produto" e "Item_Encomenda" é de muitos para muitos, pois muitos produtos podem ser comprados em várias encomendas.
+A associação possui indica que cada encomenda está associada a exatamente um estado que representa a sua situação atual no processo de compra. Esta ligação permite identificar o estado atual de cada encomenda num dado momento.
 
 **Cardinalidade:**  
-Um produto pode ser incluído em várias encomendas, e uma encomenda pode conter vários produtos.
+Uma Encomenda apenas pussui um estado e um estado pode estar em várias encomendas.
 
 ## Diagrama do Modelo Entidade-Associação
  
 ![Diagrama do Modelo Entidade-Associação](imagens/Diagrama1.png)
+
+O Diagrama mostra a estrutura dos dados da loja online. Representa os clientes, as encomendas que fazem, os produtos disponíveis, as categorias desses produtos e os diferentes estados das encomendas. Ajuda a perceber como tudo se liga e como a informação está organizada no sistema.
 
 ## Regras de Negócio Adicionais (Restrições)
 
@@ -117,19 +125,14 @@ Um produto pode ser incluído em várias encomendas, e uma encomenda pode conter
 - **Quantidade Mínima e Máxima de Produtos:**  
   Cada produto tem um número mínimo e máximo de unidades que podem ser compradas numa única encomenda. O sistema vai garantir que a quantidade encomendada respeite esses limites.
 
-- **Alteração de Preço Após Encomenda:**  
-  O preço de um produto não pode ser alterado após a encomenda ser realizada, a menos que o cliente seja informado e concorde com a alteração.
-
-- **Devoluções:**  
-  O sistema controla as devoluções de produtos, permitindo apenas devoluções dentro do prazo e conforme as condições definidas pela loja.
+- **Alteração de Preço Após Encomendas:**  
+  O preço de um produto pode ser alterado, porém não afetará as encomendas anteriores à mudança.
 
 - **Pagamentos:**  
   Uma encomenda só pode ser enviada depois de o pagamento ser confirmado. Se o pagamento não for processado corretamente, a encomenda não pode ser marcada como "Enviada".
 
 - **Atualização de Stock:**  
   O stock de produtos deve ser atualizado corretamente sempre que uma encomenda for realizada ou cancelada, garantindo que as quantidades disponíveis estão sempre corretas.
-
-Essas regras são fundamentais para manter o funcionamento correto do sistema e garantir que todos os processos sejam feitos de forma eficiente e sem erros.
 
 
 ---

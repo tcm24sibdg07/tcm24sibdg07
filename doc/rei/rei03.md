@@ -13,6 +13,7 @@ A entidade "Produto" representa cada item disponível para venda na loja online.
 - **Nome:** Nome do produto.
 - **Preço:** Valor do produto.
 - **Stock:** Quantidade de unidades disponíveis em stock.
+- **Descrição:** Breve descrição do produto.
 
 ## Entidade-Tipo: Cliente
 
@@ -20,13 +21,14 @@ A entidade "Produto" representa cada item disponível para venda na loja online.
 A entidade "Cliente" contém informações sobre os clientes da loja online. Cada cliente tem um registo único no sistema, que armazena dados pessoais essenciais para a realização de compras e a gestão de encomendas.
 
 ### Atributos:
-- **ID:** Identificador único do cliente.
+- **ID:** Identificador único do cliente, atribuído informáticamente.
 - **Nome:** Nome do cliente.
 - **E-mail:** Endereço de e-mail do cliente.
 - **Telemóvel:** Número de telefone do cliente.
 - **Morada:** Endereço de entrega do cliente.
 - **Data_Nascimento:** Data de nascimento do cliente.
 - **NIF:** Número de Contribuinte do cliente, sendo este opcional.
+- **Palavra-passe:** Palavra-passe para aceder à conta.
 
 ## Entidade-Tipo: Encomenda
 
@@ -37,11 +39,13 @@ A entidade "Encomenda" representa uma compra realizada por um cliente. Cada enco
 - **ID:** Identificador único da encomenda.
 - **Data:** Data em que a encomenda foi realizada.
 - **Valor_Total:** Valor total da encomenda, este atributo será derivado da soma de (preço_unitario x quantidade) de todos os produtos que foram encomendados.
+- **Método de Pagamento:** Escolha do método de pagamento preferencial do cliente para efetuar a compra.
+- **Observação:** Opcionalmente, o cliente pode deixar uma observação sobre a encomenda.
 
 ## Entidade-Tipo: Item
 
 **Descrição:**  
-A entidade "Item" representa um produto específico dentro de uma encomenda. Cada encomenda pode conter vários produtos, e esta entidade associa os produtos às encomendas feitas pelos clientes.
+A entidade "Item" representada pela associação pussui, retrata um produto específico dentro de uma encomenda. Cada encomenda pode conter vários produtos, e esta entidade associa os produtos às encomendas feitas pelos clientes.
 
 ### Atributos:
 - **Quantidade:** Quantidade de unidades do produto na encomenda.

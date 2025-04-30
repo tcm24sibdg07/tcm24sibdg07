@@ -32,19 +32,19 @@ Configurar taxas de IVA, modos de envio, notificações do sistema e integraçõ
 O Cliente terá um perfil restrito, podendo:
 
 - **Registo e Gestão Pessoal:**
-- Registar-se, editar dados pessoais (nome, e-mail, morada, telefone, NIF, palavra-passe) e eliminar a conta.
+Registar-se, editar dados pessoais (nome, e-mail, morada, telefone, NIF, palavra-passe) e eliminar a conta.
 
 - **Navegação e Compras:**
-- Visualizar o catálogo de produtos, aplicar filtros, consultar detalhes de produtos, adicionar ao carrinho e realizar encomendas (escolhendo métodos de pagamento e de envio).
+Visualizar o catálogo de produtos, aplicar filtros, consultar detalhes de produtos, adicionar ao carrinho e realizar encomendas (escolhendo métodos de pagamento e de envio).
 
 - **Acompanhamento de Encomendas:**
-- Acompanhar o estado das encomendas (pendente, enviada, entregue) e consultar o histórico de compras.
+Acompanhar o estado das encomendas (pendente, enviada, entregue) e consultar o histórico de compras.
 
 - **Repetir ou Cancelar Encomendas:**
-- Repetir encomendas anteriores ou cancelar, dependendo do estado.
+Repetir encomendas anteriores ou cancelar, dependendo do estado.
 
 - **Notificações e Suporte:**
-- Receber notificações sobre o estado das encomendas e submeter pedidos de apoio através de um formulário de contacto.
+Receber notificações sobre o estado das encomendas e submeter pedidos de apoio através de um formulário de contacto.
 
 
 ## Funcionalidades (Casos de Uso)

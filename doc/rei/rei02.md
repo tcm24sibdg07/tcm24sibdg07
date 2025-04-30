@@ -26,11 +26,11 @@ Este perfil tem permissões totais sobre todos os dados, podendo:
 
 - **Histórico e Estatísticas:** 
 
-  Aceder ao histórico de encomendas por cliente ou data e visualizar estatísticas (ex: produtos mais vendidos, número de encomendas).
+  Aceder ao histórico de encomendas por cliente ou data e visualizar estatísticas (ex: produtos mais vendidos, número de encomendas, média de classificações por produto).
 
 - **Gestão de Parâmetros e Integrações:** 
 
-  Configurar métodos de pagamento, notificações do sistema, observar as observações das encomendas, etc..
+  Configurar métodos de pagamento, notificações do sistema, etc..
 
 
 ### Cliente
@@ -48,6 +48,10 @@ O Cliente terá um perfil restrito, podendo:
 - **Acompanhamento de Encomendas:**
 
   Acompanhar o estado das encomendas (pendente, enviada, entregue) e consultar o histórico de compras.
+
+- **Classificação de Encomendas:**
+
+  Atribuir uma classificação de 1 a 5 estrelas a cada encomenda após esta estar no estado "Entregue". Deixar um comentário opcional sobre a experiência. Consultar classificações feitas anteriormente no seu histórico.
 
 - **Repetir ou Cancelar Encomendas:**
 
@@ -79,6 +83,9 @@ As principais funcionalidades do sistema, de acordo com os tipos de utilizadores
 - **Gestão de Stock:**  
   Monitorizar o stock de produtos, incluindo alertas de reposição e ajustes de inventário.
 
+- **Gestão de Classificações e Observações:**
+  Aceder à listagem de classificações/observações atribuídas pelos clientes, identificar produtos ou encomendas com média baixa e tomar decisões informadas. Eliminar comentários abusivos.
+
 
 ### Cliente
 
@@ -90,6 +97,9 @@ As principais funcionalidades do sistema, de acordo com os tipos de utilizadores
 
 - **Consulta de Encomendas:**  
   Aceder ao histórico de compras e acompanhar o estado das encomendas em tempo real.
+  
+- **Classificação de Encomendas:**  
+  Após receber a encomenda, o cliente poderá: Atribuir uma classificação entre 1 e 5 estrelas, deixar um comentário opcional sobre a experiência e rever as classificações feitas anteriormente.
 
 
 

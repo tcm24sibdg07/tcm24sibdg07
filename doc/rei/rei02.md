@@ -7,25 +7,33 @@
 
 O Administrador será responsável pela gestão global do sistema.  
 Este perfil tem permissões totais sobre todos os dados, podendo:
-- Adicionar, editar ou excluir produtos, categorias, clientes e encomendas.
-- Aceder ao histórico de transações.
-- Gerir o stock.
 
-### Gestor de Stock
+**Gestão de Utilizadores:** Editar dados, ativar/desativar/eliminar contas e repor palavras-passe.
 
-O Gestor de Stock terá acesso limitado à gestão de produtos e ao estado do stock.  
-Responsabilidades:
-- Atualizar as quantidades de produtos.
-- Monitorizar o nível de stock.
-- Gerar alertas para reposição de produtos quando necessário.
+**Gestão de Produtos:** Adicionar, editar, eliminar e atualizar o stock de produtos, incluindo nome, descrição, preço e categoria.
+
+**Gestão de Categorias:** Criar, editar e remover categorias de produtos.
+
+**Gestão de Encomendas:** Visualizar, alterar estados (ex: pendente, enviada, entregue, cancelada), corrigir ou eliminar encomendas, e consultar detalhes.
+
+**Histórico e Estatísticas:** Aceder ao histórico de encomendas por cliente ou data e visualizar estatísticas (ex: produtos mais vendidos, número de encomendas).
+
+**Gestão de Parâmetros e Integrações:** Configurar taxas de IVA, modos de envio, notificações do sistema e integrações externas (ex: métodos de pagamento ou de envio).
+
 
 ### Cliente
 
 O Cliente terá um perfil restrito, podendo:
-- Visualizar os produtos disponíveis.
-- Realizar uma encomenda.
-- Consultar o seu histórico de encomendas.
-- Aceder aos dados de entrega e ao estado atual da sua encomenda.
+
+**Registo e Gestão Pessoal:** Registar-se, editar dados pessoais (nome, e-mail, morada, telefone, NIF, palavra-passe) e eliminar a conta.
+
+**Navegação e Compras:** Visualizar o catálogo de produtos, aplicar filtros, consultar detalhes de produtos, adicionar ao carrinho e realizar encomendas (escolhendo métodos de pagamento e de envio).
+
+**Acompanhamento de Encomendas:** Acompanhar o estado das encomendas (pendente, enviada, entregue) e consultar o histórico de compras.
+
+**Repetir ou Cancelar Encomendas:** Repetir encomendas anteriores ou cancelar, dependendo do estado.
+
+**Notificações e Suporte:** Receber notificações sobre o estado das encomendas e submeter pedidos de apoio através de um formulário de contacto.
 
 
 ## Funcionalidades (Casos de Uso)
@@ -49,14 +57,6 @@ As principais funcionalidades do sistema, de acordo com os tipos de utilizadores
 - **Gestão de Stock:**  
   Monitorizar o stock de produtos, incluindo alertas de reposição e ajustes de inventário.
 
-
-### Gestor de Stock
-
-- **Gestão de Produtos:**  
-  Atualizar quantidades de produtos em stock, visualizar produtos em falta e gerar alertas para reposição.
-
-- **Consulta de Stock:**  
-  Acesso a relatórios sobre o estado do stock e produtos com baixo inventário.
 
 ### Cliente
 

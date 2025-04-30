@@ -20,7 +20,7 @@ A informatização do sistema visa resolver os problemas atuais:
 
 - Criar um sistema que permita registar e consultar, apagar e alterar produtos e categorias dos mesmos, incluindo preços.
 - Gerir clientes, isto é, criar novas fichas de clientes, podendo tanto consultar, alterar e ou apagar, assim como acompanhar o seu histórico de compras.
-- Gerir encomendas, isto é, poder consultá-las, alterá-las e ou cancelar as mesmas.
+- Gerir encomendas, isto é, poder consultá-las, alterá-las e ou cancelar as mesmas e até mesmo consultar o estado da mesma.
 - Consultar o estado do stock, incluindo haver uma notificação quando o stock de determinado produto tiver em falta.
   
 
@@ -34,13 +34,13 @@ A transformação do modelo de gestão manual para um modelo informatizado permi
   - Processamento de encomendas.
 - Centralização de todas as informações num único sistema.
 - Gestão do histórico de compras dos clientes.
-- Desenvolvimento de promoções personalizadas e estratégias de fidelização.
+- Desenvolvimento de promoções personalizadas (oferta de aníversário) e estratégias de fidelização.
 
 
 # Modelação do problema
 
-O sistema de informação da loja online deverá permitir o registo e gestão dos principais dados relacionados com o funcionamento da atividade. No que diz respeito aos produtos, será necessário armazenar o ID do produto, o nome, o preço, a quantidade em stock e a categoria a que pertence.
-Os clientes da loja terão um registo próprio, que incluirá o seu ID, nome, e-mail, telefone, morada e a data de aniversário. As encomendas feitas pelos clientes deverão conter o ID da encomenda, o ID do cliente, a data da encomenda e o valor total da mesma. Cada encomenda poderá incluir vários produtos, por isso será necessário registar também os itens de cada encomenda, associando o ID da encomenda e do produto, a quantidade encomendada e o preço unitário no momento da compra.
+O sistema de informação da loja online deverá permitir o registo e gestão dos principais dados relacionados com o funcionamento da atividade. No que diz respeito aos produtos, será necessário armazenar o ID do produto, o nome, o preço, a quantidade em stock e a(s) categoria(s) a que pertence.
+Os clientes da loja terão um registo próprio, que incluirá o seu ID, nome, e-mail, telemóvel, morada e a data de nascimento, NIF e palavra-passe. As encomendas feitas pelos clientes deverão conter o seu próptio ID, a data da encomenda e o valor total da mesma. Cada encomenda poderá incluir vários produtos, por isso será necessário registar também os itens de cada encomenda, associando  a quantidade encomendada e o preço unitário no momento da compra.
 
 A modelação do problema será realizada com base em alguns pressupostos que, apesar de não estarem diretamente mencionados na descrição inicial do trabalho, são fundamentais para a implementação de um sistema eficiente.  
 Estes pressupostos visam simplificar a abordagem ao problema e garantir que o modelo de dados desenvolvido seja adequado às necessidades da loja online.
@@ -53,17 +53,19 @@ Estes pressupostos visam simplificar a abordagem ao problema e garantir que o mo
 - A gestão de categorias e produtos será simples e direta.
 - Não haverá necessidade de:
   - Subcategorias.
-  - Gestão de atributos específicos como tamanho ou tipo de pele.
+  - Gestão de atributos mais específicos como tamanho ou tipo de pele/cabelo.
 
 ### Clientes Recorrentes
 
 - Assume-se que a maioria dos clientes serão recorrentes.
-- Serão armazenadas informações básicas dos clientes:
+- Serão armazenadas informações básicas dos clientes e posteriormente será-lhe atribuido um ID próprio:
   - Nome.
   - E-mail.
-  - Telefone.
+  - Telemóvel.
   - Morada.
   - Data de nascimento (Aniversário).
+  - NIF.
+  - Palavra-passe.
 - Não serão incluídas funcionalidades para:
   - Perfis avançados de clientes.
   - Preferências de compra.
@@ -79,7 +81,7 @@ Estes pressupostos visam simplificar a abordagem ao problema e garantir que o mo
   - Um produto poderá aparecer em várias encomendas.
 - Não haverá:
   - Gestão de promoções.
-  - Descontos individuais ou por volume de compra.
+  - Descontos individuais (com excessão da oferta de aniversário) ou por volume de compra.
 
 ### Operação Sem Integração com Fornecedores
 
@@ -92,21 +94,14 @@ Estes pressupostos visam simplificar a abordagem ao problema e garantir que o mo
 ### Processo Simples de Pagamento e Envio
 
 - O pagamento será realizado através de métodos simples:
-  - Cartão de crédito.
-  - MBway.
+  - Cartão de crédito/débito.
+  - MBWay.
+  - Contra-reembolso (com uma taxa acrescida de 1,95€).
 - O envio das encomendas será feito através de:
   - Serviços externos (logística não gerida pelo sistema).
 - O sistema apenas:
   - Registará as encomendas.
   - Monitorizará o estado das encomendas.
-
-### Prioridade na Usabilidade
-
-- A interface será:
-  - Intuitiva.
-  - Fácil de usar.
-- O sistema será desenhado para utilizadores sem conhecimentos técnicos avançados.
-- As principais ações (registo de produtos, processamento de encomendas e clientes, consulta de stock) serão simples e acessíveis.
 
 ### Escalabilidade Limitada
 

@@ -138,6 +138,14 @@ O Diagrama mostra a estrutura dos dados da loja online. Representa os clientes, 
 - **Atualização de Stock:**  
   O stock de produtos deve ser atualizado corretamente sempre que uma encomenda for realizada ou cancelada, garantindo que as quantidades disponíveis estão sempre corretas.
 
+- **Classificação da Encomenda:**
+A classificação só pode ser dada quando o estado da encomenda for "Entregue". Caso contrário, o sistema não permitirá que o cliente faça a avaliação.
+
+- **Validação da Classificação:**
+O cliente deve ser notificado de que a classificação foi registada com sucesso. O sistema deve garantir que apenas o cliente que fez a compra possa avaliar a encomenda.
+
+- **Comentários/Observações Opcionais:**
+Os comentários/observações são opcionais, mas caso o cliente escolha deixá-los, eles deverão ter um limite de caracteres para evitar entradas excessivas.
 
 ---
 [< Previous](rei02.md) | [^ Main](/../../) | Next >

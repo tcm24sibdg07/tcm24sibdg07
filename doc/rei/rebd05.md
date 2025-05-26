@@ -2,8 +2,8 @@
 
 ## DDL
 
+```sql
 USE `test`;
-
 DROP TABLE IF EXISTS `incluido_em`;
 DROP TABLE IF EXISTS `TELEMOVEL`;
 DROP TABLE IF EXISTS `ENCOMENDA`;
@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS `CATEGORIA` (
   PRIMARY KEY (`id`),
   UNIQUE (`nome`)
 );
+
 
 CREATE TABLE IF NOT EXISTS `CLIENTE` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
@@ -92,7 +93,8 @@ CREATE TABLE IF NOT EXISTS `incluido_em` (
   FOREIGN KEY (`id_produto`) REFERENCES `PRODUTO`(`id`),
   FOREIGN KEY (`id_encomenda`) REFERENCES `ENCOMENDA`(`id`)
 );
-
+```
+```sql
 ## DML
 
 -- Inserir categorias

@@ -1,10 +1,19 @@
 # C4 : Esquema Relacional  <!-- omit in toc -->
-_(Apresentar o esquema físico da Base de Dados. Para cada relação resultante, apresente a descrição da tabela correspondente usando o exemplo apresentado.)_
 
 - [Relações](#relações)
-  - [Tabela_a](#tabela_a)
-  - [Tabela_b](#tabela_b)
+  - [PRODUTO](#produto)
+  - [CATEGORIA](#categoria)
+  - [CLIENTE](#cliente)
+  - [TELEMOVEL](#telemovel)
+  - [ENCOMENDA](#encomenda)
+  - [CLASSIFICACAO](#classificacao)
+  - [ESTADO](#estado)
+  - [incluido_em](#incluido_em)
 - [Vistas](#vistas)
+  - [vista_produtos_com_categoria](#vista_produtos_com_categoria)
+  - [vista_encomendas_com_clientes](#vista_encomendas_com_clientes)
+  - [vista_classificacoes_detalhadas](#vista_classificacoes_detalhadas)
+  - [vista_detalhes_encomenda](#vista_detalhes_encomenda)
 
 ## Relações
 

@@ -1,7 +1,7 @@
 # C2 : Esquema conceptual
 
 ## Modelo E/A
-![Diagrama do Modelo Entidade-Associação](imagens/Diagrama1.png)
+![Diagrama do Modelo Entidade-Associação](imagens/Diagrama2.png)
 
 O Diagrama mostra a estrutura dos dados da loja online. Representa os clientes, as encomendas que fazem, os produtos disponíveis, as categorias desses produtos e os diferentes estados das encomendas. Ajuda a perceber como tudo se liga e como a informação está organizada no sistema.
 

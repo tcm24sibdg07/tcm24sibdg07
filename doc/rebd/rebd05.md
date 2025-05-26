@@ -96,6 +96,7 @@ CREATE TABLE IF NOT EXISTS `incluido_em` (
 ```
 ## DML
 
+# INSERT
 ```sql
 -- Inserir categorias
 INSERT INTO CATEGORIA (nome) VALUES ('Cuidados de Pele'), ('Maquilhagem'), ('Cabelos');
@@ -123,7 +124,9 @@ VALUES (CURRENT_DATE, 'MBWay', 'Entregar após as 18h', 29.98, 1, 1);
 -- Inserir produtos na encomenda
 INSERT INTO incluido_em (id_produto, id_encomenda, preco_unitario, quantidade)
 VALUES (1, 1, 19.99, 1), (2, 1, 9.99, 1);
-
+```
+# UPDATE
+```sql
 -- Atualizar stock após a encomenda
 UPDATE PRODUTO SET stock = stock - 1 WHERE id = 1;
 UPDATE PRODUTO SET stock = stock - 1 WHERE id = 2;
@@ -133,13 +136,17 @@ UPDATE ENCOMENDA SET id_estado = 2 WHERE id = 1;
 
 -- Atualizar palavra-passe do cliente
 UPDATE CLIENTE SET palavra_passe = 'novasenha456' WHERE id = 1;
-
+```
+# DELETE
+```sql
 -- Apagar um produto descontinuado
 DELETE FROM PRODUTO WHERE id = 3;
 
 -- Apagar um cliente (e dados associados)
 DELETE FROM CLIENTE WHERE id = 1;
-
+```
+# SELECT
+```sql
 -- Ver todos os produtos com categoria
 SELECT * FROM vista_produtos_com_categoria;
 

@@ -245,8 +245,89 @@ Tabela associativa que liga produtos às encomendas, indicando quantidades e pre
 
 ## Vistas
 
-_(Inserir a descrição e estrutura das vista, caso existam.)_
+---
 
+### `vista_produtos_com_categoria`
+
+**Descrição:**  
+Apresenta a lista de produtos com os respetivos nomes de categoria.
+
+```sql
+CREATE VIEW vista_produtos_com_categoria AS
+SELECT 
+  PRODUTO.id AS id_produto,
+  PRODUTO.nome AS nome_produto,
+  PRODUTO.preço,
+  PRODUTO.stock,
+  CATEGORIA.nome AS categoria
+FROM 
+  PRODUTO
+JOIN 
+  CATEGORIA ON PRODUTO.id_categoria = CATEGORIA.id;
+```
+
+### `vista_encomendas_com_clientes`
+
+**Descrição:**  
+Mostra todas as encomendas com o nome do cliente e o estado da encomenda.
+
+```sql
+CREATE VIEW vista_encomendas_com_clientes AS
+SELECT 
+  ENCOMENDA.id AS id_encomenda,
+  ENCOMENDA.data,
+  ENCOMENDA.método_pagamento,
+  ENCOMENDA.valor_total,
+  CLIENTE.nome AS nome_cliente,
+  ESTADO.nome AS estado
+FROM 
+  ENCOMENDA
+JOIN 
+  CLIENTE ON ENCOMENDA.id_cliente = CLIENTE.id
+JOIN 
+  ESTADO ON ENCOMENDA.id_estado = ESTADO.id;
+```
+
+### `vista_classificacoes_detalhadas`
+
+**Descrição:**  
+Mostra classificações com nome do cliente e data.
+
+```sql
+CREATE VIEW vista_classificacoes_detalhadas AS
+SELECT 
+  CLASSIFICACAO.id,
+  CLASSIFICACAO.estrelas,
+  CLASSIFICACAO.comentário,
+  CLASSIFICACAO.data,
+  CLIENTE.nome AS cliente
+FROM 
+  CLASSIFICACAO
+JOIN 
+  CLIENTE ON CLASSIFICACAO.id_cliente = CLIENTE.id;
+```
+
+### `vista_detalhes_encomenda`
+
+**Descrição:**  
+Combina detalhes de produtos incluídos em cada encomenda.
+
+```sql
+CREATE VIEW vista_detalhes_encomenda AS
+SELECT 
+  incluido_em.id_encomenda,
+  ENCOMENDA.data,
+  PRODUTO.nome AS produto,
+  incluido_em.quantidade,
+  incluido_em.preço_unitário,
+  (incluido_em.quantidade * incluido_em.preço_unitário) AS subtotal
+FROM 
+  incluido_em
+JOIN 
+  ENCOMENDA ON ENCOMENDA.id = incluido_em.id_encomenda
+JOIN 
+  PRODUTO ON PRODUTO.id = incluido_em.id_produto;
+```
 ---
 | [< Previous](rebd03.md) | [^ Main](/../../) | [Next >](rebd05.md) |
 | :---------------------- | :------------------------------------------------------: | ------------------: |

@@ -1,0 +1,13 @@
+# C2 : Esquema conceptual
+
+## Modelo E/A
+![Diagrama do Modelo Entidade-Associação](imagens/Diagrama1.png)
+
+O Diagrama mostra a estrutura dos dados da loja online. Representa os clientes, as encomendas que fazem, os produtos disponíveis, as categorias desses produtos e os diferentes estados das encomendas. Ajuda a perceber como tudo se liga e como a informação está organizada no sistema.
+
+## Regras de negócio adicionais (Restrições)
+_(Apresentar uma lista detalhada das regras e restrições não possíveis de representar no modelo EA, que visam a manutenção da consistência e integridade da modelação do problema. Podem ser introduzidas regras não apresentadas no REI)_
+
+---
+[< Previous](rebd01.md) | [^ Main](/../../) | [Next >](rebd03.md)
+:--- | :---: | ---: 

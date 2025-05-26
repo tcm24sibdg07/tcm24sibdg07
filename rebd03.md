@@ -3,11 +3,11 @@
 ## Relações
 
 ### PRODUTO
-| id | stock | nome | preço | descrição | id_categoria → CATEGORIA |
+| id || stock | nome | preço | descrição | id_categoria → CATEGORIA |
 |----||-------|------|--------|------------|----------------------------|
 
 ### CATEGORIA
-| id | nome |
+| id || nome |
 |----||------|
 
 ### CLIENTE

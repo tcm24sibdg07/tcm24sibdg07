@@ -4,11 +4,11 @@
 
 ### PRODUTO
 | id | stock | nome | preço | descrição | id_categoria → CATEGORIA |
-|----|-------|------|--------|------------|----------------------------|
+|----||-------|------|--------|------------|----------------------------|
 
 ### CATEGORIA
 | id | nome |
-|----|------|
+|----||------|
 
 ### CLIENTE
 | id | nome | morada | email | data_nascimento | nif | palavra_passe | {telemóvel} |

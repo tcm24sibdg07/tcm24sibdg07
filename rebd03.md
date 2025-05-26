@@ -19,10 +19,8 @@
 |----------------------|-----------|----|
 
 ### ENCOMENDA
-| id |  | data | método_pagamento | observação | valor_total |
-|----|----|------|------------------|-------------|--------------|
-| id_cliente → CLIENTE | id_estado → ESTADO | id_classificacao → CLASSIFICAÇÃO |
-|----------------------|---------------------|-------------------------------|
+| id |  | data | método_pagamento | observação | valor_total | id_cliente → CLIENTE | id_estado → ESTADO | id_classificacao → CLASSIFICAÇÃO |
+|----|----|------|------------------|-------------|--------------|----------------------|---------------------|----------------------------------|
 
 ### ESTADO
 | id |  | nome |

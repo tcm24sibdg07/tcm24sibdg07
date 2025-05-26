@@ -19,8 +19,8 @@ O presente projeto tem como objetivo a análise e informatização do sistema de
 
 ## Relatórios
 
-- [Relatório de Requisitos (REI)](doc/rei)
-
+- [Relatório de Especificação da Informação (REI)](doc/rei)
+- [Relatório de Especificação da Base de Dados (REBD)](doc/rebd)
 ---
 
 ## Equipa

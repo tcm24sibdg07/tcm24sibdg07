@@ -3,7 +3,7 @@
 ## DDL
 
 ```sql
-USE `test`;
+USE `purpleblush`;
 DROP TABLE IF EXISTS `incluido_em`;
 DROP TABLE IF EXISTS `TELEMOVEL`;
 DROP TABLE IF EXISTS `ENCOMENDA`;
@@ -164,7 +164,7 @@ FROM incluido_em ie
 JOIN PRODUTO p ON p.id = ie.id_produto
 GROUP BY p.nome
 ORDER BY total_vendido DESC;
-
+```
 ---
 [< Previous](rebd04.md) | [^ Main](/../../) | Next >
 :--- | :---: | ---: 

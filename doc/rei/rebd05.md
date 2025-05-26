@@ -94,9 +94,9 @@ CREATE TABLE IF NOT EXISTS `incluido_em` (
   FOREIGN KEY (`id_encomenda`) REFERENCES `ENCOMENDA`(`id`)
 );
 ```
-```sql
 ## DML
 
+```sql
 -- Inserir categorias
 INSERT INTO CATEGORIA (nome) VALUES ('Cuidados de Pele'), ('Maquilhagem'), ('Cabelos');
 

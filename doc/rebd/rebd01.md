@@ -70,3 +70,7 @@ Adicionar produtos ao carrinho, realizar o checkout escolhendo um método de pag
 Aceder ao histórico de compras e acompanhar o estado das encomendas em tempo real.
 •	Classificação de Encomendas:
 Após receber a encomenda, o cliente poderá: Atribuir uma classificação entre 1 e 5 estrelas, deixar um comentário opcional sobre a experiência e rever as classificações feitas anteriormente.
+
+---
+[< Previous](rebd00.md) | [^ Main](/../../) | [Next >](rebd02.md)
+:--- | :---: | ---: 

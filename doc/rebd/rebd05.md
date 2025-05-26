@@ -1,6 +1,6 @@
 # C5 : SQL
 
-## DDL
+# DDL
 
 ```sql
 USE `purpleblush`;

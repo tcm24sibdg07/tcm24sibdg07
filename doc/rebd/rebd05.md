@@ -140,7 +140,6 @@ UPDATE CLIENTE SET palavra_passe = 'novasenha456' WHERE id = 1;
 ## DELETE
 ```sql
 -- Apagar um produto descontinuado
-DELETE FROM incluido_em WHERE id_produto = 3;
 DELETE FROM PRODUTO WHERE id = 3;
 
 -- Apagar um cliente (e dados associados)

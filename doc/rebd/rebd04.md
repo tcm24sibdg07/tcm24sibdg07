@@ -266,7 +266,7 @@ CREATE VIEW vista_produtos_com_categoria AS
 SELECT 
   PRODUTO.id AS id_produto,
   PRODUTO.nome AS nome_produto,
-  PRODUTO.preço,
+  PRODUTO.preco,
   PRODUTO.stock,
   CATEGORIA.nome AS categoria
 FROM 
@@ -328,7 +328,7 @@ SELECT
   ENCOMENDA.data,
   PRODUTO.nome AS produto,
   incluido_em.quantidade,
-  incluido_em.preço_unitário,
+  incluido_em.preco_unitário,
   (incluido_em.quantidade * incluido_em.preço_unitário) AS subtotal
 FROM 
   incluido_em

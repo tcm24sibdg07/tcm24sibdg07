@@ -285,7 +285,7 @@ CREATE VIEW vista_encomendas_com_clientes AS
 SELECT 
   ENCOMENDA.id AS id_encomenda,
   ENCOMENDA.data,
-  ENCOMENDA.método_pagamento,
+  ENCOMENDA.metodo_pagamento,
   ENCOMENDA.valor_total,
   CLIENTE.nome AS nome_cliente,
   ESTADO.nome AS estado
@@ -307,7 +307,7 @@ CREATE VIEW vista_classificacoes_detalhadas AS
 SELECT 
   CLASSIFICACAO.id,
   CLASSIFICACAO.estrelas,
-  CLASSIFICACAO.comentário,
+  CLASSIFICACAO.comentario,
   CLASSIFICACAO.data,
   CLIENTE.nome AS cliente
 FROM 
@@ -328,8 +328,8 @@ SELECT
   ENCOMENDA.data,
   PRODUTO.nome AS produto,
   incluido_em.quantidade,
-  incluido_em.preco_unitário,
-  (incluido_em.quantidade * incluido_em.preço_unitário) AS subtotal
+  incluido_em.preco_unitario,
+  (incluido_em.quantidade * incluido_em.preco_unitario) AS subtotal
 FROM 
   incluido_em
 JOIN 

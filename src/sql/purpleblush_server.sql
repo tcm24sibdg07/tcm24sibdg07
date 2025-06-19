@@ -1,352 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `purpleblush` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `purpleblush`;
--- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
---
--- Host: 127.0.0.1    Database: purpleblush
--- ------------------------------------------------------
--- Server version	8.0.42
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `categoria`
---
-
-DROP TABLE IF EXISTS `categoria`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `categoria` (
-  `id` int NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `nome` (`nome`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `categoria`
---
-
-LOCK TABLES `categoria` WRITE;
-/*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
-INSERT INTO `categoria` VALUES (1,'Cabelo'),(2,'Cara'),(4,'Corpo'),(3,'Higiene'),(5,'Makeup');
-/*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `classificacao`
---
-
-DROP TABLE IF EXISTS `classificacao`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `classificacao` (
-  `id` int NOT NULL,
-  `estrelas` int NOT NULL,
-  `comentario` text,
-  `data` date NOT NULL DEFAULT (curdate()),
-  `encomendaId` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_classificacao_encomenda` (`encomendaId`),
-  CONSTRAINT `fk_classificacao_encomenda` FOREIGN KEY (`encomendaId`) REFERENCES `encomenda` (`id`) ON DELETE SET NULL,
-  CONSTRAINT `chk_estrelas` CHECK ((`estrelas` between 1 and 5)),
-  CONSTRAINT `classificacao_chk_1` CHECK ((`estrelas` between 1 and 5))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `classificacao`
---
-
-LOCK TABLES `classificacao` WRITE;
-/*!40000 ALTER TABLE `classificacao` DISABLE KEYS */;
-INSERT INTO `classificacao` VALUES (1,5,'TOP','2025-06-18',1);
-/*!40000 ALTER TABLE `classificacao` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `cliente`
---
-
-DROP TABLE IF EXISTS `cliente`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `cliente` (
-  `id` int NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `morada` text NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `data_nascimento` date NOT NULL,
-  `nif` varchar(9) DEFAULT NULL,
-  `palavra_passe` varchar(255) NOT NULL,
-  `telemovel` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `telemovel_UNIQUE` (`telemovel`),
-  CONSTRAINT `chk_email_format` CHECK ((`email` like _utf8mb4'%_@_%.__%'))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cliente`
---
-
-LOCK TABLES `cliente` WRITE;
-/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'Maria Silva','Rua das Flores, 123, Lisboa','maria.silva@hotmail.com','1990-05-15','123456789','senhaSegura123','962567989'),(2,'Joana Fernandes','41 Rua das Camélias, Braga','joana.fernandes@hotmail.com','1999-04-18','123432768','recheiodemorango','912345678'),(3,'Tiago Martins','Rua da Alegria 148, 2ºD, Porto','tiago_martins1@gmail.pt','1989-11-21',NULL,'ABc12345','966278374');
-/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `encomenda`
---
-
-DROP TABLE IF EXISTS `encomenda`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `encomenda` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `data` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `metodo_pagamento` varchar(50) NOT NULL,
-  `observacao` varchar(512) DEFAULT NULL,
-  `valor_total` decimal(10,2) DEFAULT NULL,
-  `clienteId` int DEFAULT NULL,
-  `estadoId` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_encomenda_cliente` (`clienteId`),
-  KEY `fk_encomenda_estado` (`estadoId`),
-  CONSTRAINT `fk_encomenda_cliente` FOREIGN KEY (`clienteId`) REFERENCES `cliente` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `fk_encomenda_estado` FOREIGN KEY (`estadoId`) REFERENCES `estado` (`id`),
-  CONSTRAINT `chk_metodo_pagamento_valido` CHECK ((`metodo_pagamento` in (_utf8mb4'MB Way',_utf8mb4'Paypal',_utf8mb4'Contrareembolso',_utf8mb4'Cartão de Crédito',_utf8mb4'Multibanco',_utf8mb4'Apple Pay')))
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `encomenda`
---
-
-LOCK TABLES `encomenda` WRITE;
-/*!40000 ALTER TABLE `encomenda` DISABLE KEYS */;
-INSERT INTO `encomenda` VALUES (1,'2025-06-17 23:58:00','MB Way',NULL,15.99,1,2),(2,'2025-06-18 09:30:00','Paypal','Entregar ao vizinho se ausente',12.98,2,1),(3,'2025-06-18 15:10:00','Cartão de Crédito','Urgente',30.98,2,3);
-/*!40000 ALTER TABLE `encomenda` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `ajustar_valor_contrareembolso_insert` BEFORE INSERT ON `encomenda` FOR EACH ROW BEGIN
-  IF NEW.metodo_pagamento = 'Contrareembolso' THEN
-    SET NEW.valor_total = NEW.valor_total + 1.95;
-  END IF;
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `ajustar_valor_contrareembolso_update` BEFORE UPDATE ON `encomenda` FOR EACH ROW BEGIN
-  IF NEW.metodo_pagamento = 'Contrareembolso' AND OLD.metodo_pagamento != 'Contrareembolso' THEN
-    SET NEW.valor_total = NEW.valor_total + 1.95;
-  ELSEIF NEW.metodo_pagamento != 'Contrareembolso' AND OLD.metodo_pagamento = 'Contrareembolso' THEN
-    SET NEW.valor_total = NEW.valor_total - 1.95;
-  END IF;
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-
---
--- Table structure for table `estado`
---
-
-DROP TABLE IF EXISTS `estado`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `estado` (
-  `id` int NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `nome_UNIQUE` (`nome`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `estado`
---
-
-LOCK TABLES `estado` WRITE;
-/*!40000 ALTER TABLE `estado` DISABLE KEYS */;
-INSERT INTO `estado` VALUES (5,'Cancelada'),(2,'Em-processamento'),(4,'Entregue'),(3,'Enviada'),(1,'Pendente');
-/*!40000 ALTER TABLE `estado` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `itemencomenda`
---
-
-DROP TABLE IF EXISTS `itemencomenda`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `itemencomenda` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `preco_unitario` decimal(10,2) DEFAULT NULL,
-  `quantidade` int NOT NULL DEFAULT '1',
-  `encomendaId` int DEFAULT NULL,
-  `produtoId` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_itemencomenda_encomenda` (`encomendaId`),
-  KEY `fk_itemencomenda_produto` (`produtoId`),
-  CONSTRAINT `fk_itemencomenda_encomenda` FOREIGN KEY (`encomendaId`) REFERENCES `encomenda` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `fk_itemencomenda_produto` FOREIGN KEY (`produtoId`) REFERENCES `produto` (`id`),
-  CONSTRAINT `chk_quantidade_maior_que_zero` CHECK ((`quantidade` > 0))
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `itemencomenda`
---
-
-LOCK TABLES `itemencomenda` WRITE;
-/*!40000 ALTER TABLE `itemencomenda` DISABLE KEYS */;
-INSERT INTO `itemencomenda` VALUES (1,15.99,1,1,1),(2,5.99,1,2,2),(3,6.99,1,2,3),(4,18.00,1,3,5),(5,1.99,1,3,6),(6,10.99,1,3,4);
-/*!40000 ALTER TABLE `itemencomenda` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `set_preco_unitario_itemencomenda` BEFORE INSERT ON `itemencomenda` FOR EACH ROW BEGIN
-  DECLARE preco DECIMAL(10,2);
-
-  SELECT preco INTO preco
-  FROM produto
-  WHERE id = NEW.produtoId;
-
-  SET NEW.preco_unitario = preco;
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `update_valor_total_after_insert` AFTER INSERT ON `itemencomenda` FOR EACH ROW BEGIN
-  UPDATE encomenda
-  SET valor_total = (
-    SELECT SUM(preco_unitario * quantidade)
-    FROM itemencomenda
-    WHERE encomendaId = NEW.encomendaId
-  )
-  WHERE id = NEW.encomendaId;
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `update_valor_total_after_update` AFTER UPDATE ON `itemencomenda` FOR EACH ROW BEGIN
-  UPDATE encomenda
-  SET valor_total = (
-    SELECT SUM(preco_unitario * quantidade)
-    FROM itemencomenda
-    WHERE encomendaId = NEW.encomendaId
-  )
-  WHERE id = NEW.encomendaId;
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-
---
--- Table structure for table `produto`
---
-
-DROP TABLE IF EXISTS `produto`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `produto` (
-  `id` int NOT NULL,
-  `stock` int NOT NULL DEFAULT '0',
-  `nome` varchar(512) NOT NULL,
-  `preco` decimal(10,2) DEFAULT NULL,
-  `descricao` varchar(512) DEFAULT NULL,
-  `categoriaId` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `nome_UNIQUE` (`nome`),
-  CONSTRAINT `chk_preco_maior_que_zero` CHECK ((`preco` > 0)),
-  CONSTRAINT `chk_stock_nao_negativo` CHECK ((`stock` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `produto`
---
-
-LOCK TABLES `produto` WRITE;
-/*!40000 ALTER TABLE `produto` DISABLE KEYS */;
-INSERT INTO `produto` VALUES (1,11,'Victoria\'s Secret Bare Vanilla',15.99,'Body Mist',4),(2,10,'OGX Coconut Milk Shampoo',5.99,'Hidrating Shampoo',1),(3,9,'OGX Coconut Milk Conditioner',6.99,'Hidrating Conditioner',1),(4,7,'Makeup Revolution Wrap Lash Mascara',10.99,'Tubing Mascara',5),(5,8,'Byoma Moisturizing Gel-Cream',18.00,'Moisturizing Gel-Cream',2),(6,5,'Laiseven Vainilla Bath Gel',1.99,'Bath Gel',3);
-/*!40000 ALTER TABLE `produto` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2025-06-19 18:39:28
 CREATE DATABASE  IF NOT EXISTS `sys` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `sys`;
 -- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
@@ -4354,4 +4005,353 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-19 18:39:29
+-- Dump completed on 2025-06-19 19:39:14
+CREATE DATABASE  IF NOT EXISTS `purpleblush` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `purpleblush`;
+-- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: purpleblush
+-- ------------------------------------------------------
+-- Server version	8.0.42
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `categoria`
+--
+
+DROP TABLE IF EXISTS `categoria`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `categoria` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `nome` (`nome`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categoria`
+--
+
+LOCK TABLES `categoria` WRITE;
+/*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
+INSERT INTO `categoria` VALUES (1,'Cabelo'),(2,'Cara'),(4,'Corpo'),(3,'Higiene'),(5,'Makeup');
+/*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `classificacao`
+--
+
+DROP TABLE IF EXISTS `classificacao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `classificacao` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `estrelas` int NOT NULL,
+  `comentario` text,
+  `data` datetime DEFAULT CURRENT_TIMESTAMP,
+  `encomendaId` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_classificacao_encomenda` (`encomendaId`),
+  CONSTRAINT `fk_classificacao_encomenda` FOREIGN KEY (`encomendaId`) REFERENCES `encomenda` (`id`) ON DELETE SET NULL,
+  CONSTRAINT `chk_estrelas` CHECK ((`estrelas` between 1 and 5)),
+  CONSTRAINT `classificacao_chk_1` CHECK ((`estrelas` between 1 and 5))
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `classificacao`
+--
+
+LOCK TABLES `classificacao` WRITE;
+/*!40000 ALTER TABLE `classificacao` DISABLE KEYS */;
+INSERT INTO `classificacao` VALUES (1,5,'TOP','2025-06-18 00:00:00',1),(3,4,'Recomendo!!','2025-06-19 19:37:55',3);
+/*!40000 ALTER TABLE `classificacao` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cliente`
+--
+
+DROP TABLE IF EXISTS `cliente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cliente` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `morada` text NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `data_nascimento` date NOT NULL,
+  `nif` varchar(9) DEFAULT NULL,
+  `palavra_passe` varchar(255) NOT NULL,
+  `telemovel` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `telemovel_UNIQUE` (`telemovel`),
+  CONSTRAINT `chk_email_format` CHECK ((`email` like _utf8mb4'%_@_%.__%'))
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cliente`
+--
+
+LOCK TABLES `cliente` WRITE;
+/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+INSERT INTO `cliente` VALUES (1,'Maria Silva','Rua das Flores, 123, Lisboa','maria.silva@hotmail.com','1990-05-15','123456789','senhaSegura123','962567989'),(2,'Joana Fernandes','41 Rua das Camélias, Braga','joana.fernandes@hotmail.com','1999-04-18','123432768','recheiodemorango','912345678'),(3,'Tiago Martins','Rua da Alegria 148, 2ºD, Porto','tiago_martins1@gmail.pt','1989-11-21',NULL,'ABc12345','966278374');
+/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `encomenda`
+--
+
+DROP TABLE IF EXISTS `encomenda`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `encomenda` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `data` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `metodo_pagamento` varchar(50) NOT NULL,
+  `observacao` varchar(512) DEFAULT NULL,
+  `valor_total` decimal(10,2) DEFAULT NULL,
+  `clienteId` int DEFAULT NULL,
+  `estadoId` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_encomenda_cliente` (`clienteId`),
+  KEY `fk_encomenda_estado` (`estadoId`),
+  CONSTRAINT `fk_encomenda_cliente` FOREIGN KEY (`clienteId`) REFERENCES `cliente` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_encomenda_estado` FOREIGN KEY (`estadoId`) REFERENCES `estado` (`id`),
+  CONSTRAINT `chk_metodo_pagamento_valido` CHECK ((`metodo_pagamento` in (_utf8mb4'MB Way',_utf8mb4'Paypal',_utf8mb4'Contrareembolso',_utf8mb4'Cartão de Crédito',_utf8mb4'Multibanco',_utf8mb4'Apple Pay')))
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `encomenda`
+--
+
+LOCK TABLES `encomenda` WRITE;
+/*!40000 ALTER TABLE `encomenda` DISABLE KEYS */;
+INSERT INTO `encomenda` VALUES (1,'2025-06-17 23:58:00','MB Way',NULL,15.99,1,2),(2,'2025-06-18 09:30:00','Paypal','Entregar ao vizinho se ausente',12.98,2,1),(3,'2025-06-18 15:10:00','Cartão de Crédito','Urgente',30.98,2,3);
+/*!40000 ALTER TABLE `encomenda` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `ajustar_valor_contrareembolso_insert` BEFORE INSERT ON `encomenda` FOR EACH ROW BEGIN
+  IF NEW.metodo_pagamento = 'Contrareembolso' THEN
+    SET NEW.valor_total = NEW.valor_total + 1.95;
+  END IF;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `ajustar_valor_contrareembolso_update` BEFORE UPDATE ON `encomenda` FOR EACH ROW BEGIN
+  IF NEW.metodo_pagamento = 'Contrareembolso' AND OLD.metodo_pagamento != 'Contrareembolso' THEN
+    SET NEW.valor_total = NEW.valor_total + 1.95;
+  ELSEIF NEW.metodo_pagamento != 'Contrareembolso' AND OLD.metodo_pagamento = 'Contrareembolso' THEN
+    SET NEW.valor_total = NEW.valor_total - 1.95;
+  END IF;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Table structure for table `estado`
+--
+
+DROP TABLE IF EXISTS `estado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `estado` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `nome_UNIQUE` (`nome`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `estado`
+--
+
+LOCK TABLES `estado` WRITE;
+/*!40000 ALTER TABLE `estado` DISABLE KEYS */;
+INSERT INTO `estado` VALUES (5,'Cancelada'),(2,'Em-processamento'),(4,'Entregue'),(3,'Enviada'),(1,'Pendente');
+/*!40000 ALTER TABLE `estado` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `itemencomenda`
+--
+
+DROP TABLE IF EXISTS `itemencomenda`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `itemencomenda` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `preco_unitario` decimal(10,2) DEFAULT NULL,
+  `quantidade` int NOT NULL DEFAULT '1',
+  `encomendaId` int DEFAULT NULL,
+  `produtoId` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_itemencomenda_encomenda` (`encomendaId`),
+  KEY `fk_itemencomenda_produto` (`produtoId`),
+  CONSTRAINT `fk_itemencomenda_encomenda` FOREIGN KEY (`encomendaId`) REFERENCES `encomenda` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_itemencomenda_produto` FOREIGN KEY (`produtoId`) REFERENCES `produto` (`id`),
+  CONSTRAINT `chk_quantidade_maior_que_zero` CHECK ((`quantidade` > 0))
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `itemencomenda`
+--
+
+LOCK TABLES `itemencomenda` WRITE;
+/*!40000 ALTER TABLE `itemencomenda` DISABLE KEYS */;
+INSERT INTO `itemencomenda` VALUES (1,15.99,1,1,1),(2,5.99,1,2,2),(3,6.99,1,2,3),(4,18.00,1,3,5),(5,1.99,1,3,6),(6,10.99,1,3,4);
+/*!40000 ALTER TABLE `itemencomenda` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `set_preco_unitario_itemencomenda` BEFORE INSERT ON `itemencomenda` FOR EACH ROW BEGIN
+  DECLARE preco DECIMAL(10,2);
+
+  SELECT preco INTO preco
+  FROM produto
+  WHERE id = NEW.produtoId;
+
+  SET NEW.preco_unitario = preco;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `update_valor_total_after_insert` AFTER INSERT ON `itemencomenda` FOR EACH ROW BEGIN
+  UPDATE encomenda
+  SET valor_total = (
+    SELECT SUM(preco_unitario * quantidade)
+    FROM itemencomenda
+    WHERE encomendaId = NEW.encomendaId
+  )
+  WHERE id = NEW.encomendaId;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `update_valor_total_after_update` AFTER UPDATE ON `itemencomenda` FOR EACH ROW BEGIN
+  UPDATE encomenda
+  SET valor_total = (
+    SELECT SUM(preco_unitario * quantidade)
+    FROM itemencomenda
+    WHERE encomendaId = NEW.encomendaId
+  )
+  WHERE id = NEW.encomendaId;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Table structure for table `produto`
+--
+
+DROP TABLE IF EXISTS `produto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `produto` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `stock` int NOT NULL DEFAULT '0',
+  `nome` varchar(512) NOT NULL,
+  `preco` decimal(10,2) DEFAULT NULL,
+  `descricao` varchar(512) DEFAULT NULL,
+  `categoriaId` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `nome_UNIQUE` (`nome`),
+  CONSTRAINT `chk_preco_maior_que_zero` CHECK ((`preco` > 0)),
+  CONSTRAINT `chk_stock_nao_negativo` CHECK ((`stock` >= 0))
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `produto`
+--
+
+LOCK TABLES `produto` WRITE;
+/*!40000 ALTER TABLE `produto` DISABLE KEYS */;
+INSERT INTO `produto` VALUES (1,11,'Victoria\'s Secret Bare Vanilla',15.99,'Body Mist',4),(2,10,'OGX Coconut Milk Shampoo',5.99,'Hidrating Shampoo',1),(3,9,'OGX Coconut Milk Conditioner',6.99,'Hidrating Conditioner',1),(4,7,'Makeup Revolution Wrap Lash Mascara',10.99,'Tubing Mascara',5),(5,8,'Byoma Moisturizing Gel-Cream',18.00,'Moisturizing Gel-Cream',2),(6,5,'Laiseven Vainilla Bath Gel',1.99,'Bath Gel',3);
+/*!40000 ALTER TABLE `produto` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-06-19 19:39:14

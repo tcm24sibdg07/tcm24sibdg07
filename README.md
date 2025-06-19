@@ -25,7 +25,7 @@ O presente projeto tem como objetivo a análise e informatização do sistema de
 - [Relatório do Projeto Final (RPF)](doc/rpf)
   
 ---
-## Code
+## Código
 
 - `purpleblush/` — código da API (LoopBack 4)
 - `postman/` — Coleção do Postman
@@ -33,7 +33,7 @@ O presente projeto tem como objetivo a análise e informatização do sistema de
 
 ---
 
-## Technologies
+## Tecnologias
 - Node.js
 - LoopBack 4
 - MySQL

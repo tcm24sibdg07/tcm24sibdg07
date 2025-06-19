@@ -66,6 +66,7 @@ Esta conclusão baseia-se nos seguintes critérios:
 - Todos os atributos não-chave **dependem exclusivamente da chave primária** de cada tabela.
 
  O modelo está em 3NF.
+ 
 ---
 [< Previous](rebd02.md) | [^ Main](/../../) | [Next >](rebd04.md)
 :--- | :---: | ---: 

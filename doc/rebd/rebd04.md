@@ -50,6 +50,13 @@ Tabela que armazena os produtos disponíveis, com dados de stock, preço, e liga
 |----------------------|-----------|---------|
 | produto_nome_unique  | nome      | Sim     |
 
+- **Check (validação de domínio):**
+
+| Nome             | Coluna(s) | Condição            |
+|------------------|-----------|---------------------|
+| chk_preco_maior_que_zero  | preco     | > 0                 |
+| chk_stock_nao_negativo    | stock     | >= 0                |
+
 ---
 
 ### CATEGORIA
@@ -106,6 +113,12 @@ Tabela que guarda informações pessoais dos clientes.
 |----------------------|-----------|---------|
 | cliente_email_unique | email     | Sim     |
 
+- **Check (validação de domínio):**
+
+| Nome             | Coluna(s) | Condição            |
+|------------------|-----------|---------------------|
+| chk_emailformat  | email     | LIKE '%@_%.__%'     |
+
 ---
 
 ### ENCOMENDA
@@ -137,6 +150,12 @@ Registo de encomendas feitas por clientes, com estado e eventual classificação
 | encomenda_cliente_fk        | id_cliente       | CLIENTE              | id                         | Não     |
 | encomenda_estado_fk         | id_estado        | ESTADO               | id                         | Não     |
 
+- **Check (validação de domínio):**
+
+| Nome             | Coluna(s) | Condição            |
+|------------------|-----------|---------------------|
+| chk_metodo_pagamento_valido | metodo_pagamento | IN ('MB Way', 'Paypal', 'Contrareembolso', 'Cartão de Crédito', 'Multibanco', 'Apple Pay')  |
+
 ---
 
 ### CLASSIFICACAO
@@ -167,9 +186,9 @@ Tabela que armazena avaliações feitas pelos clientes sobre as encomendas.
 
 - **Check (validação de domínio):**
 
-| Nome            | Coluna(s) | Condição            |
+| Nome             | Coluna(s) | Condição            |
 |------------------|-----------|---------------------|
-| estrelas_check   | estrelas  | BETWEEN 1 AND 5     |
+| chk_estrelas     | estrelas  | BETWEEN 1 AND 5     |
 
 ---
 
@@ -223,6 +242,12 @@ Tabela associativa que liga produtos às encomendas, indicando quantidades e pre
 |-----------------|--------------|----------------------|----------------------------|---------|
 | ie_produto_fk   | id_produto   | PRODUTO              | id                         | Não     |
 | ie_encomenda_fk | id_encomenda | ENCOMENDA            | id                         | Não     |
+
+- **Check (validação de domínio):**
+
+| Nome             | Coluna(s) | Condição            |
+|------------------|-----------|---------------------|
+| chk_quantidade_maior_que_zero | quantidade | > 0   |
 
 ---
 

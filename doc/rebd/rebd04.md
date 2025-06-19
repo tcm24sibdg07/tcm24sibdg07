@@ -156,6 +156,51 @@ Registo de encomendas feitas por clientes, com estado e eventual classificação
 |------------------|-----------|---------------------|
 | chk_metodo_pagamento_valido | metodo_pagamento | IN ('MB Way', 'Paypal', 'Contrareembolso', 'Cartão de Crédito', 'Multibanco', 'Apple Pay')  |
 
+- **Triggers:**
+
+- **Nome:** `ajustar_valor_contrareembolso_insert`
+- **Momento:** `BEFORE INSERT`
+- **Descrição:** Quando o método de pagamento da nova encomenda for `'Contrareembolso'`, esta trigger adiciona 1.95€ ao `valor_total`.
+- **Objetivo:** Incluir automaticamente a taxa de cobrança adicional associada ao método de pagamento contrarreembolso.
+  
+```sql
+DELIMITER $$
+
+CREATE TRIGGER ajustar_valor_contrareembolso_insert
+BEFORE INSERT ON encomenda
+FOR EACH ROW
+BEGIN
+  IF NEW.metodo_pagamento = 'Contrareembolso' THEN
+    SET NEW.valor_total = NEW.valor_total + 1.95;
+  END IF;
+END$$
+
+DELIMITER ;
+```
+- **Nome:** `ajustar_valor_contrareembolso_update`
+- **Momento:** `BEFORE UPDATE`
+- **Descrição:** 
+  - Se o método de pagamento for alterado de outro para `'Contrareembolso'`, adiciona 1.95€ ao `valor_total`.
+  - Se for alterado de `'Contrareembolso'` para outro método, subtrai 1.95€ ao `valor_total`.
+- **Objetivo:** Manter o valor total correto da encomenda sempre atualizado de acordo com alterações ao método de pagamento.
+  
+```sql
+DELIMITER $$
+
+CREATE TRIGGER ajustar_valor_contrareembolso_update
+BEFORE UPDATE ON encomenda
+FOR EACH ROW
+BEGIN
+  IF NEW.metodo_pagamento = 'Contrareembolso' AND OLD.metodo_pagamento != 'Contrareembolso' THEN
+    SET NEW.valor_total = NEW.valor_total + 1.95;
+  ELSEIF NEW.metodo_pagamento != 'Contrareembolso' AND OLD.metodo_pagamento = 'Contrareembolso' THEN
+    SET NEW.valor_total = NEW.valor_total - 1.95;
+  END IF;
+END$$
+
+DELIMITER ;
+```
+
 ---
 
 ### CLASSIFICACAO
@@ -248,6 +293,101 @@ Tabela associativa que liga produtos às encomendas, indicando quantidades e pre
 | Nome             | Coluna(s) | Condição            |
 |------------------|-----------|---------------------|
 | chk_quantidade_maior_que_zero | quantidade | > 0   |
+
+- **Triggers:**
+
+- **Nome:** `set_preco_unitario_itemencomenda`
+- **Momento:** `BEFORE INSERT`
+- **Descrição:** Esta trigger é responsável por preencher automaticamente o campo `preco_unitario` de um novo `itemencomenda`, indo buscar o preço atual do produto correspondente na tabela `produto`.
+- **Objetivo:** Garantir integridade e consistência de dados, assegurando que o preço unitário do item encomendado corresponde ao preço atual do produto.
+
+```sql
+DELIMITER $$
+
+CREATE TRIGGER set_preco_unitario_itemencomenda
+BEFORE INSERT ON itemencomenda
+FOR EACH ROW
+BEGIN
+  DECLARE preco DECIMAL(10,2);
+
+  SELECT preco INTO preco
+  FROM produto
+  WHERE id = NEW.produtoId;
+
+  SET NEW.preco_unitario = preco;
+END$$
+
+DELIMITER ;
+```
+
+- **Nome:** `update_valor_total_after_insert`
+-  **Momento:** `AFTER INSERT`
+- **Função:** Assim que um novo item é inserido numa encomenda, esta trigger recalcula automaticamente o valor_total da encomenda somando o preço de todos os seus itens (preco_unitario * quantidade).
+
+```sql
+DELIMITER $$
+
+CREATE TRIGGER update_valor_total_after_insert
+AFTER INSERT ON itemencomenda
+FOR EACH ROW
+BEGIN
+  UPDATE encomenda
+  SET valor_total = (
+    SELECT SUM(preco_unitario * quantidade)
+    FROM itemencomenda
+    WHERE encomendaId = NEW.encomendaId
+  )
+  WHERE id = NEW.encomendaId;
+END$$
+
+DELIMITER ;
+```
+
+- **Nome:** `update_valor_total_after_update`
+-  **Momento:** `AFTER UPDATE`
+- **Função:** Sempre que se atualiza a quantidade ou o preço unitário de um item, esta trigger recalcula o valor total da encomenda associada, garantindo que reflete os novos valores.
+
+```sql
+DELIMITER $$
+
+CREATE TRIGGER update_valor_total_after_update
+AFTER UPDATE ON itemencomenda
+FOR EACH ROW
+BEGIN
+  UPDATE encomenda
+  SET valor_total = (
+    SELECT SUM(preco_unitario * quantidade)
+    FROM itemencomenda
+    WHERE encomendaId = NEW.encomendaId
+  )
+  WHERE id = NEW.encomendaId;
+END$$
+
+DELIMITER ;
+```
+
+- **Nome:** `update_valor_total_after_delete`
+-  **Momento:** `AFTER DELETE`
+- **Função:** Quando um item é removido de uma encomenda, esta trigger atualiza o valor_total dessa encomenda. Se for o último item a ser removido, o valor total é ajustado para 0 usando IFNULL().
+
+```sql
+DELIMITER $$
+
+CREATE TRIGGER update_valor_total_after_delete
+AFTER DELETE ON itemencomenda
+FOR EACH ROW
+BEGIN
+  UPDATE encomenda
+  SET valor_total = (
+    SELECT IFNULL(SUM(preco_unitario * quantidade), 0)
+    FROM itemencomenda
+    WHERE encomendaId = OLD.encomendaId
+  )
+  WHERE id = OLD.encomendaId;
+END$$
+
+DELIMITER ;
+```
 
 ---
 

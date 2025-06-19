@@ -3,7 +3,7 @@
 ## Relações
 
 ### PRODUTO
-| id |  | stock | nome | preço | descrição | id_categoria → CATEGORIA |
+| id |  | stock | nome | preco | descricao | id_categoria → CATEGORIA |
 |----|----|-------|------|--------|-------------|--------------------------|
 
 ### CATEGORIA
@@ -11,15 +11,12 @@
 |----|----|------|
 
 ### CLIENTE
-| id |  | nome | morada | email | data_nascimento | nif | palavra_passe | {telemóvel} |
+| id |  | nome | morada | email | data_nascimento | nif | palavra_passe | telemovel |
 |----|----|------|--------|-------|------------------|-----|----------------|--------------|
 
-### TELEMOVEL
-| id_cliente → CLIENTE | telemóvel |  |
-|----------------------|-----------|----|
 
 ### ENCOMENDA
-| id |  | data | método_pagamento | observação | valor_total | id_cliente → CLIENTE | id_estado → ESTADO | id_classificacao → CLASSIFICAÇÃO |
+| id |  | data | metodo_pagamento | observacao | valor_total | id_cliente → CLIENTE | id_estado → ESTADO | id_classificacao → CLASSIFICACAO |
 |----|----|------|------------------|-------------|--------------|----------------------|---------------------|----------------------------------|
 
 ### ESTADO
@@ -27,11 +24,11 @@
 |----|----|------|
 
 ### CLASSIFICAÇÃO
-| id |  | estrelas | comentário | data | id_cliente → CLIENTE |
+| id |  | estrelas | comentario | data | id_cliente → CLIENTE |
 |----|----|----------|-------------|------|-----------------------|
 
 ### itemencomenda
-| id_produto → PRODUTO | id_encomenda → ENCOMENDA |  | preço_unitário | quantidade |
+| id_produto → PRODUTO | id_encomenda → ENCOMENDA |  | preco_unitario | quantidade |
 |----------------------|--------------------------|----|----------------|------------|
 
 

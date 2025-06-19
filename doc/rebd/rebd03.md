@@ -40,12 +40,32 @@
 ## Normalização do Esquema Relacional
 
 Não é necessário proceder à normalização da base de dados, pois todas as tabelas já se encontram na **3ª Forma Normal (3NF)**.  
-Além disso, não há necessidade de desnormalizar devido à:
+Esta conclusão baseia-se nos seguintes critérios:
 
-- Garantia da **integridade dos dados**  
-- **Minimização de redundâncias**  
-- **Manutenção do desempenho**  
-- **Simplicidade do sistema**
+###  1ª Forma Normal (1NF)
+
+- Todos os atributos de todas as tabelas são **atómicos**.
+- Não existem **valores multivalorados** nem **grupos repetitivos**.
+- Cada célula contém apenas **um valor único**.
+
+ O modelo está em 1NF.
+
+
+###  2ª Forma Normal (2NF)
+
+- Todas as tabelas com **chave composta** (ex.: `item_encomenda`) têm os seus atributos **totalmente dependentes da chave primária completa**.
+- Tabelas com chave simples (ex.: `cliente`, `produto`) já estão automaticamente em 2NF.
+
+ O modelo está em 2NF.
+
+
+
+###  3ª Forma Normal (3NF)
+
+- Não existem **dependências transitivas**: nenhum atributo não-chave depende de outro atributo não-chave.
+- Todos os atributos não-chave **dependem exclusivamente da chave primária** de cada tabela.
+
+ O modelo está em 3NF.
 ---
 [< Previous](rebd02.md) | [^ Main](/../../) | [Next >](rebd04.md)
 :--- | :---: | ---: 

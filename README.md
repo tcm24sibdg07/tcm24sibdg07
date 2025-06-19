@@ -14,6 +14,7 @@ O presente projeto tem como objetivo a análise e informatização do sistema de
 ## Organização do Repositório
 
 - Relatórios e documentação na pasta [`doc`](./doc)
+- Código na pasta [`src`](./src)
 
 ---
 
@@ -21,6 +22,23 @@ O presente projeto tem como objetivo a análise e informatização do sistema de
 
 - [Relatório de Especificação da Informação (REI)](doc/rei)
 - [Relatório de Especificação da Base de Dados (REBD)](doc/rebd)
+- [Relatório do Projeto Final (RPF)](doc/rpf)
+  
+---
+## Code
+
+- `purpleblush/` — código da API (LoopBack 4)
+- `postman/` — Coleção do Postman
+- `sql/` — contém o ficheiro `.sql`
+
+---
+
+## Technologies
+- Node.js
+- LoopBack 4
+- MySQL
+- Postman
+  
 ---
 
 ## Equipa

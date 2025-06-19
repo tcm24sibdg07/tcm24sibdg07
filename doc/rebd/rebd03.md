@@ -3,7 +3,7 @@
 ## Relações
 
 ### PRODUTO
-| id |  | stock | nome | preco | descricao | id_categoria → CATEGORIA |
+| id |  | stock | nome | preco | descricao | categoriaId → CATEGORIA |
 |----|----|-------|------|--------|-------------|--------------------------|
 
 ### CATEGORIA
@@ -16,19 +16,19 @@
 
 
 ### ENCOMENDA
-| id |  | data | metodo_pagamento | observacao | valor_total | id_cliente → CLIENTE | id_estado → ESTADO | id_classificacao → CLASSIFICACAO |
-|----|----|------|------------------|-------------|--------------|----------------------|---------------------|----------------------------------|
+| id |  | data | metodo_pagamento | observacao | valor_total | clienteId → CLIENTE | estadoId → ESTADO |
+|----|----|------|------------------|-------------|--------------|----------------------|---------------------|
 
 ### ESTADO
 | id |  | nome |
 |----|----|------|
 
 ### CLASSIFICAÇÃO
-| id |  | estrelas | comentario | data | id_cliente → CLIENTE |
+| id |  | estrelas | comentario | data | encomendaId → ENCOMENDA |
 |----|----|----------|-------------|------|-----------------------|
 
 ### ITEMENCOMENDA
-| id_produto → PRODUTO | id_encomenda → ENCOMENDA |  | preco_unitario | quantidade |
+| produtoId → PRODUTO | encomendaId → ENCOMENDA |  | preco_unitario | quantidade |
 |----------------------|--------------------------|----|----------------|------------|
 
 

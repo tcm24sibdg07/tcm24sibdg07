@@ -30,7 +30,7 @@
 | id |  | estrelas | comentário | data | id_cliente → CLIENTE |
 |----|----|----------|-------------|------|-----------------------|
 
-### incluido_em
+### itemencomenda
 | id_produto → PRODUTO | id_encomenda → ENCOMENDA |  | preço_unitário | quantidade |
 |----------------------|--------------------------|----|----------------|------------|
 

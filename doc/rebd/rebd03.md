@@ -27,7 +27,7 @@
 | id |  | estrelas | comentario | data | id_cliente → CLIENTE |
 |----|----|----------|-------------|------|-----------------------|
 
-### itemencomenda
+### ITEMENCOMENDA
 | id_produto → PRODUTO | id_encomenda → ENCOMENDA |  | preco_unitario | quantidade |
 |----------------------|--------------------------|----|----------------|------------|
 

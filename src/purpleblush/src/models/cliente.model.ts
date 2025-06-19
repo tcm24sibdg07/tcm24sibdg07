@@ -30,7 +30,7 @@ export class Cliente extends Entity {
 
   @property({
     type: 'string',
-    required: true,
+    required: false,
   })
   data_nascimento: string;
 

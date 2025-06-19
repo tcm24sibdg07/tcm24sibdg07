@@ -28,8 +28,8 @@ O presente projeto tem como objetivo a análise e informatização do sistema de
 ## Código
 
 - `purpleblush/` — código da API (LoopBack 4)
-- `postman/` — Coleção do Postman
-- `sql/` — contém o ficheiro `.sql`
+- `postman/` — coleção do Postman e videos demonstrativos
+- `sql/` — contém o ficheiro `.sql` 
 
 ---
 

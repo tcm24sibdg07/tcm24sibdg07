@@ -26,7 +26,7 @@ Tabela que armazena os produtos disponíveis, com dados de stock, preço, e liga
 
 | Nome         | Descrição               | Domínio        | Default | Automático | Nulo |
 |--------------|-------------------------|----------------|---------|------------|------|
-| id           | Identificador do produto| BIGINT         | -       | Sim        | Não  |
+| id           | Identificador do produto| INTEGER        | -       | Sim        | Não  |
 | stock        | Quantidade em stock     | INTEGER        | 0       | Não        | Não  |
 | nome         | Nome do produto         | VARCHAR(512)   | -       | Não        | Não  |
 | preço        | Preço do produto        | DECIMAL(10,2)  | -       | Não        | Sim  |
@@ -68,7 +68,7 @@ Tabela com as categorias de produtos.
 
 | Nome | Descrição              | Domínio      | Default | Automático | Nulo |
 |------|------------------------|--------------|---------|------------|------|
-| id   | Identificador da categoria | BIGINT | -       | Sim        | Não  |
+| id   | Identificador da categoria | INTEGER  | -       | Sim        | Não  |
 | nome | Nome da categoria      | VARCHAR(50)  | -       | Não        | Não  |
 
 **Restrições de Integridade:**
@@ -93,7 +93,7 @@ Tabela que guarda informações pessoais dos clientes.
 
 | Nome            | Descrição                      | Domínio       | Default | Automático | Nulo |
 |-----------------|--------------------------------|---------------|---------|------------|------|
-| id              | Identificador do cliente       | BIGINT        | -       | Sim        | Não  |
+| id              | Identificador do cliente       | INTEGER       | -       | Sim        | Não  |
 | nome            | Nome do cliente                | VARCHAR(100)  | -       | Não        | Não  |
 | morada          | Morada do cliente              | TEXT          | -       | Não        | Não  |
 | email           | Email                          | VARCHAR(100)  | -       | Não        | Não  |
@@ -130,7 +130,7 @@ Registo de encomendas feitas por clientes, com estado e eventual classificação
 
 | Nome              | Descrição                 | Domínio        | Default | Automático | Nulo |
 |-------------------|---------------------------|----------------|---------|------------|------|
-| id                | ID da encomenda           | BIGINT         | -       | Sim        | Não  |
+| id                | ID da encomenda           | INTEGER        | -       | Sim        | Não  |
 | data              | Data da encomenda         | VARCHAR(512)   | now()   | Não        | Não  |
 | método_pagamento  | Método de pagamento       | VARCHAR(50)    | -       | Não        | Não  |
 | observação        | Observações gerais        | VARCHAR(512)   | -       | Não        | Sim  |

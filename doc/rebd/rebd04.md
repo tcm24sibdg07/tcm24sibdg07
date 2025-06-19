@@ -156,7 +156,7 @@ Registo de encomendas feitas por clientes, com estado e eventual classificação
 |------------------|-----------|---------------------|
 | chk_metodo_pagamento_valido | metodo_pagamento | IN ('MB Way', 'Paypal', 'Contrareembolso', 'Cartão de Crédito', 'Multibanco', 'Apple Pay')  |
 
-# Triggers:
+### Triggers:
 
 - **Nome:** `ajustar_valor_contrareembolso_insert`
 - **Momento:** `BEFORE INSERT`
@@ -294,7 +294,7 @@ Tabela associativa que liga produtos às encomendas, indicando quantidades e pre
 |------------------|-----------|---------------------|
 | chk_quantidade_maior_que_zero | quantidade | > 0   |
 
-# Triggers:
+### Triggers:
 
 - **Nome:** `set_preco_unitario_itemencomenda`
 - **Momento:** `BEFORE INSERT`

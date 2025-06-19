@@ -97,7 +97,7 @@ Tabela que guarda informações pessoais dos clientes.
 | nome            | Nome do cliente                | VARCHAR(100)  | -       | Não        | Não  |
 | morada          | Morada do cliente              | TEXT          | -       | Não        | Não  |
 | email           | Email                          | VARCHAR(100)  | -       | Não        | Não  |
-| data_nascimento | Data de nascimento             | DATE          | -       | Não        | Não  |
+| data_nascimento | Data de nascimento             | DATE          | NULL    | Não        | Sim  |
 | nif             | Número de identificação fiscal | VARCHAR(9)    | -       | Não        | Sim  |
 | palavra_passe   | Palavra-passe encriptada       | VARCHAR(255)  | -       | Não        | Não  |
 | telemovel       | Número de telemóvel            | VARCHAR(20)   | -       | Não        | Não  |

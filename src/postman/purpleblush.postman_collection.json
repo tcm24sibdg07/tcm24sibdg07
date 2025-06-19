@@ -1,0 +1,4095 @@
+{
+	"info": {
+		"_postman_id": "3e8477b4-a6ee-43b9-b6fb-22867d57261e",
+		"name": "purpleblush",
+		"description": "purpleblush store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45978507"
+	},
+	"item": [
+		{
+			"name": "categorias",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "produtos",
+							"item": [
+								{
+									"name": "Categoria Produto Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"stock\": -61394434.95697767,\n  \"nome\": \"Ut sit in cupidatat\",\n  \"preco\": -15900773.576049507,\n  \"descricao\": \"exercitation elit velit non\",\n  \"categoriaId\": 72198971.44850335\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/categorias/:id/produtos",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categorias",
+												":id",
+												"produtos"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Categoria model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"stock\": -61394434.95697767,\n  \"nome\": \"Ut sit in cupidatat\",\n  \"preco\": -15900773.576049507,\n  \"descricao\": \"exercitation elit velit non\",\n  \"categoriaId\": 72198971.44850335\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/categorias/:id/produtos",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"categorias",
+														":id",
+														"produtos"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"stock\": -35719122.31631096,\n  \"nome\": \"tempor Excepteur culpa ea\",\n  \"preco\": 89050507.76167932,\n  \"id\": -55053068.39338906,\n  \"descricao\": \"ex ut exercitation culpa occaecat\",\n  \"categoriaId\": -51163598.19991541\n}"
+										}
+									]
+								},
+								{
+									"name": "Categoria Produto Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categorias/:id/produtos?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categorias",
+												":id",
+												"produtos"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Categoria has many Produto",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/categorias/:id/produtos?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"categorias",
+														":id",
+														"produtos"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"stock\": 51030582.61123675,\n    \"nome\": \"non aliquip dolore\",\n    \"preco\": -17014717.30720088,\n    \"id\": 58505686.265768826,\n    \"descricao\": \"irure\",\n    \"categoriaId\": -92144745.67753012\n  },\n  {\n    \"stock\": -85830864.33281432,\n    \"nome\": \"laborum amet ut Duis\",\n    \"preco\": -76685225.17011827,\n    \"id\": -6943775.161342144,\n    \"descricao\": \"sunt Ut sit non\",\n    \"categoriaId\": 32467439.024728462\n  }\n]"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Categoria Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -38021545.44361862,\n  \"nome\": \"cupidatat nostrud\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/categorias/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categorias",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -38021545.44361862,\n  \"nome\": \"cupidatat nostrud\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/categorias/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categorias",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Categoria PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Categoria Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categorias/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categorias",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Categoria model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categorias/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categorias",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"nome\": \"ipsum in in\",\n  \"id\": 1976967.2304611206,\n  \"produtos\": [\n    {\n      \"stock\": 44823300.95262924,\n      \"nome\": \"minim do et\",\n      \"preco\": -8457206.114535555,\n      \"id\": 81813050.60373059,\n      \"descricao\": \"officia\",\n      \"categoriaId\": 35792144.60757655,\n      \"itemEncomendas\": [\n        {\n          \"preco_unitario\": -60161641.58614901,\n          \"quantidade\": -86407505.18550897,\n          \"id\": -83170028.87319256,\n          \"encomendaId\": 3649182.106184408,\n          \"produtoId\": -3977457.011659473,\n          \"encomenda\": {\n            \"data\": \"q\",\n            \"metodo_pagamento\": \"ipsum laboris\",\n            \"id\": -51540987.77686329,\n            \"observacao\": \"occaecat consequat laboris cillum fugiat\",\n            \"valor_total\": -31434465.990318745,\n            \"clienteId\": 57023921.26471278,\n            \"estadoId\": 57864961.77533099,\n            \"cliente\": {\n              \"nome\": \"eiusmod veniam cil\",\n              \"morada\": \"ut dolor\",\n              \"email\": \"do amet Lorem qu\",\n              \"data_nascimento\": \"officia in nisi\",\n              \"palavra_passe\": \"exercitation quis\",\n              \"telemovel\": 7569584.0910669565,\n              \"id\": 43598935.76105338,\n              \"nif\": 29482674.356349573,\n              \"encomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"foreignKey\": {},\n            \"estado\": {\n              \"nome\": \"Lorem Excepteur quis cillum consequat\",\n              \"id\": -21828473.534592748,\n              \"encomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"classificacao\": {\n              \"estrelas\": 7371017.574698463,\n              \"data\": \"dolore magna veniam Duis\",\n              \"id\": 70610171.77571261,\n              \"comentario\": \"occaecat tempor non\",\n              \"encomendaId\": -25532223.305058643,\n              \"encomenda\": {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              },\n              \"foreignKey\": {}\n            },\n            \"itemEncomendas\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n              }\n            ]\n          },\n          \"foreignKey\": {},\n          \"produto\": {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n          }\n        },\n        {\n          \"preco_unitario\": -45451308.38710944,\n          \"quantidade\": -39813076.7285362,\n          \"id\": 43106075.12931353,\n          \"encomendaId\": -82578901.83354494,\n          \"produtoId\": 37104378.21046656,\n          \"encomenda\": {\n            \"data\": \"aliqua mollit\",\n            \"metodo_pagamento\": \"culpa non in aute\",\n            \"id\": -12330214.004447445,\n            \"observacao\": \"sunt reprehenderit veniam consectetur\",\n            \"valor_total\": 43016371.66026357,\n            \"clienteId\": 66915838.2025477,\n            \"estadoId\": 88158889.26403052,\n            \"cliente\": {\n              \"nome\": \"cil\",\n              \"morada\": \"veniam esse deserunt laboris\",\n              \"email\": \"pariatur laborum sit aute\",\n              \"data_nascimento\": \"mollit e\",\n              \"palavra_passe\": \"nisi labore\",\n              \"telemovel\": 2153508.4169662893,\n              \"id\": -25466328.485020906,\n              \"nif\": 83951290.71973711,\n              \"encomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"foreignKey\": {},\n            \"estado\": {\n              \"nome\": \"adipisicing proident sit consectetur\",\n              \"id\": 63152777.490694195,\n              \"encomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"classificacao\": {\n              \"estrelas\": 34379824.536951065,\n              \"data\": \"dolor ullamco\",\n              \"id\": 57551909.37538797,\n              \"comentario\": \"ad cillum\",\n              \"encomendaId\": -40272059.34252658,\n              \"encomenda\": {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              },\n              \"foreignKey\": {}\n            },\n            \"itemEncomendas\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n              }\n            ]\n          },\n          \"foreignKey\": {},\n          \"produto\": {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n          }\n        }\n      ],\n      \"categoria\": {\n        \"value\": \"<Circular reference to #/components/schemas/CategoriaWithRelations detected>\"\n      },\n      \"foreignKey\": {}\n    },\n    {\n      \"stock\": 65423794.75885233,\n      \"nome\": \"minim Ut eu culpa est\",\n      \"preco\": 84777329.28721887,\n      \"id\": -88885923.64905326,\n      \"descricao\": \"consec\",\n      \"categoriaId\": 18349815.70061682,\n      \"itemEncomendas\": [\n        {\n          \"preco_unitario\": -8014650.186491594,\n          \"quantidade\": 98549498.60691687,\n          \"id\": 30938643.54575038,\n          \"encomendaId\": 49571490.13423443,\n          \"produtoId\": 80789470.72518766,\n          \"encomenda\": {\n            \"data\": \"tempor magna veniam do\",\n            \"metodo_pagamento\": \"laboris nisi laborum\",\n            \"id\": -19804305.241366208,\n            \"observacao\": \"enim dolor qui\",\n            \"valor_total\": 53262537.897224456,\n            \"clienteId\": 6036798.481298566,\n            \"estadoId\": -1461255.4581858665,\n            \"cliente\": {\n              \"nome\": \"in\",\n              \"morada\": \"adipisicing consectetur ut\",\n              \"email\": \"ipsum labore aliqua\",\n              \"data_nascimento\": \"dolor irure\",\n              \"palavra_passe\": \"reprehenderit commodo est\",\n              \"telemovel\": -63830800.730453864,\n              \"id\": 17960395.908843994,\n              \"nif\": 36919235.07982957,\n              \"encomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"foreignKey\": {},\n            \"estado\": {\n              \"nome\": \"in ex eu in sunt\",\n              \"id\": 76009141.52094322,\n              \"encomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"classificacao\": {\n              \"estrelas\": -77924760.93654388,\n              \"data\": \"sint sit dolor\",\n              \"id\": 64023272.004861474,\n              \"comentario\": \"aliqua cillum in commodo et\",\n              \"encomendaId\": 36613624.031956285,\n              \"encomenda\": {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              },\n              \"foreignKey\": {}\n            },\n            \"itemEncomendas\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n              }\n            ]\n          },\n          \"foreignKey\": {},\n          \"produto\": {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n          }\n        },\n        {\n          \"preco_unitario\": 70049927.24797979,\n          \"quantidade\": -2724380.450592488,\n          \"id\": 7258934.573321745,\n          \"encomendaId\": -53100657.6486071,\n          \"produtoId\": 83717808.5378201,\n          \"encomenda\": {\n            \"data\": \"sunt Ut\",\n            \"metodo_pagamento\": \"culpa qui aute magna\",\n            \"id\": 23220074.43428898,\n            \"observacao\": \"do sed occaecat in\",\n            \"valor_total\": 43917721.53709978,\n            \"clienteId\": 79785114.27977017,\n            \"estadoId\": 94939210.55165231,\n            \"cliente\": {\n              \"nome\": \"Excepteur officia labore sint\",\n              \"morada\": \"in voluptate ullamco\",\n              \"email\": \"non sit\",\n              \"data_nascimento\": \"ipsum nulla\",\n              \"palavra_passe\": \"qui tempor ex magna consequat\",\n              \"telemovel\": 80107385.19610992,\n              \"id\": -9696943.140397713,\n              \"nif\": 80042553.43615708,\n              \"encomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"foreignKey\": {},\n            \"estado\": {\n              \"nome\": \"sed qui nostrud Excepteur\",\n              \"id\": 63024171.044168174,\n              \"encomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"classificacao\": {\n              \"estrelas\": 5233399.477299511,\n              \"data\": \"incididunt mollit id anim\",\n              \"id\": -20526221.120035127,\n              \"comentario\": \"incidid\",\n              \"encomendaId\": -57712617.19811296,\n              \"encomenda\": {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              },\n              \"foreignKey\": {}\n            },\n            \"itemEncomendas\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n              }\n            ]\n          },\n          \"foreignKey\": {},\n          \"produto\": {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n          }\n        }\n      ],\n      \"categoria\": {\n        \"value\": \"<Circular reference to #/components/schemas/CategoriaWithRelations detected>\"\n      },\n      \"foreignKey\": {}\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Categoria Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categorias/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categorias",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categorias/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categorias",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Categoria DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Categoria Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"dolor incididunt\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categorias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Categoria model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"dolor incididunt\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/categorias",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categorias"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"nome\": \"anim labore ipsum sint\",\n  \"id\": 72283234.58775422\n}"
+						}
+					]
+				},
+				{
+					"name": "Categoria Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/categorias?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categorias"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Categoria model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categorias?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categorias"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"nome\": \"cillum voluptate veniam esse eu\",\n    \"id\": 15276052.198532492,\n    \"produtos\": [\n      {\n        \"stock\": -76376454.64411671,\n        \"nome\": \"eu amet\",\n        \"preco\": 96599756.83858365,\n        \"id\": -28744330.90105088,\n        \"descricao\": \"occaecat id exercitation anim\",\n        \"categoriaId\": 33105975.962913975,\n        \"itemEncomendas\": [\n          {\n            \"preco_unitario\": -12083780.987943545,\n            \"quantidade\": -51578698.89432045,\n            \"id\": -22611592.938837036,\n            \"encomendaId\": -14343296.861695841,\n            \"produtoId\": 96216351.58889884,\n            \"encomenda\": {\n              \"data\": \"Excepteur reprehenderit ex\",\n              \"metodo_pagamento\": \"al\",\n              \"id\": 67666333.63512012,\n              \"observacao\": \"Lorem\",\n              \"valor_total\": 18138110.012931198,\n              \"clienteId\": -78139722.74013846,\n              \"estadoId\": 54290887.83780077,\n              \"cliente\": {\n                \"nome\": \"amet in\",\n                \"morada\": \"id\",\n                \"email\": \"minim D\",\n                \"data_nascimento\": \"reprehenderit ad\",\n                \"palavra_passe\": \"eu sit reprehenderit\",\n                \"telemovel\": 93628601.2262493,\n                \"id\": 8584957.69839771,\n                \"nif\": 53589875.22987327,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"foreignKey\": {},\n              \"estado\": {\n                \"nome\": \"culpa sed\",\n                \"id\": -43439169.88325547,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"classificacao\": {\n                \"estrelas\": -30632244.837300032,\n                \"data\": \"culpa proident sit\",\n                \"id\": -48616252.29956048,\n                \"comentario\": \"dolore dolor qui eiusmod\",\n                \"encomendaId\": -14475028.507137641,\n                \"encomenda\": {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                \"foreignKey\": {}\n              },\n              \"itemEncomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"foreignKey\": {},\n            \"produto\": {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n            }\n          },\n          {\n            \"preco_unitario\": 32567076.204663962,\n            \"quantidade\": -69173554.02730383,\n            \"id\": 37428864.97909877,\n            \"encomendaId\": 49356873.49841803,\n            \"produtoId\": -20755225.638367042,\n            \"encomenda\": {\n              \"data\": \"consectetur magna amet ipsum\",\n              \"metodo_pagamento\": \"nisi ad esse fugiat\",\n              \"id\": -86385539.0551591,\n              \"observacao\": \"non anim velit\",\n              \"valor_total\": 9006839.492953137,\n              \"clienteId\": -90059921.03772767,\n              \"estadoId\": 86351763.50465193,\n              \"cliente\": {\n                \"nome\": \"id sed\",\n                \"morada\": \"elit commodo\",\n                \"email\": \"cillum co\",\n                \"data_nascimento\": \"ex sunt in\",\n                \"palavra_passe\": \"labore laboris veniam nisi\",\n                \"telemovel\": -13848960.889446497,\n                \"id\": 10787161.929916784,\n                \"nif\": 62634214.868721336,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"foreignKey\": {},\n              \"estado\": {\n                \"nome\": \"est ipsum sunt\",\n                \"id\": -3876916.7057005465,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"classificacao\": {\n                \"estrelas\": 18846167.85904552,\n                \"data\": \"deserunt\",\n                \"id\": 31051541.342747465,\n                \"comentario\": \"laboris\",\n                \"encomendaId\": 70254627.30580401,\n                \"encomenda\": {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                \"foreignKey\": {}\n              },\n              \"itemEncomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"foreignKey\": {},\n            \"produto\": {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n            }\n          }\n        ],\n        \"categoria\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoriaWithRelations detected>\"\n        },\n        \"foreignKey\": {}\n      },\n      {\n        \"stock\": 36415688.922361076,\n        \"nome\": \"enim\",\n        \"preco\": -57192457.87518448,\n        \"id\": 97506310.91429392,\n        \"descricao\": \"mollit dolor nulla laborum irure\",\n        \"categoriaId\": 65659858.78718701,\n        \"itemEncomendas\": [\n          {\n            \"preco_unitario\": -77714627.11372915,\n            \"quantidade\": -19759206.718434542,\n            \"id\": 24365930.74937257,\n            \"encomendaId\": 48555677.4541235,\n            \"produtoId\": -75780674.1124027,\n            \"encomenda\": {\n              \"data\": \"dolor dolor tempor\",\n              \"metodo_pagamento\": \"minim veniam\",\n              \"id\": -93121198.22945704,\n              \"observacao\": \"quis id dolor consectetur\",\n              \"valor_total\": 84417668.76945454,\n              \"clienteId\": 41706020.126984775,\n              \"estadoId\": -87198497.17473629,\n              \"cliente\": {\n                \"nome\": \"ea ex fugiat\",\n                \"morada\": \"voluptate ad mollit amet anim\",\n                \"email\": \"n\",\n                \"data_nascimento\": \"est cillum laborum sint\",\n                \"palavra_passe\": \"commodo ut\",\n                \"telemovel\": -44106840.85691656,\n                \"id\": 2661062.56807217,\n                \"nif\": -45617952.983462654,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"foreignKey\": {},\n              \"estado\": {\n                \"nome\": \"eiusmod dolore\",\n                \"id\": 34121470.74990371,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"classificacao\": {\n                \"estrelas\": 99442284.71362919,\n                \"data\": \"sint\",\n                \"id\": 39042039.55725175,\n                \"comentario\": \"eiusmod tempor\",\n                \"encomendaId\": 67695698.97223148,\n                \"encomenda\": {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                \"foreignKey\": {}\n              },\n              \"itemEncomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"foreignKey\": {},\n            \"produto\": {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n            }\n          },\n          {\n            \"preco_unitario\": 39167825.125085086,\n            \"quantidade\": -37239460.70583746,\n            \"id\": 97438915.37531474,\n            \"encomendaId\": -21235285.87194854,\n            \"produtoId\": 73497588.26454407,\n            \"encomenda\": {\n              \"data\": \"dolore\",\n              \"metodo_pagamento\": \"dolore proident deserunt\",\n              \"id\": 48979570.86415246,\n              \"observacao\": \"ad id\",\n              \"valor_total\": 58088681.840096265,\n              \"clienteId\": -54950095.70189344,\n              \"estadoId\": 76693320.92389491,\n              \"cliente\": {\n                \"nome\": \"anim aliquip reprehenderit qui\",\n                \"morada\": \"eu exerci\",\n                \"email\": \"proident qui officia mollit ad\",\n                \"data_nascimento\": \"do dolore velit\",\n                \"palavra_passe\": \"dolor\",\n                \"telemovel\": 66709149.61980641,\n                \"id\": 78749239.103773,\n                \"nif\": 61045895.463388205,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"foreignKey\": {},\n              \"estado\": {\n                \"nome\": \"anim voluptate sint velit\",\n                \"id\": -71843340.70611334,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"classificacao\": {\n                \"estrelas\": 8022226.659311965,\n                \"data\": \"do aliquip tempor\",\n                \"id\": -54012946.53503115,\n                \"comentario\": \"nulla commodo ex amet\",\n                \"encomendaId\": -17731515.838353217,\n                \"encomenda\": {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                \"foreignKey\": {}\n              },\n              \"itemEncomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"foreignKey\": {},\n            \"produto\": {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n            }\n          }\n        ],\n        \"categoria\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoriaWithRelations detected>\"\n        },\n        \"foreignKey\": {}\n      }\n    ]\n  },\n  {\n    \"nome\": \"nisi voluptate\",\n    \"id\": -29102543.10883458,\n    \"produtos\": [\n      {\n        \"stock\": -5365683.368893489,\n        \"nome\": \"cupidatat velit officia\",\n        \"preco\": 16759991.316468254,\n        \"id\": -86095362.96363199,\n        \"descricao\": \"magna ut velit dolore\",\n        \"categoriaId\": 59263074.086306214,\n        \"itemEncomendas\": [\n          {\n            \"preco_unitario\": -63338208.151369594,\n            \"quantidade\": -45780920.6165106,\n            \"id\": 41430736.603016436,\n            \"encomendaId\": -71790689.06716952,\n            \"produtoId\": -77121346.09808454,\n            \"encomenda\": {\n              \"data\": \"dolor culpa consequat\",\n              \"metodo_pagamento\": \"sunt ipsum\",\n              \"id\": 70450453.76737767,\n              \"observacao\": \"ut do dolor veniam\",\n              \"valor_total\": -40328060.266738676,\n              \"clienteId\": -5240861.3545264155,\n              \"estadoId\": -66791946.766564086,\n              \"cliente\": {\n                \"nome\": \"dolor Duis\",\n                \"morada\": \"cupidatat occaecat deserunt ut\",\n                \"email\": \"magna sed in\",\n                \"data_nascimento\": \"aute in\",\n                \"palavra_passe\": \"Lorem fugiat ut elit\",\n                \"telemovel\": 36816185.98675102,\n                \"id\": -38953494.73635004,\n                \"nif\": -10907425.171099037,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"foreignKey\": {},\n              \"estado\": {\n                \"nome\": \"dolore sed non\",\n                \"id\": -82299213.41367441,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"classificacao\": {\n                \"estrelas\": 33782360.9646799,\n                \"data\": \"in irure ad\",\n                \"id\": -12107089.580917314,\n                \"comentario\": \"eu labore Lorem deserunt\",\n                \"encomendaId\": 55355032.48320642,\n                \"encomenda\": {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                \"foreignKey\": {}\n              },\n              \"itemEncomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"foreignKey\": {},\n            \"produto\": {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n            }\n          },\n          {\n            \"preco_unitario\": 22549235.711956233,\n            \"quantidade\": -69202571.16951643,\n            \"id\": 12614588.505752832,\n            \"encomendaId\": -64168630.21419479,\n            \"produtoId\": 6976889.507354185,\n            \"encomenda\": {\n              \"data\": \"officia sunt tempor ad\",\n              \"metodo_pagamento\": \"deserunt\",\n              \"id\": -96939370.24373111,\n              \"observacao\": \"id\",\n              \"valor_total\": -19893626.686516225,\n              \"clienteId\": -31880367.71204157,\n              \"estadoId\": -91290307.30880836,\n              \"cliente\": {\n                \"nome\": \"deserunt ad\",\n                \"morada\": \"eiusmod nulla aliqua consectetur\",\n                \"email\": \"proident est in anim\",\n                \"data_nascimento\": \"eu non\",\n                \"palavra_passe\": \"\",\n                \"telemovel\": 48722100.93480739,\n                \"id\": 59008229.7712259,\n                \"nif\": -44685010.711511984,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"foreignKey\": {},\n              \"estado\": {\n                \"nome\": \"sint magna adipisicing\",\n                \"id\": 71236173.00314113,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"classificacao\": {\n                \"estrelas\": 36100195.49825862,\n                \"data\": \"aliqua ut ut\",\n                \"id\": 57378521.89729726,\n                \"comentario\": \"quis amet\",\n                \"encomendaId\": 59429414.34247878,\n                \"encomenda\": {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                \"foreignKey\": {}\n              },\n              \"itemEncomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"foreignKey\": {},\n            \"produto\": {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n            }\n          }\n        ],\n        \"categoria\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoriaWithRelations detected>\"\n        },\n        \"foreignKey\": {}\n      },\n      {\n        \"stock\": -88267981.30281031,\n        \"nome\": \"magna sint\",\n        \"preco\": 76720481.85775834,\n        \"id\": 66404632.12947339,\n        \"descricao\": \"ea Lorem\",\n        \"categoriaId\": -67510881.842639,\n        \"itemEncomendas\": [\n          {\n            \"preco_unitario\": -40424509.455417424,\n            \"quantidade\": -4367982.445589289,\n            \"id\": -51907012.79461827,\n            \"encomendaId\": 58669886.788466305,\n            \"produtoId\": -64948416.9684305,\n            \"encomenda\": {\n              \"data\": \"consectet\",\n              \"metodo_pagamento\": \"elit sunt\",\n              \"id\": -99872130.22274788,\n              \"observacao\": \"in\",\n              \"valor_total\": -12360562.442516804,\n              \"clienteId\": 44782079.63749385,\n              \"estadoId\": -41121389.30550402,\n              \"cliente\": {\n                \"nome\": \"sint deserunt irure\",\n                \"morada\": \"sed nostrud tempor sint\",\n                \"email\": \"reprehenderit Ut elit sint cillum\",\n                \"data_nascimento\": \"culpa occaecat\",\n                \"palavra_passe\": \"Ut ex cillum ad\",\n                \"telemovel\": 42172147.630327225,\n                \"id\": -14719091.471599638,\n                \"nif\": -66591300.91051404,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"foreignKey\": {},\n              \"estado\": {\n                \"nome\": \"exercitation\",\n                \"id\": -83708887.01372539,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"classificacao\": {\n                \"estrelas\": -3205303.199751526,\n                \"data\": \"ut sed laborum\",\n                \"id\": -30576423.993408278,\n                \"comentario\": \"amet ea consequat\",\n                \"encomendaId\": -89548202.7925889,\n                \"encomenda\": {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                \"foreignKey\": {}\n              },\n              \"itemEncomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"foreignKey\": {},\n            \"produto\": {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n            }\n          },\n          {\n            \"preco_unitario\": 65249072.72460747,\n            \"quantidade\": 26705287.318719864,\n            \"id\": -79115611.55715217,\n            \"encomendaId\": 49247204.74674156,\n            \"produtoId\": 43801705.67480749,\n            \"encomenda\": {\n              \"data\": \"dolor esse tempor cillum labore\",\n              \"metodo_pagamento\": \"non cillum quis\",\n              \"id\": 92963441.06711313,\n              \"observacao\": \"pariatur ipsum aliqu\",\n              \"valor_total\": -84029527.83096804,\n              \"clienteId\": 99421904.50854018,\n              \"estadoId\": 59571051.28799757,\n              \"cliente\": {\n                \"nome\": \"officia cupidatat quis\",\n                \"morada\": \"eu ex in\",\n                \"email\": \"fugiat minim\",\n                \"data_nascimento\": \"reprehenderit non ad\",\n                \"palavra_passe\": \"quis enim\",\n                \"telemovel\": -80138499.31797035,\n                \"id\": -99755164.56811984,\n                \"nif\": 20419196.683716476,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"foreignKey\": {},\n              \"estado\": {\n                \"nome\": \"ea dolore\",\n                \"id\": -51999831.44281304,\n                \"encomendas\": [\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  },\n                  {\n                    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                  }\n                ]\n              },\n              \"classificacao\": {\n                \"estrelas\": 18326445.201593652,\n                \"data\": \"sint\",\n                \"id\": 40145274.55525559,\n                \"comentario\": \"nisi adipisicing Lorem Du\",\n                \"encomendaId\": 54865222.0770812,\n                \"encomenda\": {\n                  \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n                },\n                \"foreignKey\": {}\n              },\n              \"itemEncomendas\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n                }\n              ]\n            },\n            \"foreignKey\": {},\n            \"produto\": {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n            }\n          }\n        ],\n        \"categoria\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoriaWithRelations detected>\"\n        },\n        \"foreignKey\": {}\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "classificacaos",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Classificacao Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/classificacaos/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classificacaos",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Classificacao model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/classificacaos/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"classificacaos",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": 74428135.2197209\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "encomenda",
+							"item": [
+								{
+									"name": "Classificacao Encomenda Controller.get Encomenda",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/classificacaos/:id/encomenda",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"classificacaos",
+												":id",
+												"encomenda"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Encomenda belonging to Classificacao",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/classificacaos/:id/encomenda",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"classificacaos",
+														":id",
+														"encomenda"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"data\": \"eiusmod \",\n  \"metodo_pagamento\": \"nulla ea\",\n  \"id\": -72590053.8565917,\n  \"observacao\": \"aliqua tempor laborum cillum velit\",\n  \"valor_total\": 10587058.609831467,\n  \"clienteId\": -83454202.28638494,\n  \"estadoId\": 10207683.634636536\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Classificacao Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 36349724.51989791,\n  \"estrelas\": -33534442.943979137,\n  \"comentario\": \"fugiat amet ullamco laboris\",\n  \"data\": \"non aliquip\",\n  \"encomendaId\": -15362632.450866446\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/classificacaos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classificacaos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 36349724.51989791,\n  \"estrelas\": -33534442.943979137,\n  \"comentario\": \"fugiat amet ullamco laboris\",\n  \"data\": \"non aliquip\",\n  \"encomendaId\": -15362632.450866446\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/classificacaos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"classificacaos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Classificacao PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Classificacao Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/classificacaos/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classificacaos",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Classificacao model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/classificacaos/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"classificacaos",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"estrelas\": 62659947.648783386,\n  \"data\": \"ipsum id\",\n  \"id\": 60006609.632696,\n  \"comentario\": \"laborum\",\n  \"encomendaId\": 12061279.376673311,\n  \"encomenda\": {\n    \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n  },\n  \"foreignKey\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Classificacao Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/classificacaos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classificacaos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/classificacaos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"classificacaos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Classificacao DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Classificacao Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"estrelas\": 95070750.25968263,\n  \"data\": \"deserunt sit\",\n  \"comentario\": \"labo\",\n  \"encomendaId\": -12118351.68427071\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/classificacaos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"classificacaos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Classificacao model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"estrelas\": 95070750.25968263,\n  \"data\": \"deserunt sit\",\n  \"comentario\": \"labo\",\n  \"encomendaId\": -12118351.68427071\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/classificacaos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classificacaos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"estrelas\": 10401499.446756274,\n  \"data\": \"laborum non ea\",\n  \"id\": -76606100.32842383,\n  \"comentario\": \"cupidatat cillum reprehenderit\",\n  \"encomendaId\": -38231164.99603665\n}"
+						}
+					]
+				},
+				{
+					"name": "Classificacao Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/classificacaos?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"classificacaos"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Classificacao model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/classificacaos?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classificacaos"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"estrelas\": 45173671.02041933,\n    \"data\": \"velit enim\",\n    \"id\": 13932057.366637453,\n    \"comentario\": \"dolor am\",\n    \"encomendaId\": 82326840.66289058,\n    \"encomenda\": {\n      \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n    },\n    \"foreignKey\": {}\n  },\n  {\n    \"estrelas\": 29701021.57991308,\n    \"data\": \"magna qui\",\n    \"id\": 72920076.4033449,\n    \"comentario\": \"enim in cupidatat\",\n    \"encomendaId\": -69044171.30330595,\n    \"encomenda\": {\n      \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n    },\n    \"foreignKey\": {}\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "clientes",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Cliente Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/clientes/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clientes",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Cliente model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/clientes/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"clientes",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": 74428135.2197209\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "encomendas",
+							"item": [
+								{
+									"name": "Cliente Encomenda Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"data\": \"do aliquip\",\n  \"metodo_pagamento\": \"officia eiusmod dolor\",\n  \"observacao\": \"culpa ad\",\n  \"valor_total\": 45751960.22800574,\n  \"clienteId\": 7226845.19268176,\n  \"estadoId\": -85296575.76380485\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/clientes/:id/encomendas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"clientes",
+												":id",
+												"encomendas"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Cliente model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"data\": \"do aliquip\",\n  \"metodo_pagamento\": \"officia eiusmod dolor\",\n  \"observacao\": \"culpa ad\",\n  \"valor_total\": 45751960.22800574,\n  \"clienteId\": 7226845.19268176,\n  \"estadoId\": -85296575.76380485\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/clientes/:id/encomendas",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"clientes",
+														":id",
+														"encomendas"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"data\": \"eiusmod \",\n  \"metodo_pagamento\": \"nulla ea\",\n  \"id\": -72590053.8565917,\n  \"observacao\": \"aliqua tempor laborum cillum velit\",\n  \"valor_total\": 10587058.609831467,\n  \"clienteId\": -83454202.28638494,\n  \"estadoId\": 10207683.634636536\n}"
+										}
+									]
+								},
+								{
+									"name": "Cliente Encomenda Controller.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 88918952.06335926,\n  \"data\": \"qui Excepteur aliquip dolore\",\n  \"metodo_pagamento\": \"consectetur labore incididunt\",\n  \"observacao\": \"et m\",\n  \"valor_total\": -92291096.21196643,\n  \"clienteId\": 45137161.96270114,\n  \"estadoId\": 64010728.10758957\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/clientes/:id/encomendas?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"clientes",
+												":id",
+												"encomendas"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Cliente.Encomenda PATCH success count",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 88918952.06335926,\n  \"data\": \"qui Excepteur aliquip dolore\",\n  \"metodo_pagamento\": \"consectetur labore incididunt\",\n  \"observacao\": \"et m\",\n  \"valor_total\": -92291096.21196643,\n  \"clienteId\": 45137161.96270114,\n  \"estadoId\": 64010728.10758957\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/clientes/:id/encomendas?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"clientes",
+														":id",
+														"encomendas"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": 74428135.2197209\n}"
+										}
+									]
+								},
+								{
+									"name": "Cliente Encomenda Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/clientes/:id/encomendas?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"clientes",
+												":id",
+												"encomendas"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Cliente has many Encomenda",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/clientes/:id/encomendas?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"clientes",
+														":id",
+														"encomendas"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"data\": \"dolor id ex laboris eiusmod\",\n    \"metodo_pagamento\": \"molli\",\n    \"id\": -63332331.90044316,\n    \"observacao\": \"ex tempor amet voluptate\",\n    \"valor_total\": -69932469.29905261,\n    \"clienteId\": -85667516.58974177,\n    \"estadoId\": -84480169.55248247\n  },\n  {\n    \"data\": \"incididunt\",\n    \"metodo_pagamento\": \"in\",\n    \"id\": 45109252.01676613,\n    \"observacao\": \"eu Lorem d\",\n    \"valor_total\": -73317350.7307749,\n    \"clienteId\": 45065966.030438036,\n    \"estadoId\": -5079313.651789308\n  }\n]"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Cliente Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"morada\": \"Rua da Alegria 148, 2ºD, Porto\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/clientes/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clientes",
+										"3"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -57900305.318494774,\n  \"nome\": \"proident Excepteur aute\",\n  \"morada\": \"labore cillum culpa anim\",\n  \"email\": \"laborum veniam mollit dolore\",\n  \"data_nascimento\": \"dolore anim dolore\",\n  \"nif\": -18998110.930347428,\n  \"palavra_passe\": \"nulla do culpa officia esse\",\n  \"telemovel\": 18354246.1230803\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/clientes/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"clientes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Cliente PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Cliente Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/clientes/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clientes",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Cliente model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/clientes/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"clientes",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"nome\": \"nostrud consequat\",\n  \"morada\": \"qui incididunt et in\",\n  \"email\": \"id incididunt\",\n  \"data_nascimento\": \"aliquip enim fugiat nisi laboris\",\n  \"palavra_passe\": \"labore Lorem\",\n  \"telemovel\": -30499083.708894894,\n  \"id\": -51350.529519960284,\n  \"nif\": -61653652.10704148,\n  \"encomendas\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Cliente Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/clientes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clientes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/clientes/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"clientes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Cliente DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Cliente Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"dolore mollit ipsum\",\n  \"morada\": \"Excepteur ea\",\n  \"email\": \"aute ea veniam\",\n  \"data_nascimento\": \"nisi\",\n  \"palavra_passe\": \"eu pariatur amet dolor sed\",\n  \"telemovel\": -98409641.30949196,\n  \"nif\": -20032985.60503523\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Cliente model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"dolore mollit ipsum\",\n  \"morada\": \"Excepteur ea\",\n  \"email\": \"aute ea veniam\",\n  \"data_nascimento\": \"nisi\",\n  \"palavra_passe\": \"eu pariatur amet dolor sed\",\n  \"telemovel\": -98409641.30949196,\n  \"nif\": -20032985.60503523\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/clientes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clientes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"nome\": \"nisi veniam amet\",\n  \"morada\": \"sint eu aliquip\",\n  \"email\": \"deserunt amet voluptate esse\",\n  \"data_nascimento\": \"ut consequat nisi\",\n  \"palavra_passe\": \"occaecat est sint no\",\n  \"telemovel\": -16043532.136576474,\n  \"id\": 25950789.963748112,\n  \"nif\": -61791764.63029679\n}"
+						}
+					]
+				},
+				{
+					"name": "Cliente Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/clientes?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Cliente model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/clientes?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clientes"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"nome\": \"occaecat in\",\n    \"morada\": \"laborum do aute\",\n    \"email\": \"laborum consequat sunt elit\",\n    \"data_nascimento\": \"tempor\",\n    \"palavra_passe\": \"aliquip voluptate ut proident enim\",\n    \"telemovel\": -12255831.392307386,\n    \"id\": 79770421.67781052,\n    \"nif\": -38765766.787382685,\n    \"encomendas\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      }\n    ]\n  },\n  {\n    \"nome\": \"ad\",\n    \"morada\": \"culpa sit consectetur dolor\",\n    \"email\": \"cillum\",\n    \"data_nascimento\": \"labore veniam aliqua\",\n    \"palavra_passe\": \"magna sint\",\n    \"telemovel\": -3376612.6044271886,\n    \"id\": -66671431.49150902,\n    \"nif\": 94267413.40314636,\n    \"encomendas\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "encomendas",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Encomenda Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/encomendas/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"encomendas",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Encomenda model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/encomendas/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"encomendas",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": 74428135.2197209\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "classificacao",
+							"item": [
+								{
+									"name": "Encomenda Classificacao Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"estrelas\": 68902411.66615602,\n  \"data\": \"elit aliqua officia adipisicing Excepteur\",\n  \"comentario\": \"elit Duis ut aliqua culpa\",\n  \"encomendaId\": 17473498.817683592\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/encomendas/:id/classificacao",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"encomendas",
+												":id",
+												"classificacao"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Encomenda model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"estrelas\": 68902411.66615602,\n  \"data\": \"elit aliqua officia adipisicing Excepteur\",\n  \"comentario\": \"elit Duis ut aliqua culpa\",\n  \"encomendaId\": 17473498.817683592\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/encomendas/:id/classificacao",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"encomendas",
+														":id",
+														"classificacao"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"estrelas\": 10401499.446756274,\n  \"data\": \"laborum non ea\",\n  \"id\": -76606100.32842383,\n  \"comentario\": \"cupidatat cillum reprehenderit\",\n  \"encomendaId\": -38231164.99603665\n}"
+										}
+									]
+								},
+								{
+									"name": "Encomenda Classificacao Controller.get",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/encomendas/:id/classificacao?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"encomendas",
+												":id",
+												"classificacao"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Encomenda has one Classificacao",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/encomendas/:id/classificacao?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"encomendas",
+														":id",
+														"classificacao"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"estrelas\": 10401499.446756274,\n  \"data\": \"laborum non ea\",\n  \"id\": -76606100.32842383,\n  \"comentario\": \"cupidatat cillum reprehenderit\",\n  \"encomendaId\": -38231164.99603665\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "cliente",
+							"item": [
+								{
+									"name": "Encomenda Cliente Controller.get Cliente",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/encomendas/:id/cliente",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"encomendas",
+												":id",
+												"cliente"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Cliente belonging to Encomenda",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/encomendas/:id/cliente",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"encomendas",
+														":id",
+														"cliente"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"nome\": \"nisi veniam amet\",\n  \"morada\": \"sint eu aliquip\",\n  \"email\": \"deserunt amet voluptate esse\",\n  \"data_nascimento\": \"ut consequat nisi\",\n  \"palavra_passe\": \"occaecat est sint no\",\n  \"telemovel\": -16043532.136576474,\n  \"id\": 25950789.963748112,\n  \"nif\": -61791764.63029679\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "estado",
+							"item": [
+								{
+									"name": "Encomenda Estado Controller.get Estado",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/encomendas/:id/estado",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"encomendas",
+												":id",
+												"estado"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Estado belonging to Encomenda",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/encomendas/:id/estado",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"encomendas",
+														":id",
+														"estado"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"nome\": \"pariatur laboris\",\n  \"id\": 84413556.14718932\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "item-encomendas",
+							"item": [
+								{
+									"name": "Encomenda Item Encomenda Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"preco_unitario\": 71085023.48229301,\n  \"quantidade\": 79540006.56637669,\n  \"encomendaId\": 55460491.90929252,\n  \"produtoId\": -59504271.10316134\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/encomendas/:id/item-encomendas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"encomendas",
+												":id",
+												"item-encomendas"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Encomenda model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"preco_unitario\": 71085023.48229301,\n  \"quantidade\": 79540006.56637669,\n  \"encomendaId\": 55460491.90929252,\n  \"produtoId\": -59504271.10316134\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/encomendas/:id/item-encomendas",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"encomendas",
+														":id",
+														"item-encomendas"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"preco_unitario\": 74803204.9574714,\n  \"quantidade\": -67068087.09394432,\n  \"id\": -1386187.5437295437,\n  \"encomendaId\": 53524680.812193245,\n  \"produtoId\": 16637845.627589792\n}"
+										}
+									]
+								},
+								{
+									"name": "Encomenda Item Encomenda Controller.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"preco_unitario\": 98939575.92721617,\n  \"quantidade\": 95933164.72527152,\n  \"id\": 5004741.554625317,\n  \"encomendaId\": -73832585.76145822,\n  \"produtoId\": -99344973.31540278\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/encomendas/:id/item-encomendas?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"encomendas",
+												":id",
+												"item-encomendas"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Encomenda.ItemEncomenda PATCH success count",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"preco_unitario\": 98939575.92721617,\n  \"quantidade\": 95933164.72527152,\n  \"id\": 5004741.554625317,\n  \"encomendaId\": -73832585.76145822,\n  \"produtoId\": -99344973.31540278\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/encomendas/:id/item-encomendas?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"encomendas",
+														":id",
+														"item-encomendas"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": 74428135.2197209\n}"
+										}
+									]
+								},
+								{
+									"name": "Encomenda Item Encomenda Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/encomendas/:id/item-encomendas?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"encomendas",
+												":id",
+												"item-encomendas"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Encomenda has many ItemEncomenda",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/encomendas/:id/item-encomendas?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"encomendas",
+														":id",
+														"item-encomendas"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"preco_unitario\": -82809313.12828201,\n    \"quantidade\": -83797381.84413101,\n    \"id\": -55560508.05970228,\n    \"encomendaId\": 43053621.118700296,\n    \"produtoId\": -3650255.24896349\n  },\n  {\n    \"preco_unitario\": 48677880.29129723,\n    \"quantidade\": 1740869.4020626396,\n    \"id\": 74006758.2222442,\n    \"encomendaId\": -17349963.58695069,\n    \"produtoId\": -20977167.21399641\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Encomenda Item Encomenda Controller.delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/encomendas/:id/item-encomendas?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"encomendas",
+												":id",
+												"item-encomendas"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Encomenda.ItemEncomenda DELETE success count",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/encomendas/:id/item-encomendas?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"encomendas",
+														":id",
+														"item-encomendas"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": 74428135.2197209\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Encomenda Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"metodo_pagamento\": \"MB Way\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/encomendas/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"encomendas",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 88918952.06335926,\n  \"data\": \"qui Excepteur aliquip dolore\",\n  \"metodo_pagamento\": \"consectetur labore incididunt\",\n  \"observacao\": \"et m\",\n  \"valor_total\": -92291096.21196643,\n  \"clienteId\": 45137161.96270114,\n  \"estadoId\": 64010728.10758957\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/encomendas/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"encomendas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Encomenda PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Encomenda Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/encomendas/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"encomendas",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Encomenda model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/encomendas/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"encomendas",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"data\": \"mollit veniam voluptate laboris\",\n  \"metodo_pagamento\": \"et deserunt non sint labo\",\n  \"id\": 59692554.10190219,\n  \"observacao\": \"dolore deserunt\",\n  \"valor_total\": 99778752.01436558,\n  \"clienteId\": 76488347.6204176,\n  \"estadoId\": 72002641.68753085,\n  \"cliente\": {\n    \"nome\": \"est ipsu\",\n    \"morada\": \"cillum\",\n    \"email\": \"quis esse laboris dolore\",\n    \"data_nascimento\": \"reprehenderit tempo\",\n    \"palavra_passe\": \"nulla dolor cillum\",\n    \"telemovel\": 33503673.911309347,\n    \"id\": 47398815.39574942,\n    \"nif\": 59817782.508187056,\n    \"encomendas\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      }\n    ]\n  },\n  \"foreignKey\": {},\n  \"estado\": {\n    \"nome\": \"Lorem occaecat culpa laborum ut\",\n    \"id\": -26504563.030945867,\n    \"encomendas\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      }\n    ]\n  },\n  \"classificacao\": {\n    \"estrelas\": 60594573.25391352,\n    \"data\": \"esse laboris sint proident labore\",\n    \"id\": 46806991.76609501,\n    \"comentario\": \"Duis\",\n    \"encomendaId\": 29851210.670292526,\n    \"encomenda\": {\n      \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n    },\n    \"foreignKey\": {}\n  },\n  \"itemEncomendas\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Encomenda Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/encomendas?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"encomendas"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Encomenda model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/encomendas?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"encomendas"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"data\": \"veniam laboris deserunt\",\n    \"metodo_pagamento\": \"dolor non ut adipisicing\",\n    \"id\": 69295502.73788765,\n    \"observacao\": \"proident in ut\",\n    \"valor_total\": -19142872.60581565,\n    \"clienteId\": -91654442.23347707,\n    \"estadoId\": 24123908.82604125,\n    \"cliente\": {\n      \"nome\": \"amet ipsum dolore ex in\",\n      \"morada\": \"dolor\",\n      \"email\": \"ad sed fugiat mollit magna\",\n      \"data_nascimento\": \"voluptate\",\n      \"palavra_passe\": \"consequat\",\n      \"telemovel\": -24439583.62261443,\n      \"id\": -19295323.300679535,\n      \"nif\": 22018395.99654019,\n      \"encomendas\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n        }\n      ]\n    },\n    \"foreignKey\": {},\n    \"estado\": {\n      \"nome\": \"Excepteur consectetur\",\n      \"id\": -87658057.31816912,\n      \"encomendas\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n        }\n      ]\n    },\n    \"classificacao\": {\n      \"estrelas\": -44194409.388200164,\n      \"data\": \"est dolore occaecat eu\",\n      \"id\": 18525643.819447964,\n      \"comentario\": \"elit fugiat veniam\",\n      \"encomendaId\": -52693192.42592934,\n      \"encomenda\": {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      },\n      \"foreignKey\": {}\n    },\n    \"itemEncomendas\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n      }\n    ]\n  },\n  {\n    \"data\": \"ipsum velit commodo\",\n    \"metodo_pagamento\": \"in\",\n    \"id\": -63408015.413630635,\n    \"observacao\": \"sed labore reprehenderit Excepteur\",\n    \"valor_total\": -92806544.90969372,\n    \"clienteId\": 59460015.61016515,\n    \"estadoId\": -38018853.87298856,\n    \"cliente\": {\n      \"nome\": \"velit occaecat esse officia ipsum\",\n      \"morada\": \"in dolore Excepteur Lorem\",\n      \"email\": \"consectetur aliquip Duis id dolor\",\n      \"data_nascimento\": \"fugiat\",\n      \"palavra_passe\": \"cupidatat velit non i\",\n      \"telemovel\": -688903.5833278298,\n      \"id\": -29406132.63175957,\n      \"nif\": 69946725.60404158,\n      \"encomendas\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n        }\n      ]\n    },\n    \"foreignKey\": {},\n    \"estado\": {\n      \"nome\": \"occaecat\",\n      \"id\": 32582467.01126142,\n      \"encomendas\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n        }\n      ]\n    },\n    \"classificacao\": {\n      \"estrelas\": 86199148.82282108,\n      \"data\": \"quis consequat mollit in\",\n      \"id\": 42653619.990226954,\n      \"comentario\": \"nos\",\n      \"encomendaId\": -88217426.88835932,\n      \"encomenda\": {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      },\n      \"foreignKey\": {}\n    },\n    \"itemEncomendas\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "estados",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "encomendas",
+							"item": [
+								{
+									"name": "Estado Encomenda Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/estados/:id/encomendas?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"estados",
+												":id",
+												"encomendas"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Estado has many Encomenda",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/estados/:id/encomendas?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"estados",
+														":id",
+														"encomendas"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"data\": \"dolor id ex laboris eiusmod\",\n    \"metodo_pagamento\": \"molli\",\n    \"id\": -63332331.90044316,\n    \"observacao\": \"ex tempor amet voluptate\",\n    \"valor_total\": -69932469.29905261,\n    \"clienteId\": -85667516.58974177,\n    \"estadoId\": -84480169.55248247\n  },\n  {\n    \"data\": \"incididunt\",\n    \"metodo_pagamento\": \"in\",\n    \"id\": 45109252.01676613,\n    \"observacao\": \"eu Lorem d\",\n    \"valor_total\": -73317350.7307749,\n    \"clienteId\": 45065966.030438036,\n    \"estadoId\": -5079313.651789308\n  }\n]"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Estado Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/estados/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"estados",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Estado model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/estados/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"estados",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"nome\": \"ullamco veniam laborum\",\n  \"id\": -5669879.3397744745,\n  \"encomendas\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Estado Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/estados?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"estados"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Estado model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/estados?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"estados"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"nome\": \"deserunt ut dolor non\",\n    \"id\": -58040260.839269206,\n    \"encomendas\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      }\n    ]\n  },\n  {\n    \"nome\": \"in dolore\",\n    \"id\": -29724915.45046307,\n    \"encomendas\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "item-encomendas",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "encomenda",
+							"item": [
+								{
+									"name": "Item Encomenda Encomenda Controller.get Encomenda",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/item-encomendas/:id/encomenda",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"item-encomendas",
+												":id",
+												"encomenda"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Encomenda belonging to ItemEncomenda",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/item-encomendas/:id/encomenda",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"item-encomendas",
+														":id",
+														"encomenda"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"data\": \"eiusmod \",\n  \"metodo_pagamento\": \"nulla ea\",\n  \"id\": -72590053.8565917,\n  \"observacao\": \"aliqua tempor laborum cillum velit\",\n  \"valor_total\": 10587058.609831467,\n  \"clienteId\": -83454202.28638494,\n  \"estadoId\": 10207683.634636536\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "produto",
+							"item": [
+								{
+									"name": "Item Encomenda Produto Controller.get Produto",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/item-encomendas/:id/produto",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"item-encomendas",
+												":id",
+												"produto"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Produto belonging to ItemEncomenda",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/item-encomendas/:id/produto",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"item-encomendas",
+														":id",
+														"produto"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"stock\": -35719122.31631096,\n  \"nome\": \"tempor Excepteur culpa ea\",\n  \"preco\": 89050507.76167932,\n  \"id\": -55053068.39338906,\n  \"descricao\": \"ex ut exercitation culpa occaecat\",\n  \"categoriaId\": -51163598.19991541\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ping",
+			"item": [
+				{
+					"name": "Ping Controller.ping",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/ping",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ping Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/ping",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ping"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"greeting\": \"dolore non cillum\",\n  \"date\": \"in Lorem aliquip dolor\",\n  \"url\": \"qui proident\",\n  \"headers\": {\n    \"Content-Type\": \"in ull\"\n  }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "produtos",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Produto Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/produtos/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Produto model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/produtos/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": 74428135.2197209\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "categoria",
+							"item": [
+								{
+									"name": "Produto Categoria Controller.get Categoria",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:id/categoria",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":id",
+												"categoria"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Categoria belonging to Produto",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/produtos/:id/categoria",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"produtos",
+														":id",
+														"categoria"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"nome\": \"anim labore ipsum sint\",\n  \"id\": 72283234.58775422\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "item-encomendas",
+							"item": [
+								{
+									"name": "Produto Item Encomenda Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:id/item-encomendas?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":id",
+												"item-encomendas"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "17975312.845396236",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Produto has many ItemEncomenda",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/produtos/:id/item-encomendas?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"produtos",
+														":id",
+														"item-encomendas"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"preco_unitario\": -82809313.12828201,\n    \"quantidade\": -83797381.84413101,\n    \"id\": -55560508.05970228,\n    \"encomendaId\": 43053621.118700296,\n    \"produtoId\": -3650255.24896349\n  },\n  {\n    \"preco_unitario\": 48677880.29129723,\n    \"quantidade\": 1740869.4020626396,\n    \"id\": 74006758.2222442,\n    \"encomendaId\": -17349963.58695069,\n    \"produtoId\": -20977167.21399641\n  }\n]"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Produto Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 15953160.234722927,\n  \"stock\": 46550391.18011069,\n  \"nome\": \"cupidatat ut\",\n  \"preco\": 11386274.539787069,\n  \"descricao\": \"qui officia commodo non ad\",\n  \"categoriaId\": -15875592.54767777\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/produtos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 15953160.234722927,\n  \"stock\": 46550391.18011069,\n  \"nome\": \"cupidatat ut\",\n  \"preco\": 11386274.539787069,\n  \"descricao\": \"qui officia commodo non ad\",\n  \"categoriaId\": -15875592.54767777\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Produto PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Produto Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/produtos/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Produto model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"stock\": 80500583.2052612,\n  \"nome\": \"elit incididunt eu ullamco\",\n  \"preco\": 75235574.60060126,\n  \"id\": -14076326.800654337,\n  \"descricao\": \"ea proident eiusmod pariatur\",\n  \"categoriaId\": -54521285.21715944,\n  \"itemEncomendas\": [\n    {\n      \"preco_unitario\": -72347485.86827733,\n      \"quantidade\": -76423366.4875118,\n      \"id\": -2494653.8316471726,\n      \"encomendaId\": -32981681.668729387,\n      \"produtoId\": -77875467.38590762,\n      \"encomenda\": {\n        \"data\": \"pariatur ad mollit\",\n        \"metodo_pagamento\": \"ipsum ullamco Lorem sunt adipisicing\",\n        \"id\": 35260743.752640754,\n        \"observacao\": \"ipsum dolor aute\",\n        \"valor_total\": 38695546.2567741,\n        \"clienteId\": -91137737.61517794,\n        \"estadoId\": 42799677.207301766,\n        \"cliente\": {\n          \"nome\": \"quis elit irure voluptate magna\",\n          \"morada\": \"id officia\",\n          \"email\": \"est aliquip\",\n          \"data_nascimento\": \"enim reprehenderit laboris\",\n          \"palavra_passe\": \"in aute Ut\",\n          \"telemovel\": 48281756.85775569,\n          \"id\": -15721669.520585373,\n          \"nif\": -72705208.85442048,\n          \"encomendas\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n            }\n          ]\n        },\n        \"foreignKey\": {},\n        \"estado\": {\n          \"nome\": \"sed officia\",\n          \"id\": -53821202.49936997,\n          \"encomendas\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n            }\n          ]\n        },\n        \"classificacao\": {\n          \"estrelas\": 52173456.49250716,\n          \"data\": \"incididunt su\",\n          \"id\": -34044896.490888424,\n          \"comentario\": \"et laborum culpa nisi\",\n          \"encomendaId\": 47111745.11358851,\n          \"encomenda\": {\n            \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n          },\n          \"foreignKey\": {}\n        },\n        \"itemEncomendas\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n          }\n        ]\n      },\n      \"foreignKey\": {},\n      \"produto\": {\n        \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n      }\n    },\n    {\n      \"preco_unitario\": 42700428.61653164,\n      \"quantidade\": 50414453.38907558,\n      \"id\": 65326515.27150074,\n      \"encomendaId\": -39653942.83230599,\n      \"produtoId\": 67990837.97236389,\n      \"encomenda\": {\n        \"data\": \"laboris officia sint do aliquip\",\n        \"metodo_pagamento\": \"sed ipsum\",\n        \"id\": -7266729.254055977,\n        \"observacao\": \"occaecat culpa proident sint\",\n        \"valor_total\": 78682371.67006305,\n        \"clienteId\": -683972.397653237,\n        \"estadoId\": -43464654.27571271,\n        \"cliente\": {\n          \"nome\": \"mollit nostrud esse aute\",\n          \"morada\": \"id\",\n          \"email\": \"culpa proident\",\n          \"data_nascimento\": \"aute rep\",\n          \"palavra_passe\": \"dolore irure aute\",\n          \"telemovel\": 53351257.00191313,\n          \"id\": -91384726.45360154,\n          \"nif\": -16960196.405732647,\n          \"encomendas\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n            }\n          ]\n        },\n        \"foreignKey\": {},\n        \"estado\": {\n          \"nome\": \"sunt in quis\",\n          \"id\": 35681618.13171166,\n          \"encomendas\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n            }\n          ]\n        },\n        \"classificacao\": {\n          \"estrelas\": 8066492.438167751,\n          \"data\": \"in aliqua\",\n          \"id\": -76279047.69575498,\n          \"comentario\": \"magna ex\",\n          \"encomendaId\": 75652136.28313851,\n          \"encomenda\": {\n            \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n          },\n          \"foreignKey\": {}\n        },\n        \"itemEncomendas\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n          }\n        ]\n      },\n      \"foreignKey\": {},\n      \"produto\": {\n        \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n      }\n    }\n  ],\n  \"categoria\": {\n    \"value\": \"<Circular reference to #/components/schemas/CategoriaWithRelations detected>\"\n  },\n  \"foreignKey\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Produto Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/produtos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17975312.845396236",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Produto DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Produto Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"stock\": 41890633.656630844,\n  \"nome\": \"cillum ipsum fugiat amet\",\n  \"preco\": -66423102.70192864,\n  \"descricao\": \"elit magna officia dolor\",\n  \"categoriaId\": -33888240.09126621\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/produtos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Produto model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"stock\": 41890633.656630844,\n  \"nome\": \"cillum ipsum fugiat amet\",\n  \"preco\": -66423102.70192864,\n  \"descricao\": \"elit magna officia dolor\",\n  \"categoriaId\": -33888240.09126621\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/produtos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"stock\": -35719122.31631096,\n  \"nome\": \"tempor Excepteur culpa ea\",\n  \"preco\": 89050507.76167932,\n  \"id\": -55053068.39338906,\n  \"descricao\": \"ex ut exercitation culpa occaecat\",\n  \"categoriaId\": -51163598.19991541\n}"
+						}
+					]
+				},
+				{
+					"name": "Produto Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/produtos?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"produtos"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Produto model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/produtos?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"stock\": -26188625.502749473,\n    \"nome\": \"eiusmod\",\n    \"preco\": 24542292.99491684,\n    \"id\": 50656319.41030419,\n    \"descricao\": \"nisi exercitation\",\n    \"categoriaId\": 42508440.29545453,\n    \"itemEncomendas\": [\n      {\n        \"preco_unitario\": -62348647.43015187,\n        \"quantidade\": -70612885.21130793,\n        \"id\": 91736747.42985412,\n        \"encomendaId\": -5306965.250039041,\n        \"produtoId\": 22662781.94050342,\n        \"encomenda\": {\n          \"data\": \"eu dolor elit\",\n          \"metodo_pagamento\": \"qui\",\n          \"id\": 72199305.50444093,\n          \"observacao\": \"do dolore exercitation et magna\",\n          \"valor_total\": 29462068.480422452,\n          \"clienteId\": -25195953.521597624,\n          \"estadoId\": -75018017.2592537,\n          \"cliente\": {\n            \"nome\": \"Excepteur\",\n            \"morada\": \"exercitation ex sint Excepteur\",\n            \"email\": \"non\",\n            \"data_nascimento\": \"cillum sunt\",\n            \"palavra_passe\": \"ullamco nulla\",\n            \"telemovel\": 26902288.171105757,\n            \"id\": 46288010.83135262,\n            \"nif\": 80042663.95311251,\n            \"encomendas\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              }\n            ]\n          },\n          \"foreignKey\": {},\n          \"estado\": {\n            \"nome\": \"minim\",\n            \"id\": -90827565.1987001,\n            \"encomendas\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              }\n            ]\n          },\n          \"classificacao\": {\n            \"estrelas\": -11330897.74003841,\n            \"data\": \"s\",\n            \"id\": -78471978.09964453,\n            \"comentario\": \"cillum consectetur\",\n            \"encomendaId\": -51591649.101289324,\n            \"encomenda\": {\n              \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          },\n          \"itemEncomendas\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n            }\n          ]\n        },\n        \"foreignKey\": {},\n        \"produto\": {\n          \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n        }\n      },\n      {\n        \"preco_unitario\": 47529885.29407087,\n        \"quantidade\": -12574100.267315641,\n        \"id\": 94283476.43093923,\n        \"encomendaId\": -68645346.36737338,\n        \"produtoId\": -22542285.907211214,\n        \"encomenda\": {\n          \"data\": \"elit\",\n          \"metodo_pagamento\": \"nostrud cillum ex\",\n          \"id\": 37831677.73366359,\n          \"observacao\": \"ex sed reprehenderit\",\n          \"valor_total\": -29199754.84622492,\n          \"clienteId\": 17473651.246979356,\n          \"estadoId\": 44620348.5114716,\n          \"cliente\": {\n            \"nome\": \"dolor tempor ex\",\n            \"morada\": \"qui a\",\n            \"email\": \"consequat exercitation Excepteur\",\n            \"data_nascimento\": \"non dolore in ut\",\n            \"palavra_passe\": \"aliqua aute proident labore\",\n            \"telemovel\": -45240187.95371117,\n            \"id\": 33151152.68262145,\n            \"nif\": 15048749.89852789,\n            \"encomendas\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              }\n            ]\n          },\n          \"foreignKey\": {},\n          \"estado\": {\n            \"nome\": \"mollit est\",\n            \"id\": -30221569.147305563,\n            \"encomendas\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              }\n            ]\n          },\n          \"classificacao\": {\n            \"estrelas\": -26096068.97066264,\n            \"data\": \"p\",\n            \"id\": 50013297.06462094,\n            \"comentario\": \"incididunt\",\n            \"encomendaId\": 44200506.75610989,\n            \"encomenda\": {\n              \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          },\n          \"itemEncomendas\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n            }\n          ]\n        },\n        \"foreignKey\": {},\n        \"produto\": {\n          \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n        }\n      }\n    ],\n    \"categoria\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoriaWithRelations detected>\"\n    },\n    \"foreignKey\": {}\n  },\n  {\n    \"stock\": -97518541.10122551,\n    \"nome\": \"proident\",\n    \"preco\": 83824394.05146128,\n    \"id\": 76272953.33714241,\n    \"descricao\": \"velit culpa\",\n    \"categoriaId\": 35274226.09169996,\n    \"itemEncomendas\": [\n      {\n        \"preco_unitario\": -89557118.96653034,\n        \"quantidade\": 82419380.58368352,\n        \"id\": 92893008.29055315,\n        \"encomendaId\": -33825536.85877787,\n        \"produtoId\": 59562293.24924064,\n        \"encomenda\": {\n          \"data\": \"aliquip deserunt in\",\n          \"metodo_pagamento\": \"commodo Lorem\",\n          \"id\": -22620635.006826848,\n          \"observacao\": \"in cupidatat\",\n          \"valor_total\": -80106828.46482249,\n          \"clienteId\": 38750712.6864278,\n          \"estadoId\": 44874298.7117953,\n          \"cliente\": {\n            \"nome\": \"in officia velit\",\n            \"morada\": \"nulla veniam eiusmod\",\n            \"email\": \"dolore elit dolore\",\n            \"data_nascimento\": \"dolore aute cupidatat\",\n            \"palavra_passe\": \"non\",\n            \"telemovel\": 7071219.814423338,\n            \"id\": -59191725.89474071,\n            \"nif\": 18980288.18928905,\n            \"encomendas\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              }\n            ]\n          },\n          \"foreignKey\": {},\n          \"estado\": {\n            \"nome\": \"nisi esse cupidatat eu\",\n            \"id\": -4333862.803463757,\n            \"encomendas\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              }\n            ]\n          },\n          \"classificacao\": {\n            \"estrelas\": -65184688.453554206,\n            \"data\": \"esse labore occaecat Excepteur reprehenderit\",\n            \"id\": -15810782.6333552,\n            \"comentario\": \"mollit \",\n            \"encomendaId\": 46762075.43227574,\n            \"encomenda\": {\n              \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          },\n          \"itemEncomendas\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n            }\n          ]\n        },\n        \"foreignKey\": {},\n        \"produto\": {\n          \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n        }\n      },\n      {\n        \"preco_unitario\": 20475834.31651914,\n        \"quantidade\": -11930838.365863442,\n        \"id\": 67463876.07041946,\n        \"encomendaId\": -29020312.486080706,\n        \"produtoId\": -78818237.01771036,\n        \"encomenda\": {\n          \"data\": \"tempor laboris\",\n          \"metodo_pagamento\": \"ullamco laboris mollit qui\",\n          \"id\": -1388615.5954104066,\n          \"observacao\": \"in do Duis\",\n          \"valor_total\": 26955368.08318147,\n          \"clienteId\": -87901237.06166941,\n          \"estadoId\": 72644568.32419172,\n          \"cliente\": {\n            \"nome\": \"consectetur eu pariatur\",\n            \"morada\": \"aliqua dolor officia Ut nulla\",\n            \"email\": \"in\",\n            \"data_nascimento\": \"tempor\",\n            \"palavra_passe\": \"consectetur nostrud velit consequat officia\",\n            \"telemovel\": -10014129.58123833,\n            \"id\": -36152610.05398436,\n            \"nif\": -94009703.79612042,\n            \"encomendas\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              }\n            ]\n          },\n          \"foreignKey\": {},\n          \"estado\": {\n            \"nome\": \"est incididunt tempor aute velit\",\n            \"id\": -95843564.292784,\n            \"encomendas\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n              }\n            ]\n          },\n          \"classificacao\": {\n            \"estrelas\": 26700936.387156248,\n            \"data\": \"esse incididunt\",\n            \"id\": 39808693.66919121,\n            \"comentario\": \"irure cupidatat consectetur officia ex\",\n            \"encomendaId\": -30580525.534921184,\n            \"encomenda\": {\n              \"value\": \"<Circular reference to #/components/schemas/EncomendaWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          },\n          \"itemEncomendas\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ItemEncomendaWithRelations detected>\"\n            }\n          ]\n        },\n        \"foreignKey\": {},\n        \"produto\": {\n          \"value\": \"<Circular reference to #/components/schemas/ProdutoWithRelations detected>\"\n        }\n      }\n    ],\n    \"categoria\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoriaWithRelations detected>\"\n    },\n    \"foreignKey\": {}\n  }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:3000"
+		}
+	]
+}

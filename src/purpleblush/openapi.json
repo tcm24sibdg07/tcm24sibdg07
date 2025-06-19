@@ -1,0 +1,6271 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "purpleblush",
+    "version": "0.0.1",
+    "description": "purpleblush store",
+    "contact": {}
+  },
+  "paths": {
+    "/categorias/count": {
+      "get": {
+        "x-controller-name": "CategoriaController",
+        "x-operation-name": "count",
+        "tags": [
+          "CategoriaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Categoria.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Categoria>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CategoriaController.count"
+      }
+    },
+    "/categorias/{id}/produtos": {
+      "post": {
+        "x-controller-name": "CategoriaProdutoController",
+        "x-operation-name": "create",
+        "tags": [
+          "CategoriaProdutoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Produto"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewProdutoInCategoria"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CategoriaProdutoController.create"
+      },
+      "patch": {
+        "x-controller-name": "CategoriaProdutoController",
+        "x-operation-name": "patch",
+        "tags": [
+          "CategoriaProdutoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria.Produto PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Produto.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Produto>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProdutoPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CategoriaProdutoController.patch"
+      },
+      "get": {
+        "x-controller-name": "CategoriaProdutoController",
+        "x-operation-name": "find",
+        "tags": [
+          "CategoriaProdutoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Categoria has many Produto",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Produto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CategoriaProdutoController.find"
+      },
+      "delete": {
+        "x-controller-name": "CategoriaProdutoController",
+        "x-operation-name": "delete",
+        "tags": [
+          "CategoriaProdutoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria.Produto DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Produto.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Produto>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CategoriaProdutoController.delete"
+      }
+    },
+    "/categorias/{id}": {
+      "put": {
+        "x-controller-name": "CategoriaController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "CategoriaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Categoria PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Categoria"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CategoriaController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "CategoriaController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "CategoriaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Categoria PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoriaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CategoriaController.updateById"
+      },
+      "get": {
+        "x-controller-name": "CategoriaController",
+        "x-operation-name": "findById",
+        "tags": [
+          "CategoriaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoriaWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Categoria.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CategoriaController.findById"
+      },
+      "delete": {
+        "x-controller-name": "CategoriaController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "CategoriaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Categoria DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "CategoriaController.deleteById"
+      }
+    },
+    "/categorias": {
+      "post": {
+        "x-controller-name": "CategoriaController",
+        "x-operation-name": "create",
+        "tags": [
+          "CategoriaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Categoria"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCategoria"
+              }
+            }
+          }
+        },
+        "operationId": "CategoriaController.create"
+      },
+      "patch": {
+        "x-controller-name": "CategoriaController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "CategoriaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Categoria.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Categoria>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoriaPartial"
+              }
+            }
+          }
+        },
+        "operationId": "CategoriaController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "CategoriaController",
+        "x-operation-name": "find",
+        "tags": [
+          "CategoriaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Categoria model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CategoriaWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Categoria.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CategoriaController.find"
+      }
+    },
+    "/classificacaos/count": {
+      "get": {
+        "x-controller-name": "ClassificacaoController",
+        "x-operation-name": "count",
+        "tags": [
+          "ClassificacaoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Classificacao model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Classificacao.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Classificacao>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ClassificacaoController.count"
+      }
+    },
+    "/classificacaos/{id}/encomenda": {
+      "get": {
+        "x-controller-name": "ClassificacaoEncomendaController",
+        "x-operation-name": "getEncomenda",
+        "tags": [
+          "ClassificacaoEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda belonging to Classificacao",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Encomenda"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "ClassificacaoEncomendaController.getEncomenda"
+      }
+    },
+    "/classificacaos/{id}": {
+      "put": {
+        "x-controller-name": "ClassificacaoController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "ClassificacaoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Classificacao PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Classificacao"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ClassificacaoController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "ClassificacaoController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "ClassificacaoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Classificacao PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClassificacaoPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ClassificacaoController.updateById"
+      },
+      "get": {
+        "x-controller-name": "ClassificacaoController",
+        "x-operation-name": "findById",
+        "tags": [
+          "ClassificacaoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Classificacao model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClassificacaoWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Classificacao.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ClassificacaoController.findById"
+      },
+      "delete": {
+        "x-controller-name": "ClassificacaoController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "ClassificacaoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Classificacao DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "ClassificacaoController.deleteById"
+      }
+    },
+    "/classificacaos": {
+      "post": {
+        "x-controller-name": "ClassificacaoController",
+        "x-operation-name": "create",
+        "tags": [
+          "ClassificacaoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Classificacao model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Classificacao"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewClassificacao"
+              }
+            }
+          }
+        },
+        "operationId": "ClassificacaoController.create"
+      },
+      "patch": {
+        "x-controller-name": "ClassificacaoController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "ClassificacaoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Classificacao PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Classificacao.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Classificacao>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClassificacaoPartial"
+              }
+            }
+          }
+        },
+        "operationId": "ClassificacaoController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "ClassificacaoController",
+        "x-operation-name": "find",
+        "tags": [
+          "ClassificacaoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Classificacao model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClassificacaoWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Classificacao.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ClassificacaoController.find"
+      }
+    },
+    "/clientes/count": {
+      "get": {
+        "x-controller-name": "ClienteController",
+        "x-operation-name": "count",
+        "tags": [
+          "ClienteController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cliente model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Cliente.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Cliente>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ClienteController.count"
+      }
+    },
+    "/clientes/{id}/encomendas": {
+      "post": {
+        "x-controller-name": "ClienteEncomendaController",
+        "x-operation-name": "create",
+        "tags": [
+          "ClienteEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cliente model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Encomenda"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewEncomendaInCliente"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ClienteEncomendaController.create"
+      },
+      "patch": {
+        "x-controller-name": "ClienteEncomendaController",
+        "x-operation-name": "patch",
+        "tags": [
+          "ClienteEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cliente.Encomenda PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Encomenda.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Encomenda>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncomendaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ClienteEncomendaController.patch"
+      },
+      "get": {
+        "x-controller-name": "ClienteEncomendaController",
+        "x-operation-name": "find",
+        "tags": [
+          "ClienteEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Cliente has many Encomenda",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Encomenda"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ClienteEncomendaController.find"
+      },
+      "delete": {
+        "x-controller-name": "ClienteEncomendaController",
+        "x-operation-name": "delete",
+        "tags": [
+          "ClienteEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cliente.Encomenda DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Encomenda.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Encomenda>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ClienteEncomendaController.delete"
+      }
+    },
+    "/clientes/{id}": {
+      "put": {
+        "x-controller-name": "ClienteController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "ClienteController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Cliente PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cliente"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ClienteController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "ClienteController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "ClienteController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Cliente PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientePartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ClienteController.updateById"
+      },
+      "get": {
+        "x-controller-name": "ClienteController",
+        "x-operation-name": "findById",
+        "tags": [
+          "ClienteController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cliente model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClienteWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ClienteController.findById"
+      },
+      "delete": {
+        "x-controller-name": "ClienteController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "ClienteController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Cliente DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "ClienteController.deleteById"
+      }
+    },
+    "/clientes": {
+      "post": {
+        "x-controller-name": "ClienteController",
+        "x-operation-name": "create",
+        "tags": [
+          "ClienteController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cliente model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCliente"
+              }
+            }
+          }
+        },
+        "operationId": "ClienteController.create"
+      },
+      "patch": {
+        "x-controller-name": "ClienteController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "ClienteController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cliente PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Cliente.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Cliente>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientePartial"
+              }
+            }
+          }
+        },
+        "operationId": "ClienteController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "ClienteController",
+        "x-operation-name": "find",
+        "tags": [
+          "ClienteController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Cliente model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClienteWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ClienteController.find"
+      }
+    },
+    "/encomendas/count": {
+      "get": {
+        "x-controller-name": "EncomendaController",
+        "x-operation-name": "count",
+        "tags": [
+          "EncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Encomenda.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Encomenda>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EncomendaController.count"
+      }
+    },
+    "/encomendas/{id}/classificacao": {
+      "post": {
+        "x-controller-name": "EncomendaClassificacaoController",
+        "x-operation-name": "create",
+        "tags": [
+          "EncomendaClassificacaoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Classificacao"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewClassificacaoInEncomenda"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EncomendaClassificacaoController.create"
+      },
+      "patch": {
+        "x-controller-name": "EncomendaClassificacaoController",
+        "x-operation-name": "patch",
+        "tags": [
+          "EncomendaClassificacaoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda.Classificacao PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Classificacao.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Classificacao>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClassificacaoPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EncomendaClassificacaoController.patch"
+      },
+      "get": {
+        "x-controller-name": "EncomendaClassificacaoController",
+        "x-operation-name": "get",
+        "tags": [
+          "EncomendaClassificacaoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda has one Classificacao",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Classificacao"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EncomendaClassificacaoController.get"
+      },
+      "delete": {
+        "x-controller-name": "EncomendaClassificacaoController",
+        "x-operation-name": "delete",
+        "tags": [
+          "EncomendaClassificacaoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda.Classificacao DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Classificacao.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Classificacao>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EncomendaClassificacaoController.delete"
+      }
+    },
+    "/encomendas/{id}/cliente": {
+      "get": {
+        "x-controller-name": "EncomendaClienteController",
+        "x-operation-name": "getCliente",
+        "tags": [
+          "EncomendaClienteController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cliente belonging to Encomenda",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "EncomendaClienteController.getCliente"
+      }
+    },
+    "/encomendas/{id}/estado": {
+      "get": {
+        "x-controller-name": "EncomendaEstadoController",
+        "x-operation-name": "getEstado",
+        "tags": [
+          "EncomendaEstadoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Estado belonging to Encomenda",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Estado"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "EncomendaEstadoController.getEstado"
+      }
+    },
+    "/encomendas/{id}/item-encomendas": {
+      "post": {
+        "x-controller-name": "EncomendaItemEncomendaController",
+        "x-operation-name": "create",
+        "tags": [
+          "EncomendaItemEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemEncomenda"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewItemEncomendaInEncomenda"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EncomendaItemEncomendaController.create"
+      },
+      "patch": {
+        "x-controller-name": "EncomendaItemEncomendaController",
+        "x-operation-name": "patch",
+        "tags": [
+          "EncomendaItemEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda.ItemEncomenda PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "ItemEncomenda.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<ItemEncomenda>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ItemEncomendaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EncomendaItemEncomendaController.patch"
+      },
+      "get": {
+        "x-controller-name": "EncomendaItemEncomendaController",
+        "x-operation-name": "find",
+        "tags": [
+          "EncomendaItemEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Encomenda has many ItemEncomenda",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemEncomenda"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EncomendaItemEncomendaController.find"
+      },
+      "delete": {
+        "x-controller-name": "EncomendaItemEncomendaController",
+        "x-operation-name": "delete",
+        "tags": [
+          "EncomendaItemEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda.ItemEncomenda DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "ItemEncomenda.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<ItemEncomenda>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EncomendaItemEncomendaController.delete"
+      }
+    },
+    "/encomendas/{id}": {
+      "put": {
+        "x-controller-name": "EncomendaController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "EncomendaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Encomenda PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Encomenda"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EncomendaController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "EncomendaController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "EncomendaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Encomenda PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncomendaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EncomendaController.updateById"
+      },
+      "get": {
+        "x-controller-name": "EncomendaController",
+        "x-operation-name": "findById",
+        "tags": [
+          "EncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EncomendaWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Encomenda.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EncomendaController.findById"
+      },
+      "delete": {
+        "x-controller-name": "EncomendaController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "EncomendaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Encomenda DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "EncomendaController.deleteById"
+      }
+    },
+    "/encomendas": {
+      "post": {
+        "x-controller-name": "EncomendaController",
+        "x-operation-name": "create",
+        "tags": [
+          "EncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Encomenda"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewEncomenda"
+              }
+            }
+          }
+        },
+        "operationId": "EncomendaController.create"
+      },
+      "patch": {
+        "x-controller-name": "EncomendaController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "EncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Encomenda.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Encomenda>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncomendaPartial"
+              }
+            }
+          }
+        },
+        "operationId": "EncomendaController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "EncomendaController",
+        "x-operation-name": "find",
+        "tags": [
+          "EncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Encomenda model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EncomendaWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Encomenda.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EncomendaController.find"
+      }
+    },
+    "/estados/count": {
+      "get": {
+        "x-controller-name": "EstadoController",
+        "x-operation-name": "count",
+        "tags": [
+          "EstadoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Estado model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Estado.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Estado>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EstadoController.count"
+      }
+    },
+    "/estados/{id}/encomendas": {
+      "post": {
+        "x-controller-name": "EstadoEncomendaController",
+        "x-operation-name": "create",
+        "tags": [
+          "EstadoEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Estado model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Encomenda"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewEncomendaInEstado"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EstadoEncomendaController.create"
+      },
+      "patch": {
+        "x-controller-name": "EstadoEncomendaController",
+        "x-operation-name": "patch",
+        "tags": [
+          "EstadoEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Estado.Encomenda PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Encomenda.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Encomenda>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncomendaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EstadoEncomendaController.patch"
+      },
+      "get": {
+        "x-controller-name": "EstadoEncomendaController",
+        "x-operation-name": "find",
+        "tags": [
+          "EstadoEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Estado has many Encomenda",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Encomenda"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EstadoEncomendaController.find"
+      },
+      "delete": {
+        "x-controller-name": "EstadoEncomendaController",
+        "x-operation-name": "delete",
+        "tags": [
+          "EstadoEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Estado.Encomenda DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Encomenda.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Encomenda>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EstadoEncomendaController.delete"
+      }
+    },
+    "/estados/{id}": {
+      "put": {
+        "x-controller-name": "EstadoController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "EstadoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Estado PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Estado"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EstadoController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "EstadoController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "EstadoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Estado PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstadoPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EstadoController.updateById"
+      },
+      "get": {
+        "x-controller-name": "EstadoController",
+        "x-operation-name": "findById",
+        "tags": [
+          "EstadoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Estado model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstadoWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Estado.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EstadoController.findById"
+      },
+      "delete": {
+        "x-controller-name": "EstadoController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "EstadoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Estado DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "EstadoController.deleteById"
+      }
+    },
+    "/estados": {
+      "post": {
+        "x-controller-name": "EstadoController",
+        "x-operation-name": "create",
+        "tags": [
+          "EstadoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Estado model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Estado"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewEstado"
+              }
+            }
+          }
+        },
+        "operationId": "EstadoController.create"
+      },
+      "patch": {
+        "x-controller-name": "EstadoController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "EstadoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Estado PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Estado.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Estado>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstadoPartial"
+              }
+            }
+          }
+        },
+        "operationId": "EstadoController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "EstadoController",
+        "x-operation-name": "find",
+        "tags": [
+          "EstadoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Estado model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EstadoWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Estado.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EstadoController.find"
+      }
+    },
+    "/item-encomendas/count": {
+      "get": {
+        "x-controller-name": "ItemencomendaController",
+        "x-operation-name": "count",
+        "tags": [
+          "ItemencomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "ItemEncomenda model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "ItemEncomenda.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<ItemEncomenda>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ItemencomendaController.count"
+      }
+    },
+    "/item-encomendas/{id}/encomenda": {
+      "get": {
+        "x-controller-name": "ItemEncomendaEncomendaController",
+        "x-operation-name": "getEncomenda",
+        "tags": [
+          "ItemEncomendaEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Encomenda belonging to ItemEncomenda",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Encomenda"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "ItemEncomendaEncomendaController.getEncomenda"
+      }
+    },
+    "/item-encomendas/{id}/produto": {
+      "get": {
+        "x-controller-name": "ItemEncomendaProdutoController",
+        "x-operation-name": "getProduto",
+        "tags": [
+          "ItemEncomendaProdutoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Produto belonging to ItemEncomenda",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Produto"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "ItemEncomendaProdutoController.getProduto"
+      }
+    },
+    "/item-encomendas/{id}": {
+      "put": {
+        "x-controller-name": "ItemencomendaController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "ItemencomendaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "ItemEncomenda PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ItemEncomenda"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ItemencomendaController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "ItemencomendaController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "ItemencomendaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "ItemEncomenda PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ItemEncomendaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ItemencomendaController.updateById"
+      },
+      "get": {
+        "x-controller-name": "ItemencomendaController",
+        "x-operation-name": "findById",
+        "tags": [
+          "ItemencomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "ItemEncomenda model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemEncomendaWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemEncomenda.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ItemencomendaController.findById"
+      },
+      "delete": {
+        "x-controller-name": "ItemencomendaController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "ItemencomendaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "ItemEncomenda DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "ItemencomendaController.deleteById"
+      }
+    },
+    "/item-encomendas": {
+      "post": {
+        "x-controller-name": "ItemencomendaController",
+        "x-operation-name": "create",
+        "tags": [
+          "ItemencomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "ItemEncomenda model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemEncomenda"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewItemEncomenda"
+              }
+            }
+          }
+        },
+        "operationId": "ItemencomendaController.create"
+      },
+      "patch": {
+        "x-controller-name": "ItemencomendaController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "ItemencomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "ItemEncomenda PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "ItemEncomenda.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<ItemEncomenda>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ItemEncomendaPartial"
+              }
+            }
+          }
+        },
+        "operationId": "ItemencomendaController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "ItemencomendaController",
+        "x-operation-name": "find",
+        "tags": [
+          "ItemencomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of ItemEncomenda model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemEncomendaWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemEncomenda.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ItemencomendaController.find"
+      }
+    },
+    "/ping": {
+      "get": {
+        "x-controller-name": "PingController",
+        "x-operation-name": "ping",
+        "tags": [
+          "PingController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ping Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PingResponse"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "PingController.ping"
+      }
+    },
+    "/produtos/count": {
+      "get": {
+        "x-controller-name": "ProdutoController",
+        "x-operation-name": "count",
+        "tags": [
+          "ProdutoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Produto model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Produto.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Produto>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ProdutoController.count"
+      }
+    },
+    "/produtos/{id}/categoria": {
+      "get": {
+        "x-controller-name": "ProdutoCategoriaController",
+        "x-operation-name": "getCategoria",
+        "tags": [
+          "ProdutoCategoriaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria belonging to Produto",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Categoria"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "ProdutoCategoriaController.getCategoria"
+      }
+    },
+    "/produtos/{id}/item-encomendas": {
+      "post": {
+        "x-controller-name": "ProdutoItemEncomendaController",
+        "x-operation-name": "create",
+        "tags": [
+          "ProdutoItemEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Produto model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemEncomenda"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewItemEncomendaInProduto"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ProdutoItemEncomendaController.create"
+      },
+      "patch": {
+        "x-controller-name": "ProdutoItemEncomendaController",
+        "x-operation-name": "patch",
+        "tags": [
+          "ProdutoItemEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Produto.ItemEncomenda PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "ItemEncomenda.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<ItemEncomenda>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ItemEncomendaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ProdutoItemEncomendaController.patch"
+      },
+      "get": {
+        "x-controller-name": "ProdutoItemEncomendaController",
+        "x-operation-name": "find",
+        "tags": [
+          "ProdutoItemEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Produto has many ItemEncomenda",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemEncomenda"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ProdutoItemEncomendaController.find"
+      },
+      "delete": {
+        "x-controller-name": "ProdutoItemEncomendaController",
+        "x-operation-name": "delete",
+        "tags": [
+          "ProdutoItemEncomendaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Produto.ItemEncomenda DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "ItemEncomenda.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<ItemEncomenda>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ProdutoItemEncomendaController.delete"
+      }
+    },
+    "/produtos/{id}": {
+      "put": {
+        "x-controller-name": "ProdutoController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "ProdutoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Produto PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Produto"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ProdutoController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "ProdutoController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "ProdutoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Produto PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProdutoPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ProdutoController.updateById"
+      },
+      "get": {
+        "x-controller-name": "ProdutoController",
+        "x-operation-name": "findById",
+        "tags": [
+          "ProdutoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Produto model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Produto.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ProdutoController.findById"
+      },
+      "delete": {
+        "x-controller-name": "ProdutoController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "ProdutoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Produto DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "ProdutoController.deleteById"
+      }
+    },
+    "/produtos": {
+      "post": {
+        "x-controller-name": "ProdutoController",
+        "x-operation-name": "create",
+        "tags": [
+          "ProdutoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Produto model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Produto"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewProduto"
+              }
+            }
+          }
+        },
+        "operationId": "ProdutoController.create"
+      },
+      "patch": {
+        "x-controller-name": "ProdutoController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "ProdutoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Produto PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Produto.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Produto>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProdutoPartial"
+              }
+            }
+          }
+        },
+        "operationId": "ProdutoController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "ProdutoController",
+        "x-operation-name": "find",
+        "tags": [
+          "ProdutoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Produto model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProdutoWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Produto.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ProdutoController.find"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:3000"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Produto": {
+        "title": "Produto",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "stock": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "preco": {
+            "type": "number"
+          },
+          "descricao": {
+            "type": "string"
+          },
+          "categoriaId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "stock",
+          "nome",
+          "preco"
+        ],
+        "additionalProperties": false
+      },
+      "NewProduto": {
+        "title": "NewProduto",
+        "type": "object",
+        "description": "(tsType: Omit<Produto, 'id'>, schemaOptions: { title: 'NewProduto', exclude: [ 'id' ] })",
+        "properties": {
+          "stock": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "preco": {
+            "type": "number"
+          },
+          "descricao": {
+            "type": "string"
+          },
+          "categoriaId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "stock",
+          "nome",
+          "preco"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Produto, 'id'>"
+      },
+      "ClienteWithRelations": {
+        "title": "ClienteWithRelations",
+        "type": "object",
+        "description": "(tsType: ClienteWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "morada": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "data_nascimento": {
+            "type": "string"
+          },
+          "nif": {
+            "type": "number"
+          },
+          "palavra_passe": {
+            "type": "string"
+          },
+          "telemovel": {
+            "type": "number"
+          },
+          "encomendas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EncomendaWithRelations"
+            }
+          }
+        },
+        "required": [
+          "nome",
+          "morada",
+          "email",
+          "data_nascimento",
+          "palavra_passe",
+          "telemovel"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "ClienteWithRelations"
+      },
+      "EstadoWithRelations": {
+        "title": "EstadoWithRelations",
+        "type": "object",
+        "description": "(tsType: EstadoWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "encomendas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EncomendaWithRelations"
+            }
+          }
+        },
+        "required": [
+          "nome"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "EstadoWithRelations"
+      },
+      "ClassificacaoWithRelations": {
+        "title": "ClassificacaoWithRelations",
+        "type": "object",
+        "description": "(tsType: ClassificacaoWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "estrelas": {
+            "type": "number"
+          },
+          "comentario": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          },
+          "encomendaId": {
+            "type": "number"
+          },
+          "encomenda": {
+            "$ref": "#/components/schemas/EncomendaWithRelations"
+          },
+          "foreignKey": {}
+        },
+        "required": [
+          "estrelas",
+          "data"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "ClassificacaoWithRelations"
+      },
+      "EncomendaWithRelations": {
+        "title": "EncomendaWithRelations",
+        "type": "object",
+        "description": "(tsType: EncomendaWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "data": {
+            "type": "string"
+          },
+          "metodo_pagamento": {
+            "type": "string"
+          },
+          "observacao": {
+            "type": "string"
+          },
+          "valor_total": {
+            "type": "number"
+          },
+          "clienteId": {
+            "type": "number"
+          },
+          "estadoId": {
+            "type": "number"
+          },
+          "cliente": {
+            "$ref": "#/components/schemas/ClienteWithRelations"
+          },
+          "foreignKey": {},
+          "estado": {
+            "$ref": "#/components/schemas/EstadoWithRelations"
+          },
+          "classificacao": {
+            "$ref": "#/components/schemas/ClassificacaoWithRelations"
+          },
+          "itemEncomendas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemEncomendaWithRelations"
+            }
+          }
+        },
+        "required": [
+          "data",
+          "metodo_pagamento"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "EncomendaWithRelations"
+      },
+      "ItemEncomendaWithRelations": {
+        "title": "ItemEncomendaWithRelations",
+        "type": "object",
+        "description": "(tsType: ItemEncomendaWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "preco_unitario": {
+            "type": "number"
+          },
+          "quantidade": {
+            "type": "number"
+          },
+          "id": {
+            "type": "number"
+          },
+          "encomendaId": {
+            "type": "number"
+          },
+          "produtoId": {
+            "type": "number"
+          },
+          "encomenda": {
+            "$ref": "#/components/schemas/EncomendaWithRelations"
+          },
+          "foreignKey": {},
+          "produto": {
+            "$ref": "#/components/schemas/ProdutoWithRelations"
+          }
+        },
+        "required": [
+          "preco_unitario",
+          "quantidade"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "ItemEncomendaWithRelations"
+      },
+      "CategoriaWithRelations": {
+        "title": "CategoriaWithRelations",
+        "type": "object",
+        "description": "(tsType: CategoriaWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "produtos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProdutoWithRelations"
+            }
+          }
+        },
+        "required": [
+          "nome"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "CategoriaWithRelations"
+      },
+      "ProdutoWithRelations": {
+        "title": "ProdutoWithRelations",
+        "type": "object",
+        "description": "(tsType: ProdutoWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "stock": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "preco": {
+            "type": "number"
+          },
+          "descricao": {
+            "type": "string"
+          },
+          "categoriaId": {
+            "type": "number"
+          },
+          "itemEncomendas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemEncomendaWithRelations"
+            }
+          },
+          "categoria": {
+            "$ref": "#/components/schemas/CategoriaWithRelations"
+          },
+          "foreignKey": {}
+        },
+        "required": [
+          "stock",
+          "nome",
+          "preco"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "ProdutoWithRelations"
+      },
+      "ProdutoPartial": {
+        "title": "ProdutoPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Produto>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "stock": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "preco": {
+            "type": "number"
+          },
+          "descricao": {
+            "type": "string"
+          },
+          "categoriaId": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Produto>"
+      },
+      "ItemEncomenda": {
+        "title": "ItemEncomenda",
+        "type": "object",
+        "properties": {
+          "preco_unitario": {
+            "type": "number"
+          },
+          "quantidade": {
+            "type": "number"
+          },
+          "id": {
+            "type": "number"
+          },
+          "encomendaId": {
+            "type": "number"
+          },
+          "produtoId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "preco_unitario",
+          "quantidade"
+        ],
+        "additionalProperties": false
+      },
+      "NewItemEncomendaInProduto": {
+        "title": "NewItemEncomendaInProduto",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<ItemEncomenda, 'id'>, 'produtoId'>, schemaOptions: { title: 'NewItemEncomendaInProduto', exclude: [ 'id' ], optional: [ 'produtoId' ] })",
+        "properties": {
+          "preco_unitario": {
+            "type": "number"
+          },
+          "quantidade": {
+            "type": "number"
+          },
+          "encomendaId": {
+            "type": "number"
+          },
+          "produtoId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "preco_unitario",
+          "quantidade"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<ItemEncomenda, 'id'>, 'produtoId'>"
+      },
+      "ItemEncomendaPartial": {
+        "title": "ItemEncomendaPartial",
+        "type": "object",
+        "description": "(tsType: Partial<ItemEncomenda>, schemaOptions: { partial: true })",
+        "properties": {
+          "preco_unitario": {
+            "type": "number"
+          },
+          "quantidade": {
+            "type": "number"
+          },
+          "id": {
+            "type": "number"
+          },
+          "encomendaId": {
+            "type": "number"
+          },
+          "produtoId": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<ItemEncomenda>"
+      },
+      "Categoria": {
+        "title": "Categoria",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "nome"
+        ],
+        "additionalProperties": false
+      },
+      "NewItemEncomenda": {
+        "title": "NewItemEncomenda",
+        "type": "object",
+        "description": "(tsType: ItemEncomenda, schemaOptions: { title: 'NewItemEncomenda' })",
+        "properties": {
+          "preco_unitario": {
+            "type": "number"
+          },
+          "quantidade": {
+            "type": "number"
+          },
+          "id": {
+            "type": "number"
+          },
+          "encomendaId": {
+            "type": "number"
+          },
+          "produtoId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "preco_unitario",
+          "quantidade"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "ItemEncomenda"
+      },
+      "Encomenda": {
+        "title": "Encomenda",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "data": {
+            "type": "string"
+          },
+          "metodo_pagamento": {
+            "type": "string"
+          },
+          "observacao": {
+            "type": "string"
+          },
+          "valor_total": {
+            "type": "number"
+          },
+          "clienteId": {
+            "type": "number"
+          },
+          "estadoId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "data",
+          "metodo_pagamento"
+        ],
+        "additionalProperties": false
+      },
+      "Estado": {
+        "title": "Estado",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "nome"
+        ],
+        "additionalProperties": false
+      },
+      "NewEstado": {
+        "title": "NewEstado",
+        "type": "object",
+        "description": "(tsType: Estado, schemaOptions: { title: 'NewEstado' })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "nome"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Estado"
+      },
+      "EstadoPartial": {
+        "title": "EstadoPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Estado>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Estado>"
+      },
+      "NewEncomendaInEstado": {
+        "title": "NewEncomendaInEstado",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Encomenda, 'id'>, 'estadoId'>, schemaOptions: { title: 'NewEncomendaInEstado', exclude: [ 'id' ], optional: [ 'estadoId' ] })",
+        "properties": {
+          "data": {
+            "type": "string"
+          },
+          "metodo_pagamento": {
+            "type": "string"
+          },
+          "observacao": {
+            "type": "string"
+          },
+          "valor_total": {
+            "type": "number"
+          },
+          "clienteId": {
+            "type": "number"
+          },
+          "estadoId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "data",
+          "metodo_pagamento"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Encomenda, 'id'>, 'estadoId'>"
+      },
+      "EncomendaPartial": {
+        "title": "EncomendaPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Encomenda>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "data": {
+            "type": "string"
+          },
+          "metodo_pagamento": {
+            "type": "string"
+          },
+          "observacao": {
+            "type": "string"
+          },
+          "valor_total": {
+            "type": "number"
+          },
+          "clienteId": {
+            "type": "number"
+          },
+          "estadoId": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Encomenda>"
+      },
+      "NewEncomenda": {
+        "title": "NewEncomenda",
+        "type": "object",
+        "description": "(tsType: Omit<Encomenda, 'id'>, schemaOptions: { title: 'NewEncomenda', exclude: [ 'id' ] })",
+        "properties": {
+          "data": {
+            "type": "string"
+          },
+          "metodo_pagamento": {
+            "type": "string"
+          },
+          "observacao": {
+            "type": "string"
+          },
+          "valor_total": {
+            "type": "number"
+          },
+          "clienteId": {
+            "type": "number"
+          },
+          "estadoId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "data",
+          "metodo_pagamento"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Encomenda, 'id'>"
+      },
+      "NewItemEncomendaInEncomenda": {
+        "title": "NewItemEncomendaInEncomenda",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<ItemEncomenda, 'id'>, 'encomendaId'>, schemaOptions: { title: 'NewItemEncomendaInEncomenda', exclude: [ 'id' ], optional: [ 'encomendaId' ] })",
+        "properties": {
+          "preco_unitario": {
+            "type": "number"
+          },
+          "quantidade": {
+            "type": "number"
+          },
+          "encomendaId": {
+            "type": "number"
+          },
+          "produtoId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "preco_unitario",
+          "quantidade"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<ItemEncomenda, 'id'>, 'encomendaId'>"
+      },
+      "Cliente": {
+        "title": "Cliente",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "morada": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "data_nascimento": {
+            "type": "string"
+          },
+          "nif": {
+            "type": "number"
+          },
+          "palavra_passe": {
+            "type": "string"
+          },
+          "telemovel": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "nome",
+          "morada",
+          "email",
+          "data_nascimento",
+          "palavra_passe",
+          "telemovel"
+        ],
+        "additionalProperties": false
+      },
+      "Classificacao": {
+        "title": "Classificacao",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "estrelas": {
+            "type": "number"
+          },
+          "comentario": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          },
+          "encomendaId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "estrelas",
+          "data"
+        ],
+        "additionalProperties": false
+      },
+      "NewClassificacaoInEncomenda": {
+        "title": "NewClassificacaoInEncomenda",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Classificacao, 'id'>, 'encomendaId'>, schemaOptions: { title: 'NewClassificacaoInEncomenda', exclude: [ 'id' ], optional: [ 'encomendaId' ] })",
+        "properties": {
+          "estrelas": {
+            "type": "number"
+          },
+          "comentario": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          },
+          "encomendaId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "estrelas",
+          "data"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Classificacao, 'id'>, 'encomendaId'>"
+      },
+      "ClassificacaoPartial": {
+        "title": "ClassificacaoPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Classificacao>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "estrelas": {
+            "type": "number"
+          },
+          "comentario": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          },
+          "encomendaId": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Classificacao>"
+      },
+      "NewCliente": {
+        "title": "NewCliente",
+        "type": "object",
+        "description": "(tsType: Omit<Cliente, 'id'>, schemaOptions: { title: 'NewCliente', exclude: [ 'id' ] })",
+        "properties": {
+          "nome": {
+            "type": "string"
+          },
+          "morada": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "data_nascimento": {
+            "type": "string"
+          },
+          "nif": {
+            "type": "number"
+          },
+          "palavra_passe": {
+            "type": "string"
+          },
+          "telemovel": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "nome",
+          "morada",
+          "email",
+          "data_nascimento",
+          "palavra_passe",
+          "telemovel"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Cliente, 'id'>"
+      },
+      "ClientePartial": {
+        "title": "ClientePartial",
+        "type": "object",
+        "description": "(tsType: Partial<Cliente>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "morada": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "data_nascimento": {
+            "type": "string"
+          },
+          "nif": {
+            "type": "number"
+          },
+          "palavra_passe": {
+            "type": "string"
+          },
+          "telemovel": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Cliente>"
+      },
+      "NewEncomendaInCliente": {
+        "title": "NewEncomendaInCliente",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Encomenda, 'id'>, 'clienteId'>, schemaOptions: { title: 'NewEncomendaInCliente', exclude: [ 'id' ], optional: [ 'clienteId' ] })",
+        "properties": {
+          "data": {
+            "type": "string"
+          },
+          "metodo_pagamento": {
+            "type": "string"
+          },
+          "observacao": {
+            "type": "string"
+          },
+          "valor_total": {
+            "type": "number"
+          },
+          "clienteId": {
+            "type": "number"
+          },
+          "estadoId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "data",
+          "metodo_pagamento"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Encomenda, 'id'>, 'clienteId'>"
+      },
+      "NewClassificacao": {
+        "title": "NewClassificacao",
+        "type": "object",
+        "description": "(tsType: Omit<Classificacao, 'id'>, schemaOptions: { title: 'NewClassificacao', exclude: [ 'id' ] })",
+        "properties": {
+          "estrelas": {
+            "type": "number"
+          },
+          "comentario": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          },
+          "encomendaId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "estrelas",
+          "data"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Classificacao, 'id'>"
+      },
+      "NewCategoria": {
+        "title": "NewCategoria",
+        "type": "object",
+        "description": "(tsType: Omit<Categoria, 'id'>, schemaOptions: { title: 'NewCategoria', exclude: [ 'id' ] })",
+        "properties": {
+          "nome": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "nome"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Categoria, 'id'>"
+      },
+      "CategoriaPartial": {
+        "title": "CategoriaPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Categoria>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Categoria>"
+      },
+      "NewProdutoInCategoria": {
+        "title": "NewProdutoInCategoria",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Produto, 'id'>, 'categoriaId'>, schemaOptions: { title: 'NewProdutoInCategoria', exclude: [ 'id' ], optional: [ 'categoriaId' ] })",
+        "properties": {
+          "stock": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "preco": {
+            "type": "number"
+          },
+          "descricao": {
+            "type": "string"
+          },
+          "categoriaId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "stock",
+          "nome",
+          "preco"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Produto, 'id'>, 'categoriaId'>"
+      },
+      "loopback.Count": {
+        "type": "object",
+        "title": "loopback.Count",
+        "x-typescript-type": "@loopback/repository#Count",
+        "properties": {
+          "count": {
+            "type": "number"
+          }
+        }
+      },
+      "Categoria.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Categoria.ScopeFilter"
+      },
+      "Categoria.IncludeFilter.Items": {
+        "title": "Categoria.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "produtos"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Categoria.ScopeFilter"
+          }
+        }
+      },
+      "Categoria.Filter": {
+        "type": "object",
+        "title": "Categoria.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nome": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nome"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Categoria.Fields"
+          },
+          "include": {
+            "title": "Categoria.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Categoria.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Categoria>"
+      },
+      "Categoria.Filter1": {
+        "type": "object",
+        "title": "Categoria.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Categoria.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nome": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nome"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Categoria.Fields"
+          },
+          "include": {
+            "title": "Categoria.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Categoria.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Categoria>"
+      },
+      "Classificacao.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Classificacao.ScopeFilter"
+      },
+      "Classificacao.IncludeFilter.Items": {
+        "title": "Classificacao.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "encomenda"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Classificacao.ScopeFilter"
+          }
+        }
+      },
+      "Classificacao.Filter": {
+        "type": "object",
+        "title": "Classificacao.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "estrelas": {
+                    "type": "boolean"
+                  },
+                  "comentario": {
+                    "type": "boolean"
+                  },
+                  "data": {
+                    "type": "boolean"
+                  },
+                  "encomendaId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "estrelas",
+                    "comentario",
+                    "data",
+                    "encomendaId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Classificacao.Fields"
+          },
+          "include": {
+            "title": "Classificacao.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Classificacao.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Classificacao>"
+      },
+      "Classificacao.Filter1": {
+        "type": "object",
+        "title": "Classificacao.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Classificacao.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "estrelas": {
+                    "type": "boolean"
+                  },
+                  "comentario": {
+                    "type": "boolean"
+                  },
+                  "data": {
+                    "type": "boolean"
+                  },
+                  "encomendaId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "estrelas",
+                    "comentario",
+                    "data",
+                    "encomendaId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Classificacao.Fields"
+          },
+          "include": {
+            "title": "Classificacao.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Classificacao.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Classificacao>"
+      },
+      "Cliente.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Cliente.ScopeFilter"
+      },
+      "Cliente.IncludeFilter.Items": {
+        "title": "Cliente.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "encomendas"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Cliente.ScopeFilter"
+          }
+        }
+      },
+      "Cliente.Filter": {
+        "type": "object",
+        "title": "Cliente.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nome": {
+                    "type": "boolean"
+                  },
+                  "morada": {
+                    "type": "boolean"
+                  },
+                  "email": {
+                    "type": "boolean"
+                  },
+                  "data_nascimento": {
+                    "type": "boolean"
+                  },
+                  "nif": {
+                    "type": "boolean"
+                  },
+                  "palavra_passe": {
+                    "type": "boolean"
+                  },
+                  "telemovel": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nome",
+                    "morada",
+                    "email",
+                    "data_nascimento",
+                    "nif",
+                    "palavra_passe",
+                    "telemovel"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Cliente.Fields"
+          },
+          "include": {
+            "title": "Cliente.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Cliente.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Cliente>"
+      },
+      "Cliente.Filter1": {
+        "type": "object",
+        "title": "Cliente.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Cliente.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nome": {
+                    "type": "boolean"
+                  },
+                  "morada": {
+                    "type": "boolean"
+                  },
+                  "email": {
+                    "type": "boolean"
+                  },
+                  "data_nascimento": {
+                    "type": "boolean"
+                  },
+                  "nif": {
+                    "type": "boolean"
+                  },
+                  "palavra_passe": {
+                    "type": "boolean"
+                  },
+                  "telemovel": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nome",
+                    "morada",
+                    "email",
+                    "data_nascimento",
+                    "nif",
+                    "palavra_passe",
+                    "telemovel"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Cliente.Fields"
+          },
+          "include": {
+            "title": "Cliente.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Cliente.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Cliente>"
+      },
+      "Encomenda.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Encomenda.ScopeFilter"
+      },
+      "Encomenda.IncludeFilter.Items": {
+        "title": "Encomenda.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "cliente",
+              "estado",
+              "classificacao",
+              "itemEncomendas"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Encomenda.ScopeFilter"
+          }
+        }
+      },
+      "Encomenda.Filter": {
+        "type": "object",
+        "title": "Encomenda.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "data": {
+                    "type": "boolean"
+                  },
+                  "metodo_pagamento": {
+                    "type": "boolean"
+                  },
+                  "observacao": {
+                    "type": "boolean"
+                  },
+                  "valor_total": {
+                    "type": "boolean"
+                  },
+                  "clienteId": {
+                    "type": "boolean"
+                  },
+                  "estadoId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "data",
+                    "metodo_pagamento",
+                    "observacao",
+                    "valor_total",
+                    "clienteId",
+                    "estadoId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Encomenda.Fields"
+          },
+          "include": {
+            "title": "Encomenda.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Encomenda.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Encomenda>"
+      },
+      "Encomenda.Filter1": {
+        "type": "object",
+        "title": "Encomenda.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Encomenda.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "data": {
+                    "type": "boolean"
+                  },
+                  "metodo_pagamento": {
+                    "type": "boolean"
+                  },
+                  "observacao": {
+                    "type": "boolean"
+                  },
+                  "valor_total": {
+                    "type": "boolean"
+                  },
+                  "clienteId": {
+                    "type": "boolean"
+                  },
+                  "estadoId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "data",
+                    "metodo_pagamento",
+                    "observacao",
+                    "valor_total",
+                    "clienteId",
+                    "estadoId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Encomenda.Fields"
+          },
+          "include": {
+            "title": "Encomenda.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Encomenda.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Encomenda>"
+      },
+      "Estado.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Estado.ScopeFilter"
+      },
+      "Estado.IncludeFilter.Items": {
+        "title": "Estado.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "encomendas"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Estado.ScopeFilter"
+          }
+        }
+      },
+      "Estado.Filter": {
+        "type": "object",
+        "title": "Estado.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nome": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nome"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Estado.Fields"
+          },
+          "include": {
+            "title": "Estado.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Estado.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Estado>"
+      },
+      "Estado.Filter1": {
+        "type": "object",
+        "title": "Estado.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Estado.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nome": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nome"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Estado.Fields"
+          },
+          "include": {
+            "title": "Estado.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Estado.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Estado>"
+      },
+      "ItemEncomenda.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "ItemEncomenda.ScopeFilter"
+      },
+      "ItemEncomenda.IncludeFilter.Items": {
+        "title": "ItemEncomenda.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "encomenda",
+              "produto"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/ItemEncomenda.ScopeFilter"
+          }
+        }
+      },
+      "ItemEncomenda.Filter": {
+        "type": "object",
+        "title": "ItemEncomenda.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "preco_unitario": {
+                    "type": "boolean"
+                  },
+                  "quantidade": {
+                    "type": "boolean"
+                  },
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "encomendaId": {
+                    "type": "boolean"
+                  },
+                  "produtoId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "preco_unitario",
+                    "quantidade",
+                    "id",
+                    "encomendaId",
+                    "produtoId"
+                  ],
+                  "example": "preco_unitario"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "ItemEncomenda.Fields"
+          },
+          "include": {
+            "title": "ItemEncomenda.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ItemEncomenda.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<ItemEncomenda>"
+      },
+      "ItemEncomenda.Filter1": {
+        "type": "object",
+        "title": "ItemEncomenda.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "ItemEncomenda.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "preco_unitario": {
+                    "type": "boolean"
+                  },
+                  "quantidade": {
+                    "type": "boolean"
+                  },
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "encomendaId": {
+                    "type": "boolean"
+                  },
+                  "produtoId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "preco_unitario",
+                    "quantidade",
+                    "id",
+                    "encomendaId",
+                    "produtoId"
+                  ],
+                  "example": "preco_unitario"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "ItemEncomenda.Fields"
+          },
+          "include": {
+            "title": "ItemEncomenda.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ItemEncomenda.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<ItemEncomenda>"
+      },
+      "PingResponse": {
+        "type": "object",
+        "title": "PingResponse",
+        "properties": {
+          "greeting": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "properties": {
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "Produto.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Produto.ScopeFilter"
+      },
+      "Produto.IncludeFilter.Items": {
+        "title": "Produto.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "itemEncomendas",
+              "categoria"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Produto.ScopeFilter"
+          }
+        }
+      },
+      "Produto.Filter": {
+        "type": "object",
+        "title": "Produto.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "stock": {
+                    "type": "boolean"
+                  },
+                  "nome": {
+                    "type": "boolean"
+                  },
+                  "preco": {
+                    "type": "boolean"
+                  },
+                  "descricao": {
+                    "type": "boolean"
+                  },
+                  "categoriaId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "stock",
+                    "nome",
+                    "preco",
+                    "descricao",
+                    "categoriaId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Produto.Fields"
+          },
+          "include": {
+            "title": "Produto.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Produto.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Produto>"
+      },
+      "Produto.Filter1": {
+        "type": "object",
+        "title": "Produto.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Produto.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "stock": {
+                    "type": "boolean"
+                  },
+                  "nome": {
+                    "type": "boolean"
+                  },
+                  "preco": {
+                    "type": "boolean"
+                  },
+                  "descricao": {
+                    "type": "boolean"
+                  },
+                  "categoriaId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "stock",
+                    "nome",
+                    "preco",
+                    "descricao",
+                    "categoriaId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Produto.Fields"
+          },
+          "include": {
+            "title": "Produto.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Produto.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Produto>"
+      }
+    }
+  }
+}

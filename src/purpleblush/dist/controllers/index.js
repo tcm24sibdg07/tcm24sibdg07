@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+tslib_1.__exportStar(require("./ping.controller"), exports);
+tslib_1.__exportStar(require("./cliente.controller"), exports);
+tslib_1.__exportStar(require("./encomenda.controller"), exports);
+tslib_1.__exportStar(require("./classificacao.controller"), exports);
+tslib_1.__exportStar(require("./estado.controller"), exports);
+tslib_1.__exportStar(require("./categoria.controller"), exports);
+tslib_1.__exportStar(require("./produto.controller"), exports);
+tslib_1.__exportStar(require("./itemencomenda.controller"), exports);
+tslib_1.__exportStar(require("./cliente-encomenda.controller"), exports);
+tslib_1.__exportStar(require("./encomenda-cliente.controller"), exports);
+tslib_1.__exportStar(require("./encomenda-estado.controller"), exports);
+tslib_1.__exportStar(require("./estado-encomenda.controller"), exports);
+tslib_1.__exportStar(require("./encomenda-classificacao.controller"), exports);
+tslib_1.__exportStar(require("./classificacao-encomenda.controller"), exports);
+tslib_1.__exportStar(require("./encomenda-item-encomenda.controller"), exports);
+tslib_1.__exportStar(require("./item-encomenda-encomenda.controller"), exports);
+tslib_1.__exportStar(require("./produto-item-encomenda.controller"), exports);
+tslib_1.__exportStar(require("./item-encomenda-produto.controller"), exports);
+tslib_1.__exportStar(require("./categoria-produto.controller"), exports);
+tslib_1.__exportStar(require("./produto-categoria.controller"), exports);
+//# sourceMappingURL=index.js.map

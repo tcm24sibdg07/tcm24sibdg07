@@ -131,7 +131,7 @@ Registo de encomendas feitas por clientes, com estado e eventual classificação
 | Nome              | Descrição                 | Domínio        | Default | Automático | Nulo |
 |-------------------|---------------------------|----------------|---------|------------|------|
 | id                | ID da encomenda           | INTEGER        | -       | Sim        | Não  |
-| data              | Data da encomenda         | VARCHAR(512)   | now()   | Não        | Não  |
+| data              | Data da encomenda         | DATETIME       | CURRENT_TIMESTAMP | Não | Não |
 | método_pagamento  | Método de pagamento       | VARCHAR(50)    | -       | Não        | Não  |
 | observação        | Observações gerais        | VARCHAR(512)   | -       | Não        | Sim  |
 | valor_total       | Total da encomenda        | DECIMAL(10,2)  | -       | Não        | Sim  |
@@ -215,7 +215,7 @@ Tabela que armazena avaliações feitas pelos clientes sobre as encomendas.
 | id          | Identificador da classificação   | BIGINT      | -       | Sim        | Não  |
 | estrelas    | Avaliação em estrelas (1 a 5)    | INTEGER     | -       | Não        | Não  |
 | comentário  | Comentário escrito do cliente    | TEXT        | -       | Não        | Sim  |
-| data        | Data da classificação            | DATETIME    | now()   | Não        | Não  |
+| data        | Data da classificação            | DATETIME    | CURRENT_TIMESTAMP | Não | Não |
 | encomendaId | Encomenda a que pertence a classificação  | BIGINT      | -       | Não        | Sim  |
 
 **Restrições de Integridade:**

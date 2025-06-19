@@ -44,8 +44,7 @@ Esta conclusão baseia-se nos seguintes critérios:
 
 ###  1ª Forma Normal (1NF)
 
-- Todos os atributos de todas as tabelas são **atómicos**.
-- Não existem **valores multivalorados** nem **grupos repetitivos**.
+- Todos os atributos de todas as tabelas são atómicos.
 - Cada célula contém apenas **um valor único**.
 
  O modelo está em 1NF.
@@ -53,8 +52,8 @@ Esta conclusão baseia-se nos seguintes critérios:
 
 ###  2ª Forma Normal (2NF)
 
-- Todas as tabelas com **chave composta** (ex.: `item_encomenda`) têm os seus atributos **totalmente dependentes da chave primária completa**.
-- Tabelas com chave simples (ex.: `cliente`, `produto`) já estão automaticamente em 2NF.
+- Todas as tabelas com chave composta (ex.: itemencomenda) têm os seus atributos totalmente dependentes da chave primária completa.
+- Tabelas com chave simples (ex.: cliente, produto) já estão automaticamente na 2NF.
 
  O modelo está em 2NF.
 
@@ -62,8 +61,8 @@ Esta conclusão baseia-se nos seguintes critérios:
 
 ###  3ª Forma Normal (3NF)
 
-- Não existem **dependências transitivas**: nenhum atributo não-chave depende de outro atributo não-chave.
-- Todos os atributos não-chave **dependem exclusivamente da chave primária** de cada tabela.
+- Não existem dependências transitivas: nenhum atributo não-chave depende de outro atributo não-chave.
+- Todos os atributos não-chave dependem exclusivamente da chave primária de cada tabela.
 
  O modelo está em 3NF.
  
